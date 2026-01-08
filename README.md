@@ -10,6 +10,7 @@ Repositório dedicado aos meus estudos e à minha evolução na linguagem Java.
 3. Estruturas condicionais
 4. Estruturas de Repetição 
 5. Validação de dados e controle de fluxo
+6. Arrays (vetores)
 
 ---
 
