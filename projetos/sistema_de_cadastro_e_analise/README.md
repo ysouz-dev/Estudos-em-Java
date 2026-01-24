@@ -1,4 +1,4 @@
-# Sistema de Cadastro e Análise (Java)
+# Sistema de Cadastro e Análise
 
 Projeto desenvolvido em Java com foco em lógica, métodos e organização de código, simulando um **sistema simples de cadastro e análise de pessoas** via terminal.
 
