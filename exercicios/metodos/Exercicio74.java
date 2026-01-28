@@ -17,7 +17,11 @@ public class Exercicio74 {
             System.out.print("Nome: ");
             nome = scanner.nextLine().strip().toUpperCase();
             if (!validaNome(nome)) {
-                System.out.println("Error: O nome deve conter apenas caracteres alfabéticos.");
+                if (nome.isEmpty()) {
+                    System.out.println("Error: O nome não pode estar vazio.");
+                } else {
+                    System.out.println("Error: O nome deve conter apenas caracteres alfabéticos.");
+                }
             }
         } while (!validaNome(nome));
 
@@ -34,6 +38,10 @@ public class Exercicio74 {
     }
 
     public static boolean validaNome(String nome) {
+        if (nome.isEmpty()) {
+            return false;
+        }
+
         String nomeSemEspaco = nome.replace(" ", "");
         for (int i = 0; i < nomeSemEspaco.length(); i++) {
             if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
