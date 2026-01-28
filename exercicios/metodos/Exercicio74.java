@@ -20,6 +20,17 @@ public class Exercicio74 {
                 System.out.println("Error: O nome deve conter apenas caracteres alfabéticos.");
             }
         } while (!validaNome(nome));
+
+        int idade;
+        do {
+            System.out.print("Idade: ");
+            idade = scanner.nextInt();
+
+            if (!validaIdade(idade)) {
+                String erro = (idade < 18) ? "Você deve ser maior de idade para se cadastrar" : "A idade máxima permitida para cadastro é 65 anos";
+                System.out.printf("Error: %s.%n", erro);
+            }
+        } while (!validaIdade(idade));
     }
 
     public static boolean validaNome(String nome) {
@@ -30,6 +41,10 @@ public class Exercicio74 {
             }
         }
         return true;
+    }
+
+    public static boolean validaIdade(int idade) {
+        return idade >= 18 && idade <= 65;
     }
 
     public static void main(String[] args) {
