@@ -35,6 +35,16 @@ public class Exercicio74 {
                 System.out.printf("Error: %s.%n", erro);
             }
         } while (!validaIdade(idade));
+
+        double salario;
+        do {
+            System.out.print("Salário: ");
+            salario = scanner.nextDouble();
+
+            if (!validaSalario(salario)) {
+                System.out.println("Error: O salário não pode ser R$ 0,00.");
+            }
+        } while (!validaSalario(salario));
     }
 
     public static boolean validaNome(String nome) {
@@ -53,6 +63,10 @@ public class Exercicio74 {
 
     public static boolean validaIdade(int idade) {
         return idade >= 18 && idade <= 65;
+    }
+
+    public static boolean validaSalario(double salario) {
+        return salario > 0;
     }
 
     public static void main(String[] args) {
