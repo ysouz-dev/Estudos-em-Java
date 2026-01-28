@@ -45,6 +45,12 @@ public class Exercicio73 {
                 System.out.println("Error: O salário não pode ser R$ 0,00.");
             }
         } while (!validaSalario(salario));
+
+        System.out.println("=================================");
+        System.out.println("Cadastro realizado com sucesso!");
+        System.out.println("=================================");
+        System.out.printf("1. %nNome: %s %nIdade: %d anos %nSalário: R$ %.2f%n", nome, idade, salario);
+        System.out.println("=================================");
     }
 
     public static boolean validaNome(String nome) {
