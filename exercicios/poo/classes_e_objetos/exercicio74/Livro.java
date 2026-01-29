@@ -9,9 +9,9 @@ public class Livro {
     public void emprestarLivro() {
         if (!this.emprestado) {
             this.emprestado = true;
-            System.out.println("Livro emprestado!");
+            System.out.printf("Livro %s emprestado!%n", this.titulo);
         } else {
-            System.out.println("O livro ja está emprestado.");
+            System.out.printf("O livro %s ja está emprestado.%n", this.titulo);
         }
     }
 
