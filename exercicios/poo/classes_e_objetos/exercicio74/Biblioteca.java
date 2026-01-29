@@ -19,10 +19,28 @@ public class Biblioteca {
 
         } while (!validaTitulo(livroNovo.titulo));
 
-        
+        do {
+            System.out.print("Nome do autor: ");
+            livroNovo.autor = scanner.nextLine().strip().toUpperCase();
+
+            if (!validaAutor(livroNovo.autor)) {
+                System.out.println("Error: o nome do autor deve conter apenas caracteres alfabéticos.");
+            }
+
+        } while (!validaAutor(livroNovo.autor));
     }
 
     public static boolean validaTitulo(String titulo) {
         return titulo.length() > 2;
+    }
+
+    public static boolean validaAutor(String autor) {
+        String autorSemEspaco = autor.replace(" ", "");
+        for (int i = 0; i < autorSemEspaco.length(); i++) {
+            if (!Character.isLetter(autorSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 }
