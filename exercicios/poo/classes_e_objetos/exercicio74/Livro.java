@@ -23,4 +23,11 @@ public class Livro {
             System.out.printf("O livro %s não está emprestado para se devolver.%n", this.titulo);
         }
     }
+
+    public void mostrarInfo() {
+        System.out.println("============= LIVRO =============");
+        System.out.printf("Titulo: %s %nAutor: %s %nPaginas: %d %nEmprestado: %b%n", 
+                        this.titulo, this.autor, this.paginas, this.emprestado);
+        System.out.println("=============================");        
+    }
 }
