@@ -5,5 +5,13 @@ public class Livro {
     String autor;
     int paginas;
     boolean emprestado = false;
-    
+
+    public void emprestarLivro() {
+        if (!this.emprestado) {
+            this.emprestado = true;
+            System.out.println("Livro emprestado!");
+        } else {
+            System.out.println("O livro ja está emprestado.");
+        }
+    }
 }
