@@ -97,6 +97,25 @@ public class Main {
                     estanteDeLivros.listaDeLivros[escolha1 - 1].devolverLivro();
                     break;
 
+                case 4:
+                    if (!validaSePossuiLivros(estanteDeLivros.listaDeLivros)) {
+                        System.out.println("A Biblioteca não possui nenhum livro cadastrado");
+                        break;
+                    }
+
+                    estanteDeLivros.listarLivros();
+                    System.out.print("Digite o código do livro que deseja ver informações: ");
+                    int escolha2 = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (!validaCodigoLivro(estanteDeLivros.listaDeLivros, escolha2)) {
+                        System.out.printf("Error: não possui livro com código %d, tente novamente!%n", escolha2);
+                        break;
+                    }
+
+                    estanteDeLivros.listaDeLivros[escolha2 - 1].mostrarInfo();
+                    break;
+
             }
         }
 
