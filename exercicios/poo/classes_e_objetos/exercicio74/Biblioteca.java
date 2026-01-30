@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Biblioteca {
     Livro[] listaDeLivros = new Livro[0];
     
-    public static void CadastrarLivro(Scanner scanner) {
+    public static Livro CadastrarLivro(Scanner scanner) {
         scanner.nextLine();
         Livro livroNovo = new Livro();
 
@@ -32,6 +32,7 @@ public class Biblioteca {
                 System.out.println("Error: a quantidade de páginas deve ser maior que 0.");
             }
         } while (!livroNovo.validarPagina());
+        return livroNovo;
     }
 
     public Livro[] adicionaLivroNaLista(Livro livroAdicionado) {
