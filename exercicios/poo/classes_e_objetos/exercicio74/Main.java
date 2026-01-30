@@ -17,7 +17,7 @@ public class Main {
         System.out.println("          Biblioteca");
         System.out.println("==============================");
         System.out.println(
-                "[ 1 ] Cadastrar livro \n[ 2 ] Emprestar livro \n[ 2 ] Devolver livro \n[ 4 ] Mostrar info \n[ 5 ] Sair");
+                "[ 1 ] Cadastrar livro \n[ 2 ] Emprestar livro \n[ 3 ] Devolver livro \n[ 4 ] Mostrar info \n[ 5 ] Sair");
         System.out.println("==============================");
 
         int escolha;
@@ -61,7 +61,7 @@ public class Main {
 
                 case 2:
                     if (!validaSePossuiLivros(estanteDeLivros.listaDeLivros)) {
-                        System.out.println("A Biblioteca não possui nenhum livro para emprestar.");
+                        System.out.println("A Biblioteca não possui nenhum livro cadastrado.");
                         break;
                     }
 
@@ -76,6 +76,25 @@ public class Main {
                     }
 
                     estanteDeLivros.listaDeLivros[escolha - 1].emprestarLivro();
+                    break;
+
+                case 3:
+                    if (!validaSePossuiLivros(estanteDeLivros.listaDeLivros)) {
+                        System.out.println("A Biblioteca não possui nenhum livro cadastrado.");
+                        break;
+                    }
+
+                    estanteDeLivros.listarLivros();
+                    System.out.print("Digite o código do livro que deseja devolver: ");
+                    int escolha1 = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (!validaCodigoLivro(estanteDeLivros.listaDeLivros, escolha1)) {
+                        System.out.printf("Error: não possui livro com código %d, tente novamente!%n", escolha1);
+                        break;
+                    }
+
+                    estanteDeLivros.listaDeLivros[escolha1 - 1].devolverLivro();
                     break;
 
             }
