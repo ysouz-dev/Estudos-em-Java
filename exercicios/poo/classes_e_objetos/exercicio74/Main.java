@@ -23,6 +23,7 @@ public class Main {
         do {
             System.out.print("Qual opção desejada: ");
             escolha = scanner.nextInt();
+            scanner.nextLine();
             if (escolha < 1 || escolha > 5) {
                 System.out.printf("Error: %d não é uma opção válida.%n", escolha);
             }

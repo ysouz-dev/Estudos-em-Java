@@ -6,7 +6,6 @@ public class Biblioteca {
     Livro[] listaDeLivros = new Livro[0];
 
     public static Livro cadastrarLivro(Scanner scanner) {
-        scanner.nextLine();
         Livro livroNovo = new Livro();
 
         do {
