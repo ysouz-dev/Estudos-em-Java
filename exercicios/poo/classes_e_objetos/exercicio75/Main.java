@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         Produto produto1 = new Produto();
         Produto produto2 = new Produto();
 
@@ -24,5 +24,13 @@ public class Main {
         produto2.nome = "Mouse";
         produto2.preco = 10.0;
         produto2.estoque = 10;
+
+        System.out.println("======== 1 ========");
+        produto1.mostrarDados();
+        System.out.printf("Valor total de estoque: R$ %.2f%n", produto1.valorTotalEstoque());
+        System.out.println("======== 2 ========");
+        produto2.mostrarDados();
+        System.out.printf("Valor total de estoque: R$ %.2f%n", produto2.valorTotalEstoque());
+        scanner.close();
     }
 }
