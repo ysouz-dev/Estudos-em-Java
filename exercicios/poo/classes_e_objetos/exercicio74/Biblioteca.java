@@ -51,8 +51,6 @@ public class Biblioteca {
                 System.out.printf("%d. %nTitulo: %s%n", i+1, this.listaDeLivros[i].titulo);
                 System.out.println("=============================");
             }
-        } else {
-            System.out.println("Nenhum livro registrado para listar.");
         }
     }
 }
