@@ -7,7 +7,6 @@ Atributos:
 
 package exercicios.poo.classes_e_objetos.exercicio74;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
