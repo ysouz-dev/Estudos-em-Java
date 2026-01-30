@@ -58,17 +58,23 @@ public class Main {
                     break;
 
                 case 2:
+                    if (!validaSePossuiLivros(estanteDeLivros.listaDeLivros)) {
+                        System.out.println("A Biblioteca não possui nenhum livro para emprestar.");
+                        break;
+                    }
+
                     estanteDeLivros.listarLivros();
                     System.out.print("Digite o código do livro que deseja emprestar: ");
                     int escolha = scanner.nextInt();
                     scanner.nextLine();
+
                     if (!validaCodigoLivro(estanteDeLivros.listaDeLivros, escolha)) {
                         System.out.printf("Error: não possui livro com código %d, tente novamente!%n", escolha);
                         break;
                     }
+
                     estanteDeLivros.listaDeLivros[escolha-1].emprestarLivro();
                     break;
-
                     
             }
         }
