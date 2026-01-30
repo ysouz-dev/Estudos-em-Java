@@ -13,5 +13,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        
+        Produto produto1 = new Produto();
+        Produto produto2 = new Produto();
+
+        produto1.nome = "Teclado";
+        produto1.preco = 39.90;
+        produto1.estoque = 10;
+
+        produto2.nome = "Mouse";
+        produto2.preco = 10.0;
+        produto2.estoque = 10;
     }
 }
