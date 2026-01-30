@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Biblioteca {
     Livro[] listaDeLivros = new Livro[0];
-    
-    public static Livro CadastrarLivro(Scanner scanner) {
+
+    public static Livro cadastrarLivro(Scanner scanner) {
         scanner.nextLine();
         Livro livroNovo = new Livro();
 
@@ -48,7 +48,7 @@ public class Biblioteca {
         if (this.listaDeLivros.length != 0) {
             System.out.println("===== Lista de Livros =====");
             for (int i = 0; i < this.listaDeLivros.length; i++) {
-                System.out.printf("%d. %nTitulo: %s%n", i+1, this.listaDeLivros[i].titulo);
+                System.out.printf("%d. %nTitulo: %s%n", i + 1, this.listaDeLivros[i].titulo);
                 System.out.println("=============================");
             }
         }

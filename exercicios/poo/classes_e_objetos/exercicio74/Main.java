@@ -16,9 +16,10 @@ public class Main {
         System.out.println("==============================");
         System.out.println("          Biblioteca");
         System.out.println("==============================");
-        System.out.println("[ 1 ] Cadastrar livro \n[ 2 ] Emprestar livro \n[ 2 ] Devolver livro \n[ 4 ] Mostrar info \n[ 5 ] Sair");
+        System.out.println(
+                "[ 1 ] Cadastrar livro \n[ 2 ] Emprestar livro \n[ 2 ] Devolver livro \n[ 4 ] Mostrar info \n[ 5 ] Sair");
         System.out.println("==============================");
-        
+
         int escolha;
         do {
             System.out.print("Qual opção desejada: ");
@@ -39,10 +40,11 @@ public class Main {
     }
 
     public static boolean validaSePossuiLivros(Livro[] listaLivros) {
-        if (listaLivros.length == 0) return false;
+        if (listaLivros.length == 0)
+            return false;
         return true;
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Biblioteca estanteDeLivros = new Biblioteca();
@@ -52,7 +54,7 @@ public class Main {
             opcao = menu(scanner);
             switch (opcao) {
                 case 1:
-                    Livro livroNovo = Biblioteca.CadastrarLivro(scanner);
+                    Livro livroNovo = Biblioteca.cadastrarLivro(scanner);
                     estanteDeLivros.listaDeLivros = estanteDeLivros.adicionaLivroNaLista(livroNovo);
                     System.out.println("\n===== Livro cadastrado! =====");
                     break;
@@ -73,12 +75,11 @@ public class Main {
                         break;
                     }
 
-                    estanteDeLivros.listaDeLivros[escolha-1].emprestarLivro();
+                    estanteDeLivros.listaDeLivros[escolha - 1].emprestarLivro();
                     break;
-                    
+
             }
         }
-
 
     }
 }
