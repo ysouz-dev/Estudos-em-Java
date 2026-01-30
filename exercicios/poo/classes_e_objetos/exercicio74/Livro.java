@@ -30,4 +30,18 @@ public class Livro {
                         this.titulo, this.autor, this.paginas, this.emprestado);
         System.out.println("=============================");        
     }
+
+    public boolean validaTitulo() {
+        return this.titulo.length() > 2;
+    }
+
+    public boolean validaAutor() {
+        String autorSemEspaco = this.autor.replace(" ", "");
+        for (int i = 0; i < autorSemEspaco.length(); i++) {
+            if (!Character.isLetter(autorSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
