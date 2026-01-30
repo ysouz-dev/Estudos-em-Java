@@ -26,4 +26,8 @@ public class ContaBancaria {
             System.out.println(erro);
         }
     }
+
+    public void mostrarSaldo() {
+        System.out.printf("Saldo bancário: R$ %.2f%n", this.saldo);
+    }
 }
