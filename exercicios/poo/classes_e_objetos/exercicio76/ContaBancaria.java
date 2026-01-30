@@ -10,7 +10,7 @@ public class ContaBancaria {
             this.saldo += valor;
             System.out.println("Depósito realizado com sucesso!");
         } else {
-            System.out.printf("Não é possivel depositar R$ %.2f, escolha um valor maior.%n", valor);
+            System.out.printf("Não é possivel depositar R$ %.2f. escolha um valor maior.%n", valor);
         }
     }
 
