@@ -42,6 +42,7 @@ public class Main {
                 case 1:
                     Livro livroNovo = Biblioteca.CadastrarLivro(scanner);
                     estanteDeLivros.listaDeLivros = estanteDeLivros.adicionaLivroNaLista(livroNovo);
+                    System.out.println("\n===== Livro cadastrado! =====");
                     break;
             }
         }
