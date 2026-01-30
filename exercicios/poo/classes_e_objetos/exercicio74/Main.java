@@ -30,6 +30,13 @@ public class Main {
         System.out.println("==============================");
         return escolha;
     }
+
+    public static boolean validaCodigoLivro(Livro[] listaDeLivros, int escolha) {
+        if (escolha > listaDeLivros.length || escolha < 0) {
+            return false;
+        }
+        return true;
+    }
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -44,6 +51,20 @@ public class Main {
                     estanteDeLivros.listaDeLivros = estanteDeLivros.adicionaLivroNaLista(livroNovo);
                     System.out.println("\n===== Livro cadastrado! =====");
                     break;
+
+                case 2:
+                    estanteDeLivros.listarLivros();
+                    System.out.print("Digite o código do livro que deseja emprestar: ");
+                    int escolha = scanner.nextInt();
+                    scanner.nextLine();
+                    if (!validaCodigoLivro(estanteDeLivros.listaDeLivros, escolha)) {
+                        System.out.printf("Error: não possui livro com código %d, tente novamente!%n", escolha);
+                        break;
+                    }
+                    estanteDeLivros.listaDeLivros[escolha-1].emprestarLivro();
+                    break;
+
+                    
             }
         }
 
