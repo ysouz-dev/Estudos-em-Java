@@ -10,5 +10,9 @@ public class Produto {
         System.out.printf("Nome: %s %nPreço: R$ %.2f %nEstoque: %d%n", this.nome, this.preco, this.estoque);
         System.out.println("===================");
     }
+
+    public double valorTotalEstoque() {
+        return this.preco * this.estoque;
+    }
 }
 
