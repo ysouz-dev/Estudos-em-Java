@@ -116,8 +116,11 @@ public class Main {
                     estanteDeLivros.listaDeLivros[escolha2 - 1].mostrarInfo();
                     break;
 
+                case 5:
+                    System.out.println("====== Sistema encerrado! ======");
+                    scanner.close();
+                    break;
             }
         }
-
     }
 }
