@@ -32,7 +32,7 @@ public class Main {
     }
 
     public static boolean validaCodigoLivro(Livro[] listaDeLivros, int escolha) {
-        if (escolha > listaDeLivros.length || escolha < 0) {
+        if (escolha > listaDeLivros.length || escolha < 1) {
             return false;
         }
         return true;
