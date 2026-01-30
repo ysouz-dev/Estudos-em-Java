@@ -7,6 +7,7 @@ Atributos:
 
 package exercicios.poo.classes_e_objetos.exercicio74;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -32,5 +33,19 @@ public class Main {
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Biblioteca estanteDeLivros = new Biblioteca();
+
+        int opcao = 0;
+        while (opcao != 5) {
+            opcao = menu(scanner);
+            switch (opcao) {
+                case 1:
+                    Livro livroNovo = Biblioteca.CadastrarLivro(scanner);
+                    estanteDeLivros.listaDeLivros = estanteDeLivros.adicionaLivroNaLista(livroNovo);
+                    break;
+            }
+        }
+
+
     }
 }
