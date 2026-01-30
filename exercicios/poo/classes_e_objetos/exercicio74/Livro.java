@@ -44,4 +44,8 @@ public class Livro {
         }
         return true;
     }
+
+    public boolean validarPagina() {
+        return this.paginas > 0;
+    }
 }

@@ -28,5 +28,16 @@ public class Biblioteca {
             }
 
         } while (!livroNovo.validaAutor());
+
+        do {
+            System.out.print("Quantidade de paginas: ");
+            livroNovo.paginas = scanner.nextInt();
+
+            if (!livroNovo.validarPagina()) {
+                System.out.println("Error: a quantidade de páginas deve ser maior que 0.");
+            }
+
+
+        } while (!livroNovo.validarPagina());
     }
 }
