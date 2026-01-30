@@ -37,6 +37,11 @@ public class Main {
         }
         return true;
     }
+
+    public static boolean validaSePossuiLivros(Livro[] listaLivros) {
+        if (listaLivros.length == 0) return false;
+        return true;
+    }
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
