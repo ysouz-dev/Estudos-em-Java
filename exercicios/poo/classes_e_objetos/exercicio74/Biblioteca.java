@@ -40,4 +40,13 @@ public class Biblioteca {
 
         } while (!livroNovo.validarPagina());
     }
+
+    public Livro[] adicionaLivroNaLista(Livro livroAdicionado) {
+        Livro[] listaNova = new Livro[this.listaDeLivros.length + 1];
+        for (int i = 0; i < this.listaDeLivros.length; i++) {
+            listaNova[i] = this.listaDeLivros[i];
+        }
+        listaNova[this.listaDeLivros.length] = livroAdicionado;
+        return listaNova;
+    }
 }
