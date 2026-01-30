@@ -43,4 +43,16 @@ public class Biblioteca {
         listaNova[this.listaDeLivros.length] = livroAdicionado;
         return listaNova;
     }
+
+    public void listarLivros() {
+        if (this.listaDeLivros.length != 0) {
+            System.out.println("===== Lista de Livros =====");
+            for (int i = 0; i < this.listaDeLivros.length; i++) {
+                System.out.printf("%d. %nTitulo: %s%n", i+1, this.listaDeLivros[i].titulo);
+                System.out.println("=============================");
+            }
+        } else {
+            System.out.println("Nenhum livro registrado para listar.");
+        }
+    }
 }
