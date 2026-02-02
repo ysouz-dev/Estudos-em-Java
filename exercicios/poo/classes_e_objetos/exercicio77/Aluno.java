@@ -12,4 +12,12 @@ public class Aluno {
     public boolean ehAprovado() {
         return calcularMedia() >= 7.0;
     }
+
+    public void situacao() {
+        if (ehAprovado()) {
+            System.out.println("Situação: APROVADO");
+        } else {
+            System.out.println("Situação: REPROVADO");
+        }
+    }
 }
