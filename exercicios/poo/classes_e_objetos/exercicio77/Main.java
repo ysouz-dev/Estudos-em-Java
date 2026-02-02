@@ -55,6 +55,16 @@ public class Main {
         return alunos;
     }
 
+    public static void relatorioAlunos(Aluno[] listaDeAlunos) {
+        for (Aluno al : listaDeAlunos) {
+            System.out.println("=========================");
+            System.out.printf("Nome: %s %n1°Nota: %.1f pts%n2°Nota: %.1f pts%nMédia: %.1f pts%n",
+                            al.nome, al.nota1, al.nota2, al.calcularMedia());
+                            al.situacao();
+            System.out.println("=========================");
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
     }
