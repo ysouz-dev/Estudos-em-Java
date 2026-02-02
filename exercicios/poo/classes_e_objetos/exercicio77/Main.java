@@ -67,5 +67,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Aluno[] listaDeAlunos = cadastroAlunos(scanner);
+        System.out.println("===== Situações =====");
+        relatorioAlunos(listaDeAlunos);
     }
 }
