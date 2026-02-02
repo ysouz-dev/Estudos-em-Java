@@ -21,15 +21,33 @@ public class Main {
         Aluno[] alunos = new Aluno[3];
         for (int i = 0; i < alunos.length; i++) {
             Aluno aluno = new Aluno();
-            System.out.printf("Digite o nome do %d° aluno: ", i+1);
-            aluno.nome = scanner.nextLine();
+            do {
+                System.out.printf("Digite o nome do %d° aluno: ", i+1);
+                aluno.nome = scanner.nextLine();
 
-            System.out.printf("Digite a %d° nota de %s: ", i+1, aluno.nome);
-            aluno.nota1 = scanner.nextDouble();
+                if (!aluno.validaNomeAluno()) {
+                    System.out.println("Error: o nome do aluno deve conter apenas caracteres alfabéticos.");
+                }
+            } while (!aluno.validaNomeAluno());
+            
+            do {
+                System.out.printf("Digite a 1° nota de %s: ", aluno.nome);
+                aluno.nota1 = scanner.nextDouble();
+                
+                if (!Aluno.validaNota(aluno.nota1)) {
+                    System.out.println("Error: as notas devem estar entre 0 e 10.0 pontos.");
+                }
+            } while (!Aluno.validaNota(aluno.nota1));
 
-            System.out.printf("Digite a %d° nota de %s: ", i+1, aluno.nome);
-            aluno.nota2 = scanner.nextDouble();
-            scanner.nextLine();
+            do {
+                System.out.printf("Digite a 2° nota de %s: ", aluno.nome);
+                aluno.nota2 = scanner.nextDouble();
+                scanner.nextLine();
+                
+                if (!Aluno.validaNota(aluno.nota2)) {
+                    System.out.println("Error: as notas devem estar entre 0 e 10.0 pontos.");
+                }
+            } while (!Aluno.validaNota(aluno.nota2));
 
             alunos[i] = aluno;
             System.out.println("=============================");
