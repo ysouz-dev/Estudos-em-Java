@@ -8,4 +8,8 @@ public class Aluno {
     public double calcularMedia() {
         return (this.nota1 + this.nota2) / 2;
     }
+
+    public boolean ehAprovado() {
+        return calcularMedia() >= 7.0;
+    }
 }
