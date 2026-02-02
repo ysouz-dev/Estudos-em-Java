@@ -30,4 +30,8 @@ public class Aluno {
         }
         return true;
     } 
+
+    public static boolean validaNota(double nota) {
+        return nota >= 0 && nota <= 10;
+    }
 }
