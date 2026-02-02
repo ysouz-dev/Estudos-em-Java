@@ -23,7 +23,7 @@ public class Main {
             Aluno aluno = new Aluno();
             do {
                 System.out.printf("Digite o nome do %d° aluno: ", i+1);
-                aluno.nome = scanner.nextLine();
+                aluno.nome = scanner.nextLine().strip().toUpperCase();
 
                 if (!aluno.validaNomeAluno()) {
                     System.out.println("Error: o nome do aluno deve conter apenas caracteres alfabéticos.");
