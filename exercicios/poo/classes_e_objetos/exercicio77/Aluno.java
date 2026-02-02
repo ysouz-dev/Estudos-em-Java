@@ -20,4 +20,14 @@ public class Aluno {
             System.out.println("Situação: REPROVADO");
         }
     }
+
+    public boolean validaNomeAluno() {
+        String nomeSemEspaco = this.nome.replace(" ", "");
+        for (int i = 0; i < nomeSemEspaco.length(); i++) {
+            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    } 
 }
