@@ -12,4 +12,12 @@ public class Produto {
     public void setNome(String novoNome) {
         this.nome = novoNome;
     }
+
+    public double getPreco() {
+        return this.preco;
+    }
+
+    public void setPreco(double novoPreco) {
+        this.preco = novoPreco;
+    }
 }
