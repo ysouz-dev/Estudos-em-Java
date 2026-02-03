@@ -45,5 +45,15 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        Produto[] listaDeProdutos = new Produto[3];
+        for (int i = 0; i < listaDeProdutos.length; i++) {
+            listaDeProdutos[i] = cadastraProduto(scanner);
+            System.out.println("==============================");
+            System.out.printf("%s cadastrado com sucesso!%n", listaDeProdutos[i].getNome());
+            System.out.println("==============================");
+        }
+        System.out.println("======== Produtos cadastrados ========");
+        scanner.close();
     }
 }
