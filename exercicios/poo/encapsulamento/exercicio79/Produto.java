@@ -49,13 +49,6 @@ public class Produto {
 
     public static boolean validaNome(String nome) {
         if (nome.isEmpty()) return false;
-        
-        String nomeSemEspaco = nome.replace(" ", "");
-        for (int i = 0; i < nomeSemEspaco.length(); i++) {
-            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
-                return false;
-            }
-        }
         return true;
     }
 
