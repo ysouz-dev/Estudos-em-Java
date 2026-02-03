@@ -44,5 +44,8 @@ public class Produto {
     public static boolean validaPreco(double preco) {
         return preco > 0;
     }
-    
+
+    public static boolean validaEstoque(int estoque) {
+        return estoque >= 0;
+    }
 }
