@@ -17,6 +17,32 @@ package exercicios.poo.encapsulamento.exercicio79;
 import java.util.Scanner;
 
 public class Main {
+
+    public static Produto cadastraProduto(Scanner scanner) {
+        Produto produto = new Produto();
+        
+        String nome;
+        do {
+            System.out.print("Nome do produto: ");
+            nome = scanner.nextLine();
+        } while (!produto.setNome(nome));
+
+        double preco;
+        do {
+            System.out.print("Preço do produto R$: ");
+            preco = scanner.nextDouble();
+        } while (!produto.setPreco(preco));
+
+        int estoque;
+        do {
+            System.out.print("Quantidade em estoque: ");
+            estoque = scanner.nextInt();
+            scanner.nextLine();
+        } while (!produto.setEstoque(estoque));
+
+        return produto;
+    }
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
     }
