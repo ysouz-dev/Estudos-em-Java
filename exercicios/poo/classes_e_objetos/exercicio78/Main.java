@@ -15,7 +15,7 @@ public class Main {
             
             do {
                 System.out.printf("Digite o nome do %d° funcionário: ", i+1);
-                funcionario.nome = scanner.nextLine();
+                funcionario.nome = scanner.nextLine().strip().toUpperCase();
                 if (funcionario.nome.isEmpty()) {
                     System.out.println("Error: o nome não pode estar vazio.");
                 } else if (!funcionario.validaNomeFuncionario()) {
