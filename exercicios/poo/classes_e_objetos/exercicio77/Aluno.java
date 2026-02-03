@@ -22,6 +22,8 @@ public class Aluno {
     }
 
     public boolean validaNomeAluno() {
+        if (this.nome.isEmpty()) return false;
+
         String nomeSemEspaco = this.nome.replace(" ", "");
         for (int i = 0; i < nomeSemEspaco.length(); i++) {
             if (!Character.isLetter(nomeSemEspaco.charAt(i))) {

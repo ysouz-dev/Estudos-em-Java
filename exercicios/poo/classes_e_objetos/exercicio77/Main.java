@@ -25,7 +25,9 @@ public class Main {
                 System.out.printf("Digite o nome do %d° aluno: ", i+1);
                 aluno.nome = scanner.nextLine().strip().toUpperCase();
 
-                if (!aluno.validaNomeAluno()) {
+                if (aluno.nome.isEmpty()) {
+                    System.out.println("Error: o nome não pode estar vazio.");
+                } else if (!aluno.validaNomeAluno()) {
                     System.out.println("Error: o nome do aluno deve conter apenas caracteres alfabéticos.");
                 }
             } while (!aluno.validaNomeAluno());
