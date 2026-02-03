@@ -55,6 +55,10 @@ public class Produto {
         System.out.println("============================");
     }
 
+    public double valorEstoque() {
+        return this.estoque * this.preco;
+    }
+
     public static boolean validaNome(String nome) {
         if (nome.isEmpty()) return false;
         return true;
