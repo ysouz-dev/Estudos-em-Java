@@ -60,6 +60,7 @@ public class Main {
             System.out.println("==============================");
         }
         System.out.println("======== Produtos cadastrados ========");
+        listarProdutos(listaDeProdutos);
         scanner.close();
     }
 }
