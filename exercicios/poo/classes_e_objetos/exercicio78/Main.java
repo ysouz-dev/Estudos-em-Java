@@ -67,5 +67,9 @@ public class Main {
             func.mostrarDados();
             func.aumentarSalario(defineAumento(scanner));
         }
+
+        System.out.println("======= Lista de funcionários =======");
+        listarFuncionarios(listaDeFuncionarios);
+        scanner.close();
     }
 }
