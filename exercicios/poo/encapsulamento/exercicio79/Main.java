@@ -24,7 +24,7 @@ public class Main {
         String nome;
         do {
             System.out.print("Nome do produto: ");
-            nome = scanner.nextLine();
+            nome = scanner.nextLine().strip().toUpperCase();
         } while (!produto.setNome(nome));
 
         double preco;
@@ -62,5 +62,5 @@ public class Main {
         System.out.println("======== Produtos cadastrados ========");
         listarProdutos(listaDeProdutos);
         scanner.close();
-    }
+    } 
 }
