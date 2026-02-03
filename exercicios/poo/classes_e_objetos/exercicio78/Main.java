@@ -53,6 +53,12 @@ public class Main {
         return aumento;
     }
 
+    public static void listarFuncionarios(Funcionario[] lista) {
+        for (Funcionario func : lista) {
+            func.mostrarDados();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Funcionario[] listaDeFuncionarios = cadastraFuncionarios(scanner);
