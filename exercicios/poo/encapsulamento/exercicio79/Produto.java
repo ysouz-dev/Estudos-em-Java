@@ -10,6 +10,10 @@ public class Produto {
     }
 
     public void setNome(String novoNome) {
+        if (!validaNome(novoNome)) {
+            System.out.println("Error: o nome deve conter apenas caracteres alfabéticos.");
+            return;
+        }
         this.nome = novoNome;
     }
 
@@ -18,6 +22,10 @@ public class Produto {
     }
 
     public void setPreco(double novoPreco) {
+        if (!validaPreco(novoPreco)) {
+            System.out.println("Error: o preço deve ser maior que 0.");
+            return;
+        }
         this.preco = novoPreco;
     }
 
@@ -26,6 +34,10 @@ public class Produto {
     }
 
     public void setEstoque(int novoEstoque) {
+        if (!validaEstoque(novoEstoque)) {
+            System.out.println("Error: o estoque não pode ser negativo.");
+            return;
+        }
         this.estoque = novoEstoque;
     }
 
