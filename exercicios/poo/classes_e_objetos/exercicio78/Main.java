@@ -38,6 +38,19 @@ public class Main {
         return funcionarios;
     }
 
+    public static int defineAumento(Scanner scanner) {
+        int aumento;
+        do {
+            System.out.print("Quantos % de aumento: ");
+            aumento = scanner.nextInt();
+
+            if (!Funcionario.validaPercentual(aumento)) {
+                System.out.println("Error: o percentual não pode ser negativo.");
+            }
+        } while (!Funcionario.validaPercentual(aumento));
+        return aumento;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
     }
