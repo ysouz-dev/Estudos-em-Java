@@ -72,5 +72,6 @@ public class Main {
         Aluno[] listaDeAlunos = cadastroAlunos(scanner);
         System.out.println("===== Situações =====");
         relatorioAlunos(listaDeAlunos);
+        scanner.close();
     }
 }
