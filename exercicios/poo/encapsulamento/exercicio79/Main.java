@@ -43,6 +43,12 @@ public class Main {
         return produto;
     }
 
+    public static void listarProdutos(Produto[] lista) {
+        for (Produto prod : lista) {
+            prod.mostraInfo();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
