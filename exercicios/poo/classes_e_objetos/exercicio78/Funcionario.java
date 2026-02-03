@@ -27,7 +27,7 @@ public class Funcionario {
         return true;
     }
 
-    public boolean validaSalario () {
+    public boolean validaSalario() {
         return this.salario > 0;
     }
 
