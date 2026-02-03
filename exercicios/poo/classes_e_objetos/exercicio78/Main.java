@@ -13,8 +13,15 @@ public class Main {
         for (int i = 0; i < funcionarios.length; i++) {
             Funcionario funcionario = new Funcionario();
             
-            System.out.printf("Digite o nome do %d° funcionário: ", i+1);
-            funcionario.nome = scanner.nextLine();
+            do {
+                System.out.printf("Digite o nome do %d° funcionário: ", i+1);
+                funcionario.nome = scanner.nextLine();
+                if (funcionario.nome.isEmpty()) {
+                    System.out.println("Error: o nome não pode estar vazio.");
+                } else if (!funcionario.validaNomeFuncionario()) {
+                    System.out.println("Error: O nome só pode conter caracters alfabéticos.");
+                }
+            } while (!funcionario.validaNomeFuncionario());
 
             System.out.printf("Digite o salário de %s: R$ ", funcionario.nome);
             funcionario.salario = scanner.nextDouble();
