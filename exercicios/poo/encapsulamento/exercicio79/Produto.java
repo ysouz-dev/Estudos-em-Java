@@ -17,7 +17,7 @@ public class Produto {
 
     public boolean setNome(String novoNome) {
         if (!validaNome(novoNome)) {
-            System.out.println("Error: o nome deve conter apenas caracteres alfabéticos.");
+            System.out.println("Error: o nome não pode estar vazio.");
             return false;
         }
         this.nome = novoNome;
