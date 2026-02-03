@@ -26,4 +26,8 @@ public class Funcionario {
         }
         return true;
     }
+
+    public static boolean validaPercentual(int percentual) {
+        return percentual >= 0 && percentual <= 100;
+    }
 }
