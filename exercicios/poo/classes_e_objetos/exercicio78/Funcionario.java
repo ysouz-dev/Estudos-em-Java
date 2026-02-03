@@ -5,7 +5,7 @@ public class Funcionario {
     double salario;
 
     public void aumentarSalario (int percentual) {
-        this.salario += percentual / 100 * this.salario;
+        this.salario += percentual / 100.0 * this.salario;
         if (percentual > 0) System.out.printf("Parabens pelo aumento %s!%n", this.nome);
     }
 
