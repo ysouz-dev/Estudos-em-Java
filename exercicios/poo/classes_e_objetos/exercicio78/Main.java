@@ -53,5 +53,11 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Funcionario[] listaDeFuncionarios = cadastraFuncionarios(scanner);
+        
+        for (Funcionario func : listaDeFuncionarios) {
+            func.mostrarDados();
+            func.aumentarSalario(defineAumento(scanner));
+        }
     }
 }
