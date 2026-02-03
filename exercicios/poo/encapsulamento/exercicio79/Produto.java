@@ -20,4 +20,12 @@ public class Produto {
     public void setPreco(double novoPreco) {
         this.preco = novoPreco;
     }
+
+    public int getEstoque() {
+        return this.estoque;
+    }
+
+    public void setEstoque(int novoEstoque) {
+        this.estoque = novoEstoque;
+    }
 }
