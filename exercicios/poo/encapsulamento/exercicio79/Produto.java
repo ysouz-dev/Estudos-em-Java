@@ -51,7 +51,8 @@ public class Produto {
     }
 
     public void mostraInfo() {
-        System.out.printf("Nome: %s %nPreço: R$ %.2f %nEstoque: %d%n", this.nome, this.preco, this.estoque);
+        System.out.printf("Nome: %s %nPreço: R$ %.2f %nEstoque: %d %nValor total em: R$ %.2f%n", 
+                            this.nome, this.preco, this.estoque, valorEstoque());
         System.out.println("============================");
     }
 
