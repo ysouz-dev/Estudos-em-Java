@@ -27,6 +27,10 @@ public class Funcionario {
         return true;
     }
 
+    public boolean validaSalario () {
+        return this.salario > 0;
+    }
+
     public static boolean validaPercentual(int percentual) {
         return percentual >= 0 && percentual <= 100;
     }
