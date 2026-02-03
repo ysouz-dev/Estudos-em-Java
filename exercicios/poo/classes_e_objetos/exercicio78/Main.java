@@ -13,6 +13,7 @@ public class Main {
         for (int i = 0; i < funcionarios.length; i++) {
             Funcionario funcionario = new Funcionario();
             
+            System.out.println("=========================");
             do {
                 System.out.printf("Digite o nome do %d° funcionário: ", i+1);
                 funcionario.nome = scanner.nextLine().strip().toUpperCase();
@@ -34,6 +35,7 @@ public class Main {
                 }
             } while (!funcionario.validaSalario());
             funcionarios[i] = funcionario;
+            System.out.println("=========================");
         }
         return funcionarios;
     }
