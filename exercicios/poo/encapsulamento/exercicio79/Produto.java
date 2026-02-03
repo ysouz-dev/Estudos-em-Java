@@ -5,10 +5,10 @@ public class Produto {
     private double preco;
     private int estoque;
 
-    public Produto(String nome, double preco, int estoque) {
-        this.nome = nome;
-        this.preco = preco;
-        this.estoque = estoque;
+    public Produto() {
+        this.nome = "<Empty>";
+        this.preco = 1.00;
+        this.estoque = 0;
     }
 
     public String getNome() {
