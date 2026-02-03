@@ -23,10 +23,15 @@ public class Main {
                 }
             } while (!funcionario.validaNomeFuncionario());
 
-            System.out.printf("Digite o salário de %s: R$ ", funcionario.nome);
-            funcionario.salario = scanner.nextDouble();
-            scanner.nextLine();
+            do {
+                System.out.printf("Digite o salário de %s: R$ ", funcionario.nome);
+                funcionario.salario = scanner.nextDouble();
+                scanner.nextLine();
 
+                if (!funcionario.validaSalario()) {
+                    System.out.println("Error: o salário não pode ser negativo.");
+                }
+            } while (!funcionario.validaSalario());
             funcionarios[i] = funcionario;
         }
         return funcionarios;
