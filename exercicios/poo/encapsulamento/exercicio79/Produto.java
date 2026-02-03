@@ -15,36 +15,39 @@ public class Produto {
         return this.nome;
     }
 
-    public void setNome(String novoNome) {
+    public boolean setNome(String novoNome) {
         if (!validaNome(novoNome)) {
             System.out.println("Error: o nome deve conter apenas caracteres alfabéticos.");
-            return;
+            return false;
         }
         this.nome = novoNome;
+        return true;
     }
 
     public double getPreco() {
         return this.preco;
     }
 
-    public void setPreco(double novoPreco) {
+    public boolean setPreco(double novoPreco) {
         if (!validaPreco(novoPreco)) {
             System.out.println("Error: o preço deve ser maior que 0.");
-            return;
+            return false;
         }
         this.preco = novoPreco;
+        return true;
     }
 
     public int getEstoque() {
         return this.estoque;
     }
 
-    public void setEstoque(int novoEstoque) {
+    public boolean setEstoque(int novoEstoque) {
         if (!validaEstoque(novoEstoque)) {
             System.out.println("Error: o estoque não pode ser negativo.");
-            return;
+            return false;
         }
         this.estoque = novoEstoque;
+        return true;
     }
 
     public static boolean validaNome(String nome) {
