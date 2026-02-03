@@ -14,4 +14,16 @@ public class Funcionario {
         System.out.printf("Nome: %s %nSalário: R$ %.2f%n", this.nome, this.salario);
         System.out.println("=================");
     }
+
+    public boolean validaNomeFuncionario() {
+        if (this.nome.isEmpty()) return false;
+
+        String nomeSemEspaco = this.nome.replace(" ", "");
+        for (int i = 0; i < nomeSemEspaco.length(); i++) {
+            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
