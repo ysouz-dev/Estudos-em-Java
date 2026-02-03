@@ -40,4 +40,9 @@ public class Produto {
         }
         return true;
     }
+
+    public static boolean validaPreco(double preco) {
+        return preco > 0;
+    }
+    
 }
