@@ -7,9 +7,9 @@ public class ContaBancaria {
     private String titular;
     private double saldo;
 
-    public ContaBancaria(int conta, String titular) {
+    public ContaBancaria(String titular) {
         this.titular = titular;
-        this.conta = conta;
+        this.conta;
         this.saldo = 0;
     }
 
