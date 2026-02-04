@@ -17,6 +17,16 @@ package exercicios.poo.encapsulamento.exercicio80;
 import java.util.Scanner;
 
 public class Main {
+
+    public static ContaBancaria cadastraConta(Scanner scanner) {
+        System.out.println("===== Cadastro =====");
+        
+        System.out.print("Digite seu nome: ");
+        String nome = scanner.nextLine();
+
+        return new ContaBancaria(nome);
+    }
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
     }
