@@ -12,8 +12,8 @@ Repositório dedicado aos meus estudos e à minha evolução na linguagem Java.
 5. Validação de dados e controle de fluxo
 6. Arrays (vetores)
 7. POO
-  1. Classes e objetos
-  2. Getters e setters
+    1. Classes e objetos
+    2. Getters e setters
 
 ---
 
