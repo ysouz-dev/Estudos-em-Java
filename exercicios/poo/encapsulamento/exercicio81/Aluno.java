@@ -18,7 +18,7 @@ public class Aluno {
         return this.nome;
     }
 
-    public void setNome(String novoNome) {
+    public boolean setNome(String novoNome) {
         this.nome = novoNome;
     }
 
