@@ -11,6 +11,9 @@ Repositório dedicado aos meus estudos e à minha evolução na linguagem Java.
 4. Estruturas de Repetição 
 5. Validação de dados e controle de fluxo
 6. Arrays (vetores)
+7. POO
+   7.1 Classes e objetos
+   7.2 Getters e setters
 
 ---
 
