@@ -22,6 +22,14 @@ public class ContaBancaria {
         return this.saldo;
     }
 
+    public boolean depositar(double valor) {
+        if (valor <= 0) {
+            return false;
+        }
+        this.saldo += valor;
+        return true;
+    }
+
     public static boolean validaNomeTitular(String titular) {
         if (titular.isEmpty() || titular.length() < 3) return false;
 
