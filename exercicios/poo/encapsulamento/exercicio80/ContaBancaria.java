@@ -10,4 +10,16 @@ public class ContaBancaria {
         this.conta = conta;
         this.saldo = saldo;
     }
+
+    public static boolean validaNomeTitular(String titular) {
+        if (titular.isEmpty() || titular.length() < 2) return false;
+
+        String titularSemEspaco = titular.replace(" ", "");
+        for (int i = 0; i < titularSemEspaco.length(); i++) {
+            if (!Character.isLetter(titularSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
