@@ -5,10 +5,10 @@ public class ContaBancaria {
     private String titular;
     private double saldo;
 
-    public ContaBancaria(int conta, String titular, double saldo) {
+    public ContaBancaria(int conta, String titular) {
         this.titular = titular;
         this.conta = conta;
-        this.saldo = saldo;
+        this.saldo = 0;
     }
 
     public static boolean validaNomeTitular(String titular) {
