@@ -38,6 +38,12 @@ public class ContaBancaria {
         return true;
     }
 
+    public void mostrarDados() {
+        System.out.println("N°conta: " + this.conta);
+        System.out.println("Titular: " + this.titular);
+        System.out.println("Saldo: R$ %.2f".formatted(this.saldo));
+    }
+
     public static boolean validaNomeTitular(String titular) {
         if (titular.isEmpty() || titular.length() < 3) return false;
 
