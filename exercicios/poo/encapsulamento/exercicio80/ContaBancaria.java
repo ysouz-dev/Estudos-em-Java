@@ -9,7 +9,8 @@ public class ContaBancaria {
 
     public ContaBancaria(String titular) {
         this.titular = titular;
-        this.conta;
+        this.conta = contadorDeContas;
+        contadorDeContas++;
         this.saldo = 0;
     }
 
