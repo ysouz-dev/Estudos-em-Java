@@ -19,7 +19,10 @@ public class Aluno {
     }
 
     public boolean setNome(String novoNome) {
+        if (!validaNome(novoNome)) return false;
+        
         this.nome = novoNome;
+        return true;
     }
 
     public static boolean validaNome(String nome) {
