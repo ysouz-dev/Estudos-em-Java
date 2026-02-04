@@ -29,5 +29,21 @@ public class Main {
     
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        
+        ContaBancaria[] listaDeContas = new ContaBancaria[3];
+        for (int i = 0; i < listaDeContas.length; i++) {
+            System.out.printf("======== %d° ========%n", i+1);
+            listaDeContas[i] = cadastraConta(scanner);
+
+            listaDeContas[i].depositar(100*i); // deposito de teste
+            listaDeContas[i].saque(i);// saque de teste
+        }
+
+        System.out.println("===== Contas Cadastradas =====");
+        for (ContaBancaria conta : listaDeContas) {
+            conta.mostrarDados();
+            System.out.println("=====");
+        }
+        scanner.close();
     }
 }
