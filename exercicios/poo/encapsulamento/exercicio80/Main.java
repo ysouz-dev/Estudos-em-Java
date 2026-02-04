@@ -22,11 +22,11 @@ public class Main {
         System.out.println("===== Cadastro =====");
         
         System.out.print("Digite seu nome: ");
-        String nome = scanner.nextLine();
+        String nome = scanner.nextLine().strip().toUpperCase();
 
         return new ContaBancaria(nome);
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
