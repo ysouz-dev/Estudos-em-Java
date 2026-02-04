@@ -14,6 +14,10 @@ public class ContaBancaria {
         this.saldo = 0;
     }
 
+    public double getSaldo() {
+        return this.saldo;
+    }
+
     public static boolean validaNomeTitular(String titular) {
         if (titular.isEmpty() || titular.length() < 2) return false;
 
