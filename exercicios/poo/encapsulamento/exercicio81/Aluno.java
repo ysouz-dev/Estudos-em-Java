@@ -25,6 +25,28 @@ public class Aluno {
         return true;
     }
 
+    public double getNota1() {
+        return this.nota1;
+    }
+
+    public boolean setNota1(double novaNota) {
+        if (!validaNota(novaNota)) return false;
+        
+        this.nota1 = novaNota;
+        return true;
+    }
+
+    public double getNota2() {
+        return this.nota2;
+    }
+
+    public boolean setNota2(double novaNota) {
+        if (!validaNota(novaNota)) return false;
+        
+        this.nota2 = novaNota;
+        return true;
+    }
+
     public static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3) return false;
         String nomeSemEspaco = nome.replace(" ", "");
