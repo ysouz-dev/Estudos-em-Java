@@ -47,6 +47,10 @@ public class Aluno {
         return true;
     }
 
+    public double calcularMedia() {
+        return (this.nota1 + this.nota2) / 2;
+    }
+
     public static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3) return false;
         String nomeSemEspaco = nome.replace(" ", "");
