@@ -8,6 +8,10 @@ public class ContaBancaria {
     private double saldo;
 
     public ContaBancaria(String titular) {
+        if (!validaNomeTitular(titular)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+
         this.titular = titular;
         this.conta = contadorDeContas;
         contadorDeContas++;
