@@ -23,7 +23,7 @@ public class ContaBancaria {
     }
 
     public static boolean validaNomeTitular(String titular) {
-        if (titular.isEmpty() || titular.length() < 2) return false;
+        if (titular.isEmpty() || titular.length() < 3) return false;
 
         String titularSemEspaco = titular.replace(" ", "");
         for (int i = 0; i < titularSemEspaco.length(); i++) {
