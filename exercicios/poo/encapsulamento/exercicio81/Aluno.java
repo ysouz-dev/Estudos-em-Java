@@ -14,6 +14,14 @@ public class Aluno {
         this.nota2 = nota2;
     }
 
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String novoNome) {
+        this.nome = novoNome;
+    }
+
     public static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3) return false;
         String nomeSemEspaco = nome.replace(" ", "");
