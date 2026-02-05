@@ -57,6 +57,14 @@ public class Aluno {
         return "REPROVADO";
     }
 
+    public void mostrarDados() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("1° nota: " + this.nota1);
+        System.out.println("2° nota: " + this.nota2);
+        System.out.println("Média: %.1f".formatted(calcularMedia()));
+        System.out.println("Situação: " + situacao());
+    }
+    
     public static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3) return false;
         String nomeSemEspaco = nome.replace(" ", "");
