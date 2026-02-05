@@ -6,8 +6,8 @@ public class Aluno {
     private double nota2;
 
     public Aluno(String nome, double nota1, double nota2) {
-        if (!validaNome(nome)) throw new IllegalArgumentException("Nome informado inválido!");
-        if (!validaNota(nota1) || !validaNota(nota2)) throw new IllegalArgumentException("Nota informada inválida!");
+        if (!validaNome(nome)) throw new IllegalArgumentException("Nome informado inválido! (permitido somente caracteres)");
+        if (!validaNota(nota1) || !validaNota(nota2)) throw new IllegalArgumentException("Nota informada inválida (fora do intervalo 0 a 10)!");
 
         this.nome = nome;
         this.nota1 = nota1;
