@@ -51,6 +51,12 @@ public class Aluno {
         return (this.nota1 + this.nota2) / 2;
     }
 
+    public String situacao() {
+        if (calcularMedia() >= 7)  return "APROVADO";
+
+        return "REPROVADO";
+    }
+
     public static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3) return false;
         String nomeSemEspaco = nome.replace(" ", "");
