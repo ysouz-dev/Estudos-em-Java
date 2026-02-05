@@ -38,5 +38,18 @@ public class Main {
     }
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
+
+        Aluno[] listaDeAlunos = new Aluno[3];
+        for (int i = 0; i < listaDeAlunos.length; i++) {
+            System.out.printf("========= %d° =========%n", i + 1);
+            listaDeAlunos[i] = cadastrarAluno(scanner);
+            System.out.println("Aluno cadastrado!");
+        }
+        System.out.println("====== Boletim Escolar ======");
+        for (Aluno al : listaDeAlunos) {
+            al.mostrarDados();
+            System.out.println("================");
+        }
+        scanner.close();
     }
 }
