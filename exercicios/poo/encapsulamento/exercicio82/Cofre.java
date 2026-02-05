@@ -5,6 +5,10 @@ public class Cofre {
     private boolean aberto;
 
     public Cofre(String senha) {
+        if (!validaSenha(senha)) {
+            throw new IllegalArgumentException("A senha deve conter no mínimo 8 dígitos.");
+        }
+
         this.senha = senha;
     }
 
