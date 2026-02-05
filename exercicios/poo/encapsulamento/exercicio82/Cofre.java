@@ -10,6 +10,7 @@ public class Cofre {
         }
 
         this.senha = senha;
+        this.aberto = false;
     }
 
     public static boolean validaSenha(String senha) {
