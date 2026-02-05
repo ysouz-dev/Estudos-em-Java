@@ -13,6 +13,10 @@ public class Cofre {
         this.aberto = false;
     }
 
+    public boolean getAberto() {
+        return this.aberto;
+    }
+
     public static boolean validaSenha(String senha) {
         if (senha.length() < 8) { 
             return false;
