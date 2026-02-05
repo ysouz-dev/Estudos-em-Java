@@ -21,6 +21,21 @@ package exercicios.poo.encapsulamento.exercicio81;
 import java.util.Scanner;
 
 public class Main {
+
+    public static Aluno cadastrarAluno(Scanner scanner) {
+        System.out.println("====== Cadastro ======");
+        System.out.print("Nome do aluno: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("1° nota: ");
+        double nota1 = scanner.nextDouble();
+
+        System.out.print("2° nota: ");
+        double nota2 = scanner.nextDouble();
+        scanner.nextLine();
+
+        return new Aluno(nome, nota1, nota2);
+    }
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
     }
