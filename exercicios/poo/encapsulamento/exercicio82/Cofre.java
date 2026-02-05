@@ -17,6 +17,22 @@ public class Cofre {
         return this.aberto;
     }
 
+    public boolean abrirCofre(String senhaDoCofre) {
+        if (this.aberto) return false;
+        
+        if (senhaDoCofre.equals(this.senha)) {
+            this.aberto = true;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean fecharCofre() {
+        if (!this.aberto) return false;
+        this.aberto = false;
+        return true;
+    }
+
     public static boolean validaSenha(String senha) {
         if (senha.length() < 8) { 
             return false;
