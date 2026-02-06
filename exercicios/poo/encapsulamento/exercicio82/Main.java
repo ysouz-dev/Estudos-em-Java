@@ -38,6 +38,25 @@ public class Main {
         return cf;
     }
 
+    public static void tentarAbrirCofre(Scanner scanner, Cofre cofrinho) {
+        String senha;
+        int contador = 3;
+        do {
+            System.out.print("Senha para abrir: ");
+            senha = scanner.nextLine();
+            if (!cofrinho.abrirCofre(senha)) {
+                contador--;
+                if (contador == 0) {
+                    System.out.println("Excesso de tentativas, tente novamente mais tarde.");
+                    break;
+                }
+                System.out.println("senha incorreta");
+                System.out.printf("%d tentativa(s). %n", contador);
+                
+            }
+        } while (!cofrinho.abrirCofre(senha));
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
     }
