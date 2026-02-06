@@ -33,8 +33,9 @@ public class Main {
 
         } while (!senha.equals(confirmSenha));
 
+        Cofre cf = new Cofre(senha);
         System.out.println("Cofre criado!");
-        return new Cofre(senha);
+        return cf;
     }
 
     public static void main(String[] args) {
