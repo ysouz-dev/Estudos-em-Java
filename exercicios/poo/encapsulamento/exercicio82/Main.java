@@ -16,6 +16,26 @@ package exercicios.poo.encapsulamento.exercicio82;
 import java.util.Scanner;
 
 public class Main {
+
+    public static Cofre criarCofre(Scanner scanner) {
+        String senha;
+        String confirmSenha;
+        do {
+            System.out.print("Nova senha: ");
+            senha = scanner.nextLine();
+
+            System.out.print("Confirme a senha: ");
+            confirmSenha = scanner.nextLine();
+
+            if (!senha.equals(confirmSenha)) {
+                System.out.println("Error: senha e confirmação de senha não coincidem");
+            }
+
+        } while (!senha.equals(confirmSenha));
+
+        return new Cofre(senha);
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
     }
