@@ -59,5 +59,10 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Cofre cofrinho = criarCofre(scanner);
+        System.out.println("cofre aberto = " + cofrinho.getAberto());
+        tentarAbrirCofre(scanner, cofrinho);
+        System.out.println("cofre aberto = " + cofrinho.getAberto());
+        scanner.close();
     }
 }
