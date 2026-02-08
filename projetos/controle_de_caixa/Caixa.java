@@ -68,4 +68,23 @@ public class Caixa {
         System.out.println("Quantidade de entradas: " + quantidadeEntradas);
         System.out.println("Valor total: R$ %.2f".formatted(valorEntrada));
     }
+
+    public void mostrarSaidas() {
+        if (this.listaDeMovimentacoes.length == 0) {
+            System.out.println("Nenhuma movimentação registrada.");
+            return;
+        }
+
+        double valorSaida = 0;
+        int quantidadeSaidas = 0;
+        for (int i = 0; i < this.listaDeMovimentacoes.length; i++) {
+            if (this.listaDeMovimentacoes[i].getTipo().equals("SAIDA") || 
+            this.listaDeMovimentacoes[i].getTipo().equals("SAÍDA")) {
+                valorSaida += this.listaDeMovimentacoes[i].getValor();
+                quantidadeSaidas++;
+            }
+        }
+        System.out.println("Quantidade de saídas: " + quantidadeSaidas);
+        System.out.println("Valor total: -R$ %.2f".formatted(valorSaida));
+    }
 }
