@@ -15,4 +15,13 @@ public class Caixa {
         this.aberto = false;
         this.listaDeMovimentacoes = new Movimentacao[0];
     }
+
+    public void abrirCaixa() {
+        if (this.aberto) {
+            System.out.println("Erro: Caixa já aberto.");
+            return;
+        }
+        this.aberto = true;
+        System.out.println("Caixa aberto!");
+    }
 }
