@@ -24,4 +24,13 @@ public class Caixa {
         this.aberto = true;
         System.out.println("Caixa aberto!");
     }
+    
+    public void fecharCaixa() {
+        if (!this.aberto) {
+            System.out.println("Erro: Caixa já está fechado.");
+            return;
+        }
+        this.aberto = false;
+        System.out.println("Caixa fechado!");
+    }
 }
