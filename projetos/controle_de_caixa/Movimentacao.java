@@ -37,7 +37,7 @@ public class Movimentacao {
             throw new IllegalArgumentException("A descrição não pode estar vazia.");
         }
 
-        this.descricao = novaDesc;
+        this.descricao = novaDesc.strip().toUpperCase();
     }
 
     public double getValor() {
