@@ -23,7 +23,7 @@ public class Movimentacao {
     public static boolean validaTipo(String tipo) {
         final String[] TIPOS_PERMITIDOS = {"ENTRADA", "SAIDA", "SAÍDA"};
         for (String type : TIPOS_PERMITIDOS) {
-            if (tipo.equals(type)) {
+            if (tipo.strip().toUpperCase().equals(type)) {
                 return true;
             }
         }
