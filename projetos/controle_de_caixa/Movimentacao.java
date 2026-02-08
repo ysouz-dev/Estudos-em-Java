@@ -9,6 +9,18 @@ public class Movimentacao {
     private String tipo;
 
     public Movimentacao(String descricao, double valor, String tipo) {
+        if (descricao.isEmpty() || tipo.isEmpty()) {
+            throw new IllegalArgumentException("Nenhum paramêtro pode estar vazio.");
+        }
+        
+        if (!validaValor(valor)) {
+            throw new IllegalArgumentException("O valor não pode ser negativo.");       
+        }
+
+        if (!validaTipo(tipo)) {
+            throw new IllegalArgumentException("O tipo deve ser somente ENTRADA ou SAÍDA.");
+        }
+
         this.id = contadorId;
         contadorId++;
         this.descricao = descricao;
