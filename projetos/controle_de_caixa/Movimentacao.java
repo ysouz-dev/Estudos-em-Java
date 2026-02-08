@@ -44,6 +44,13 @@ public class Movimentacao {
         return "R$ %.2f".formatted(this.valor);
     }
 
+    public void mostrarInfo() {
+        System.out.println("Id: " + this.id);
+        System.out.println("Descrição: " + this.descricao);
+        System.out.println("Valor: R$ %.2f".formatted(this.valor));
+        System.out.println("Tipo: " + this.tipo);
+    }
+
     public static boolean validaValor(double valor) {
         return valor >= 0;
     }
