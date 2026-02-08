@@ -9,7 +9,7 @@ public class Movimentacao {
     private String tipo;
 
     public Movimentacao(String descricao, double valor, String tipo) {
-        if (descricao.isEmpty() || tipo.isEmpty()) {
+        if (descricao.strip().isEmpty() || tipo.isEmpty()) {
             throw new IllegalArgumentException("Nenhum paramêtro pode estar vazio.");
         }
         
@@ -23,9 +23,9 @@ public class Movimentacao {
 
         this.id = contadorId;
         contadorId++;
-        this.descricao = descricao;
+        this.descricao = descricao.strip().toUpperCase();
         this.valor = valor;
-        this.tipo = tipo;
+        this.tipo = tipo.strip().toUpperCase();
     }
 
     public String getDescricao() {
@@ -33,7 +33,7 @@ public class Movimentacao {
     }
 
     public void setDescricao(String novaDesc) {
-        if (novaDesc.isEmpty()) {
+        if (novaDesc.strip().isEmpty()) {
             throw new IllegalArgumentException("A descrição não pode estar vazia.");
         }
 
