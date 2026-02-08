@@ -50,4 +50,22 @@ public class Caixa {
         
         System.out.println("Movimentação adicionada!");
     }
+
+    public void mostrarEntradas() {
+        if (this.listaDeMovimentacoes.length == 0) {
+            System.out.println("Nenhuma movimentação registrada.");
+            return;
+        }
+
+        double valorEntrada = 0;
+        int quantidadeEntradas = 0;
+        for (int i = 0; i < this.listaDeMovimentacoes.length; i++) {
+            if (this.listaDeMovimentacoes[i].getTipo().equals("ENTRADA")) {
+                valorEntrada += this.listaDeMovimentacoes[i].getValor();
+                quantidadeEntradas++;
+            }
+        }
+        System.out.println("Quantidade de entradas: " + quantidadeEntradas);
+        System.out.println("Valor total: R$ %.2f".formatted(valorEntrada));
+    }
 }
