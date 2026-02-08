@@ -15,4 +15,14 @@ public class Movimentacao {
         this.valor = valor;
         this.tipo = tipo;
     }
+
+    public static boolean validaTipo(String tipo) {
+        final String[] TIPOS_PERMITIDOS = {"ENTRADA", "SAIDA", "SAÍDA"};
+        for (String type : TIPOS_PERMITIDOS) {
+            if (tipo.equals(type)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
