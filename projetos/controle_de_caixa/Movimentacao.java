@@ -28,6 +28,18 @@ public class Movimentacao {
         this.tipo = tipo;
     }
 
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public void setDescricao(String novaDesc) {
+        if (novaDesc.isEmpty()) {
+            throw new IllegalArgumentException("A descrição não pode estar vazia.");
+        }
+
+        this.descricao = novaDesc;
+    }
+
     public String getValor() {
         return "R$ %.2f".formatted(this.valor);
     }
