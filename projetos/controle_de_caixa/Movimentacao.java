@@ -28,6 +28,10 @@ public class Movimentacao {
         this.tipo = tipo;
     }
 
+    public String getValor() {
+        return "R$ %.2f".formatted(this.valor);
+    }
+
     public static boolean validaValor(double valor) {
         return valor >= 0;
     }
