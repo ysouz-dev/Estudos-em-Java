@@ -16,6 +16,10 @@ public class Movimentacao {
         this.tipo = tipo;
     }
 
+    public static boolean validaValor(double valor) {
+        return valor >= 0;
+    }
+
     public static boolean validaTipo(String tipo) {
         final String[] TIPOS_PERMITIDOS = {"ENTRADA", "SAIDA", "SAÍDA"};
         for (String type : TIPOS_PERMITIDOS) {
