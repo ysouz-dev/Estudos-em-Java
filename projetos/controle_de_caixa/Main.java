@@ -29,5 +29,10 @@ public class Main {
         
         caixaGeral.relatorio();
         System.out.println("-----");
+
+        // teste com caixa fechado
+        Movimentacao testeMov = new Movimentacao("teste", 100, "saida");
+        caixaGeral.adicionarMovimentacao(testeMov);
+        caixaGeral.fecharCaixa();
     }
 }
