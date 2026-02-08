@@ -87,7 +87,7 @@ public class Caixa {
             }
         }
         System.out.println("Quantidade de saídas: " + quantidadeSaidas);
-        System.out.println("Valor total: -R$ %.2f".formatted(valorSaida));
+        System.out.println("Valor total: R$ -%.2f".formatted(valorSaida));
     }
 
     public void atualizaSaldo(Movimentacao movimentacao) {
