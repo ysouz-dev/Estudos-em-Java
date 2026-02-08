@@ -97,4 +97,9 @@ public class Caixa {
             this.saldo -= movimentacao.getValor();
         }
     }
+
+    public void relatorio() {
+        System.out.println("Total de movimentações: " + this.listaDeMovimentacoes.length);
+        System.out.println("Saldo final: R$ %.2f".formatted(this.saldo));
+    }
 }
