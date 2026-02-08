@@ -44,6 +44,10 @@ public class Movimentacao {
         return this.valor;
     }
 
+    public String getTipo() {
+        return this.tipo;
+    }
+
     public void mostrarInfo() {
         System.out.println("Id: " + this.id);
         System.out.println("Descrição: " + this.descricao);
