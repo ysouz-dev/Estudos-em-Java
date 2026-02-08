@@ -40,8 +40,8 @@ public class Movimentacao {
         this.descricao = novaDesc;
     }
 
-    public String getValor() {
-        return "R$ %.2f".formatted(this.valor);
+    public double getValor() {
+        return this.valor;
     }
 
     public void mostrarInfo() {
