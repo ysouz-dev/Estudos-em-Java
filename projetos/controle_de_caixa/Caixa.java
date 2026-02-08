@@ -33,4 +33,21 @@ public class Caixa {
         this.aberto = false;
         System.out.println("Caixa fechado!");
     }
+
+    public void adicionarMovimentacao(Movimentacao novaMov) {
+        if (!this.aberto) {
+            System.out.println("Movimentações no caixa só podem ser realizadas com ele aberto.");
+            return;
+        }
+
+        // adiciona movimentacao a lista
+        Movimentacao[] arrayTemporaria = new Movimentacao[this.listaDeMovimentacoes.length + 1];
+        for (int i = 0; i < this.listaDeMovimentacoes.length; i++) {
+            arrayTemporaria[i] = this.listaDeMovimentacoes[i];
+        }
+        arrayTemporaria[this.listaDeMovimentacoes.length] = novaMov;
+        this.listaDeMovimentacoes = arrayTemporaria;
+        
+        System.out.println("Movimentação adicionada!");
+    }
 }
