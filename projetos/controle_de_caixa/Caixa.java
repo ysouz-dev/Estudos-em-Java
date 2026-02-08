@@ -47,6 +47,8 @@ public class Caixa {
         }
         arrayTemporaria[this.listaDeMovimentacoes.length] = novaMov;
         this.listaDeMovimentacoes = arrayTemporaria;
+
+        atualizaSaldo(novaMov);
         
         System.out.println("Movimentação adicionada!");
     }
