@@ -25,6 +25,10 @@ public class ContaBancaria {
         return true;
     }
 
+    public static boolean validaValor(double valor) {
+        return valor >= 0;
+    }
+
     private static String formataNome(String nome) {
         return nome.strip().toUpperCase();
     }
