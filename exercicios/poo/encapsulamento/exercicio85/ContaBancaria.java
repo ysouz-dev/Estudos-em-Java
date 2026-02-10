@@ -11,6 +11,12 @@ public class ContaBancaria implements Conta {
         this.limiteUsado = 0;
     }
     
+    public void getResumo() {
+        System.out.println("Saldo: R$ %.2f".formatted(this.saldo));
+        System.out.println("Limite Diário de saque: R$ %.2f".formatted(this.limiteDiario));
+        System.out.println("Limite usado: R$ %.2f".formatted(this.limiteUsado));
+    }
+
     private static boolean validaValor(double valor) {
         return valor >= 0;
     }
