@@ -55,6 +55,13 @@ public class ContaBancaria implements Conta {
         if (!validaValor(valor)) {
             throw new IllegalArgumentException("Valor de deposito inválido");
         }
+        
+        if (!verificaStatus()) {
+            String erro = "Sua conta está BLOQUEADA! você não pode fazer mais movimentações.";
+            if (this.status == null) erro = "Sua conta foi RECÉM CRIADA, ative ela antes de movimentar.";
+            throw new IllegalStateException(erro);
+        }
+
         this.saldo += valor;
     }
 
@@ -65,6 +72,13 @@ public class ContaBancaria implements Conta {
             if (valor > this.saldo) erro = "Saldo insuficiente para esse saque.";
             throw new IllegalArgumentException(erro);
         }
+
+        if (!verificaStatus()) {
+            String erro = "Sua conta está BLOQUEADA! você não pode fazer mais movimentações.";
+            if (this.status == null) erro = "Sua conta foi RECÉM CRIADA, ative ela antes de movimentar.";
+            throw new IllegalStateException(erro);
+        }
+
         this.saldo -= valor;
     }
 }
