@@ -4,4 +4,5 @@ public interface Conta {
     public abstract void sacar(double valor);
     public abstract void depositar(double valor);
     public abstract void virarDia();
+    public abstract void reajustarLimiteDiario(double valor);
 }
