@@ -13,7 +13,7 @@ public class ContaSimples implements Conta{
         this.saldo = 0;
     }
 
-    public static boolean validaSaldo(double saldo) {
+    public static boolean validaValor(double saldo) {
         return saldo >= 0;
     }
 
@@ -37,7 +37,7 @@ public class ContaSimples implements Conta{
 
     @Override
     public void depositar(double valor) {
-        if (!validaSaldo(valor)) {
+        if (!validaValor(valor)) {
             throw new IllegalArgumentException("Saldo inválido!");
         }
         this.saldo += valor;
@@ -45,7 +45,7 @@ public class ContaSimples implements Conta{
 
     @Override
     public void sacar(double valor) {
-        if (!validaSaldo(valor) || valor > this.saldo) {
+        if (!validaValor(valor) || valor > this.saldo) {
             String erro = "Saldo inválido!";
             
             if (valor > this.saldo) erro = "Saldo insuficiente!";
