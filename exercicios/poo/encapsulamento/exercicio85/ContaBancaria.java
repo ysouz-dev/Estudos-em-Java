@@ -43,6 +43,18 @@ public class ContaBancaria implements Conta {
 
         this.saldo -= valor;
         this.limiteUsado += valor;
-        
+    }
+
+    @Override
+    public void virarDia() {
+        this.limiteUsado = 0;
+    }
+
+    @Override
+    public void reajustarLimiteDiario(double valor) {
+        if (!validaValor(valor)) {
+            throw new IllegalArgumentException("Valor de reajuste inválido!");
+        }
+        this.limiteDiario = valor;
     }
 }
