@@ -25,6 +25,13 @@ public class ContaBancaria implements Conta {
         return true;
     }
 
+    private boolean verificaStatus() {
+        if (!this.status || this.status == null) {
+            return false;
+        }
+        return true;
+    }
+
     public static boolean validaValor(double valor) {
         return valor >= 0;
     }
