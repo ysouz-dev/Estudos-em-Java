@@ -3,10 +3,12 @@ package exercicios.poo.encapsulamento.exercicio85;
 public class ContaBancaria implements Conta {
     private double saldo;
     private double limiteDiario;
+    private double limiteUsado;
 
     public ContaBancaria() {
         this.saldo = 0;
         this.limiteDiario = 1000;
+        this.limiteUsado = 0;
     }
     
     private static boolean validaValor(double valor) {
@@ -35,6 +37,12 @@ public class ContaBancaria implements Conta {
             throw new IllegalArgumentException(erro);
         }
         
+        if (limiteUsado == limiteDiario) {
+            throw new IllegalStateException("Limite diário de saque atingido!");
+        }
 
+        this.saldo -= valor;
+        this.limiteUsado += valor;
+        
     }
 }
