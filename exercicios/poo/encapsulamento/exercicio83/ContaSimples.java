@@ -13,6 +13,10 @@ public class ContaSimples {
         this.saldo = 0;
     }
 
+    public static boolean validaSaldo(double saldo) {
+        return saldo >= 0;
+    }
+
     public static boolean validaNome(String nome) {
         String nomeSemEspaco = nome.strip().replace(" ", "");
         for (int i = 0; i < nomeSemEspaco.length(); i++) {
