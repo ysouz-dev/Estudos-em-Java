@@ -5,6 +5,10 @@ public class ContaSimples {
     private double saldo;
 
     public ContaSimples(String nome) {
+        if (!validaNome(nome)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+
         this.nome = nome.strip().toUpperCase();
         this.saldo = 0;
     }
