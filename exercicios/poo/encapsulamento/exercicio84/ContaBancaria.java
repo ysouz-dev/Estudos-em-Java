@@ -6,6 +6,10 @@ public class ContaBancaria {
     private Boolean status;
 
     public ContaBancaria(String nome) {
+        if (!validaNome(nome)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+
         this.nome = formataNome(nome);
         this.saldo = 0;
         this.status = null;
