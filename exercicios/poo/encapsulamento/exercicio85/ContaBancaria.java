@@ -8,6 +8,8 @@ public class ContaBancaria {
         this.saldo = 0;
         this.limiteDiario = 1000;
     }
-
-
+    
+    private static boolean validaValor(double valor) {
+        return valor >= 0;
+    }
 }
