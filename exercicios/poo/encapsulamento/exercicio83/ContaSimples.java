@@ -52,7 +52,7 @@ public class ContaSimples implements Conta{
             
             throw new IllegalArgumentException(erro);
         }
-        this.saldo = valor;
+        this.saldo -= valor;
     }
 
     @Override
