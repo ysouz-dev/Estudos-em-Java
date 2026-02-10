@@ -31,12 +31,12 @@ public class ContaBancaria implements Conta {
 
     @Override
     public void sacar(double valor) {
-        if (!validaValor(valor) || valor > this.saldo || valor > limiteDiario) {
+        if (!validaValor(valor) || valor > this.saldo || valor > (limiteDiario - limiteUsado)) {
             String erro = "Valor de saque inválido!";
 
             if (valor > this.saldo) {
                 erro = "Saldo insuficiente para esse saque.";
-            } else if (valor > limiteDiario) {
+            } else if (valor > (limiteDiario - limiteUsado)) {
                 erro = "Valor desejado superior ao limite diário de saque."; 
             }
 
