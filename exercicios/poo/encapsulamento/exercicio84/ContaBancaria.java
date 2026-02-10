@@ -10,4 +10,8 @@ public class ContaBancaria {
         this.saldo = 0;
         this.status = null;
     }
+
+    private static String formataNome(String nome) {
+        return nome.strip().toUpperCase();
+    }
 }
