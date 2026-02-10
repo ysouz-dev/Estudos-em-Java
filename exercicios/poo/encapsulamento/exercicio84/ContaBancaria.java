@@ -11,6 +11,16 @@ public class ContaBancaria {
         this.status = null;
     }
 
+    private static boolean validaNome(String nome) {
+        String nomeSemEspaco = formataNome(nome).replace(" ", "");
+        for (int i = 0; i < nomeSemEspaco.length(); i++) {
+            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private static String formataNome(String nome) {
         return nome.strip().toUpperCase();
     }
