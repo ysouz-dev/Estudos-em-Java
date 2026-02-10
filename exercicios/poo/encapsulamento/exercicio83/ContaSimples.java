@@ -8,4 +8,14 @@ public class ContaSimples {
         this.nome = nome.strip().toUpperCase();
         this.saldo = 0;
     }
+
+    public static boolean validaNome(String nome) {
+        String nomeSemEspaco = nome.strip().replace(" ", "");
+        for (int i = 0; i < nomeSemEspaco.length(); i++) {
+            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
