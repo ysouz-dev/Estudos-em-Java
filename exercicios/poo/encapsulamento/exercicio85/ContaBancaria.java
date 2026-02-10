@@ -36,7 +36,7 @@ public class ContaBancaria implements Conta {
 
             if (valor > this.saldo) {
                 erro = "Saldo insuficiente para esse saque.";
-            } else if (limiteDiario == 0) {
+            } else if (valor > limiteDiario) {
                 erro = "Valor desejado superior ao limite diário de saque."; 
             }
 
