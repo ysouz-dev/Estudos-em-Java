@@ -7,7 +7,7 @@ public class ContaBancaria implements Conta {
 
     private String nome;
     private double saldo;
-    private Boolean status;
+    private int status;
 
     public ContaBancaria(String nome) {
         if (!validaNome(nome)) {
@@ -16,7 +16,7 @@ public class ContaBancaria implements Conta {
 
         this.nome = formataNome(nome);
         this.saldo = 0;
-        this.status = null;
+        this.status = RECEM_CRIADA;
     }
 
     private static boolean validaNome(String nome) {
@@ -30,7 +30,7 @@ public class ContaBancaria implements Conta {
     }
 
     private boolean verificaStatus() {
-        if (!this.status || this.status == null) {
+        if (this.status == RECEM_CRIADA || this.status == BLOQUEADA) {
             return false;
         }
         return true;
@@ -46,12 +46,12 @@ public class ContaBancaria implements Conta {
 
     @Override
     public void ativar() {
-        this.status = true;
+        this.status = ATIVA;
     }
 
     @Override
     public void bloquear() {
-        this.status = false;
+        this.status = BLOQUEADA;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class ContaBancaria implements Conta {
         
         if (!verificaStatus()) {
             String erro = "Sua conta está BLOQUEADA! você não pode fazer mais movimentações.";
-            if (this.status == null) erro = "Sua conta foi RECÉM CRIADA, ative ela antes de movimentar.";
+            if (this.status == RECEM_CRIADA) erro = "Sua conta foi RECÉM CRIADA, ative ela antes de movimentar.";
             throw new IllegalStateException(erro);
         }
 
@@ -79,7 +79,7 @@ public class ContaBancaria implements Conta {
 
         if (!verificaStatus()) {
             String erro = "Sua conta está BLOQUEADA! você não pode fazer mais movimentações.";
-            if (this.status == null) erro = "Sua conta foi RECÉM CRIADA, ative ela antes de movimentar.";
+            if (this.status == RECEM_CRIADA) erro = "Sua conta foi RECÉM CRIADA, ative ela antes de movimentar.";
             throw new IllegalStateException(erro);
         }
 
