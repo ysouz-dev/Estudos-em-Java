@@ -19,6 +19,16 @@ public class ContaBancaria implements Conta {
         this.status = RECEM_CRIADA;
     }
 
+    public void mostrarInfo() {
+        System.out.println("------- Informações -------");
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Saldo: R$ %.2f".formatted(this.saldo));
+        String status = "CRIADA";
+        if (this.status == ATIVA) status = "ATIVA";
+        if (this.status == BLOQUEADA) status = "BLOQUEADA";      
+        System.out.println("Status: " + status);
+    }
+
     private static boolean validaNome(String nome) {
         String nomeSemEspaco = formataNome(nome).replace(" ", "");
         for (int i = 0; i < nomeSemEspaco.length(); i++) {
