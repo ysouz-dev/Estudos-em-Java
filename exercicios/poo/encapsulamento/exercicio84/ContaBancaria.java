@@ -1,6 +1,10 @@
 package exercicios.poo.encapsulamento.exercicio84;
 
 public class ContaBancaria implements Conta {
+    final private static int RECEM_CRIADA = 0;
+    final private static int ATIVA = 1;
+    final private static int BLOQUEADA = 2;
+
     private String nome;
     private double saldo;
     private Boolean status;
