@@ -1,6 +1,6 @@
 package exercicios.poo.encapsulamento.exercicio84;
 
-public class ContaBancaria {
+public class ContaBancaria implements Conta {
     private String nome;
     private double saldo;
     private Boolean status;
@@ -31,5 +31,33 @@ public class ContaBancaria {
 
     private static String formataNome(String nome) {
         return nome.strip().toUpperCase();
+    }
+
+    @Override
+    public void ativar() {
+        this.status = true;
+    }
+
+    @Override
+    public void bloquear() {
+        this.status = false;
+    }
+
+    @Override
+    public void depositar(double valor) {
+        if (!validaValor(valor)) {
+            throw new IllegalArgumentException("Valor de deposito inválido");
+        }
+        this.saldo += valor;
+    }
+
+    @Override
+    public void sacar(double valor) {
+        if (!validaValor(valor) || valor > this.saldo) {
+            String erro = "Valor de saque inválido!";
+            if (valor > this.saldo) erro = "Saldo insuficiente para esse saque.";
+            throw new IllegalArgumentException(erro);
+        }
+        this.saldo -= valor;
     }
 }
