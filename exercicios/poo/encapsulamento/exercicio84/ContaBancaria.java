@@ -6,7 +6,7 @@ public class ContaBancaria {
     private Boolean status;
 
     public ContaBancaria(String nome) {
-        this.nome = nome;
+        this.nome = formataNome(nome);
         this.saldo = 0;
         this.status = null;
     }
