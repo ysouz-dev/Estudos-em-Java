@@ -61,6 +61,9 @@ public class ContaBancaria implements Conta {
 
     @Override
     public void bloquear() {
+        if (this.saldo != 0) {
+            throw new IllegalArgumentException("Conta ainda com saldo para ser bloqueada.");
+        }
         this.status = BLOQUEADA;
     }
 
