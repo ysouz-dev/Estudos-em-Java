@@ -6,6 +6,13 @@ public class Evento {
     private Inscricao[] listaDeInscricoes;
 
     public Evento(String nomeEvento, int totalVagas) {
+        if (!validaNomeEvento(nomeEvento)) {
+            throw new IllegalArgumentException("Nome do evento inválido!");
+        }
+        if (!validaVagas(totalVagas)) {
+            throw new IllegalArgumentException("Número de vagas inválido!");
+        }
+
         this.nomeEvento = formataNome(nomeEvento);
         this.totalVagas = totalVagas;
         this.listaDeInscricoes = new Inscricao[0];
