@@ -35,7 +35,7 @@ public class Inscricao {
 
     private static void isAtiva(boolean ativa) {
         if (!ativa)
-            throw new IllegalStateException("A inscrição se encontra desativa.");
+            throw new IllegalStateException("A inscrição se encontra desativada.");
     }
 
     private static String formataNome(String nome) {
