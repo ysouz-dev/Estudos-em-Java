@@ -21,6 +21,10 @@ public class Evento {
         this.totalVagas--;
     }
 
+    public static boolean validaVagas(int vagas) {
+        return vagas > 0;
+    }
+
     private static boolean validaNomeEvento(String nomeEvento) {
         if (formataNome(nomeEvento).isEmpty() || formataNome(nomeEvento).length() < 3) {
             return false;
