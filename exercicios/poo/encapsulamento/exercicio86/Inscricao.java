@@ -10,12 +10,12 @@ public class Inscricao {
         if (!validaNome(nomeParticipante)) {
             throw new IllegalArgumentException("Nome inválido!");
         }
-        if (!validaEmail(email.strip())) {
+        if (!validaEmail(email)) {
             throw new IllegalArgumentException("Email inválido!");
         }
 
         this.nomeParticipante = formataNome(nomeParticipante);
-        this.email = email.strip();
+        this.email = formataNome(email);
         this.pagamentoConfirmado = false;
         this.ativa = true;
     }
@@ -55,9 +55,9 @@ public class Inscricao {
     }
 
     private static boolean validaEmail(String email) {
-        final String[] EMAILS_PERMITIDOS = { "@gmail.com", "@outlook.com", "@yahoo.com" };
+        final String[] EMAILS_PERMITIDOS = { "@GMAIL.COM", "@OUTLOOK.COM", "@YAHOO.COM" };
         for (String mail : EMAILS_PERMITIDOS) {
-            if (email.endsWith(mail)) {
+            if (formataNome(email).endsWith(mail)) {
                 return true;
             }
         }
