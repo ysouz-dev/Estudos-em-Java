@@ -30,8 +30,10 @@ public class Evento {
         for (int i = 0; i < this.listaDeInscricoes.length; i++) {
             if (this.listaDeInscricoes[i].getEmail().equals(formataNome(email))) {
                 this.listaDeInscricoes[i].confirmarPagamento();
+                return;
             }
         }
+        System.out.println("Email não encontrado!");
     }
 
     public void cancelarInscricao(String email) {
