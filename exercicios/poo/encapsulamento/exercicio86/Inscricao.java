@@ -17,7 +17,7 @@ public class Inscricao {
         this.nomeParticipante = nomeParticipante;
         this.email = email;
         this.pagamentoConfirmado = false;
-        this.ativa = false;
+        this.ativa = true;
     }
 
     private static String formataNome(String nome) {
