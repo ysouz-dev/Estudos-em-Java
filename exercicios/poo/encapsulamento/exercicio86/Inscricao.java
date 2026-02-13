@@ -33,13 +33,13 @@ public class Inscricao {
     }
 
     public void confirmarPagamento() {
-        isAtiva(this.ativa);
+        verificaSeAtiva(this.ativa);
 
         this.pagamentoConfirmado = true;
     }
 
     public void cancelarInscricao() {
-        isAtiva(this.ativa);
+        verificaSeAtiva(this.ativa);
 
         this.pagamentoConfirmado = false;
         this.ativa = false;
@@ -52,7 +52,7 @@ public class Inscricao {
         System.out.println("Ativa: " + ((this.ativa) ? "SIM" : "NÃO"));
     }
 
-    private static void isAtiva(boolean ativa) {
+    private static void verificaSeAtiva(boolean ativa) {
         if (!ativa)
             throw new IllegalStateException("A inscrição se encontra desativada.");
     }
