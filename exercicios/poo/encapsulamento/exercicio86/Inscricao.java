@@ -13,6 +13,10 @@ public class Inscricao {
         this.ativa = false;
     }
 
+    private static String formataNome(String nome) {
+        return nome.strip().toUpperCase();
+    }
+
     public static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3)
             return false;
