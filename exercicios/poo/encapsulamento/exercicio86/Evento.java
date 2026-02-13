@@ -18,6 +18,10 @@ public class Evento {
         this.listaDeInscricoes = new Inscricao[0];
     }
 
+    public int getVagasDisponiveis() {
+        return this.totalVagas;
+    }
+
     public void realizarInscricao(String nome, String email) {
         if (!validaVagas(totalVagas)) {
             throw new IllegalStateException("Número máximo de vagas atingido!");
