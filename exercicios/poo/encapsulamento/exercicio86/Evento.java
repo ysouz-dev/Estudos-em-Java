@@ -40,6 +40,16 @@ public class Evento {
         return contador;
     }
 
+    public int getPagamentosConfirmados() {
+        int contador = 0;
+        for (Inscricao inscritos : this.listaDeInscricoes) {
+            if (inscritos.getPagamento()) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
     public void realizarInscricao(String nome, String email) {
         if (!validaVagas(totalVagas)) {
             throw new IllegalStateException("Número máximo de vagas atingido!");
