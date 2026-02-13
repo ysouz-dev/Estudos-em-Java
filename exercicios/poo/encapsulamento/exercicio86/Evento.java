@@ -26,6 +26,34 @@ public class Evento {
         System.out.println("Pagamentos confirmados: " + getPagamentosConfirmados());
     }
 
+    public void listarInscritos() {
+        System.out.println("----- Lista de Inscritos -----");
+        for (Inscricao inscrito : this.listaDeInscricoes) {
+            inscrito.mostraResumo();
+            System.out.println("--------------------");
+        }
+    }
+
+    public void listarInscritosAtivos() {
+        System.out.println("----- Lista de Ativos -----");
+        for (Inscricao inscrito : this.listaDeInscricoes) {
+            if (inscrito.getAtiva()) {
+                inscrito.mostraResumo();
+                System.out.println("--------------------");
+            }
+        }
+    }
+
+    public void listarInscritosPagos() {
+        System.out.println("----- Lista de Pagos -----");
+        for (Inscricao inscrito : this.listaDeInscricoes) {
+            if (inscrito.getPagamento()) {
+                inscrito.mostraResumo();
+                System.out.println("--------------------");
+            }
+        }
+    }
+
     public void confirmarPagamento(String email) {
         for (int i = 0; i < this.listaDeInscricoes.length; i++) {
             if (this.listaDeInscricoes[i].getEmail().equals(formataNome(email))) {
