@@ -17,7 +17,7 @@ public class Inscricao {
         return nome.strip().toUpperCase();
     }
 
-    public static boolean validaNome(String nome) {
+    private static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3)
             return false;
 
