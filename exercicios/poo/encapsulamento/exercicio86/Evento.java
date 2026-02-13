@@ -26,7 +26,7 @@ public class Evento {
         adicionarInscricao(inscricao);
     }
 
-    public void adicionarInscricao(Inscricao inscricao) {
+    private void adicionarInscricao(Inscricao inscricao) {
         Inscricao[] arrayTemporaria = new Inscricao[this.listaDeInscricoes.length + 1];
         for (int i = 0; i < arrayTemporaria.length; i++) {
             arrayTemporaria[i] = this.listaDeInscricoes[i];
@@ -36,7 +36,7 @@ public class Evento {
         this.totalVagas--;
     }
 
-    public static boolean validaVagas(int vagas) {
+    private static boolean validaVagas(int vagas) {
         return vagas > 0;
     }
 
