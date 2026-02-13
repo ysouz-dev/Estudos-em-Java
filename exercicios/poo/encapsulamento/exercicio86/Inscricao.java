@@ -10,12 +10,12 @@ public class Inscricao {
         if (!validaNome(nomeParticipante)) {
             throw new IllegalArgumentException("Nome inválido!");
         }
-        if (!validaEmail(email)) {
+        if (!validaEmail(email.strip())) {
             throw new IllegalArgumentException("Email inválido!");
         }
 
-        this.nomeParticipante = nomeParticipante;
-        this.email = email;
+        this.nomeParticipante = formataNome(nomeParticipante);
+        this.email = email.strip();
         this.pagamentoConfirmado = false;
         this.ativa = true;
     }
@@ -61,7 +61,7 @@ public class Inscricao {
     }
 
     private static boolean validaNome(String nome) {
-        if (nome.isEmpty() || nome.length() < 3)
+        if (formataNome(nome).isEmpty() || formataNome(nome).length() < 3)
             return false;
 
         String nomeSemEspaco = formataNome(nome).replace(" ", "");
