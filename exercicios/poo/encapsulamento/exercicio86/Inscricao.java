@@ -12,4 +12,17 @@ public class Inscricao {
         this.pagamentoConfirmado = false;
         this.ativa = false;
     }
+
+    public static boolean validaNome(String nome) {
+        if (nome.isEmpty() || nome.length() < 3)
+            return false;
+
+        String nomeSemEspaco = formataNome(nome).replace(" ", "");
+        for (int i = 0; i < nomeSemEspaco.length(); i++) {
+            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
