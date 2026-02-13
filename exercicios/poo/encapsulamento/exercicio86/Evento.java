@@ -34,6 +34,17 @@ public class Evento {
         }
     }
 
+    public void cancelarInscricao(String email) {
+        for (int i = 0; i < this.listaDeInscricoes.length; i++) {
+            if (this.listaDeInscricoes[i].getEmail().equals(formataNome(email))) {
+                this.listaDeInscricoes[i].cancelarInscricao();
+                this.totalVagas++;
+                return;
+            }
+        }
+        System.out.println("Email não encontrado!");
+    }
+
     public int getVagasDisponiveis() {
         return this.totalVagas;
     }
