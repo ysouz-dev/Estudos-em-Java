@@ -46,7 +46,6 @@ public class Inscricao {
     }
 
     public void mostraResumo() {
-        System.out.println("----- Resumo -----");
         System.out.println("Nome: " + this.nomeParticipante);
         System.out.println("Email: " + this.email);
         System.out.println("Pagamento confirmado: " + ((this.pagamentoConfirmado) ? "SIM" : "NÃO"));
