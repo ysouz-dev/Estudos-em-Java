@@ -17,6 +17,16 @@ public class Inscricao {
         return nome.strip().toUpperCase();
     }
 
+    private static boolean validaEmail(String email) {
+        final String[] EMAILS_PERMITIDOS = { "@gmail.com", "@outlook.com", "@yahoo.com" };
+        for (String mail : EMAILS_PERMITIDOS) {
+            if (email.endsWith(mail)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3)
             return false;
