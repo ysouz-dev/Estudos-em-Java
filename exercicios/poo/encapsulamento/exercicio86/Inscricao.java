@@ -20,6 +20,11 @@ public class Inscricao {
         this.ativa = true;
     }
 
+    private static void isAtiva(boolean ativa) {
+        if (!ativa)
+            throw new IllegalStateException("A inscrição se encontra desativa.");
+    }
+
     private static String formataNome(String nome) {
         return nome.strip().toUpperCase();
     }
