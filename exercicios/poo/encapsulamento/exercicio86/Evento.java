@@ -18,6 +18,14 @@ public class Evento {
         this.listaDeInscricoes = new Inscricao[0];
     }
 
+    public void mostraResumoEvento() {
+        System.out.println("----- Resumo Evento -----");
+        System.out.println("Nome do evento: " + this.nomeEvento);
+        System.out.println("Vagas disponíveis: " + this.totalVagas);
+        System.out.println("Inscritos ativos: " + getInscritosAtivos());
+        System.out.println("Pagamentos confirmados: " + getPagamentosConfirmados());
+    }
+
     public int getVagasDisponiveis() {
         return this.totalVagas;
     }
