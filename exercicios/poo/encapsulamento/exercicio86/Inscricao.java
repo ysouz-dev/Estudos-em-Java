@@ -20,6 +20,10 @@ public class Inscricao {
         this.ativa = true;
     }
 
+    public String getEmail() {
+        return this.email;
+    }
+
     public void confirmarPagamento() {
         isAtiva(this.ativa);
 
