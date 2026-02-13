@@ -20,6 +20,12 @@ public class Inscricao {
         this.ativa = true;
     }
 
+    public void confirmarPagamento() {
+        isAtiva(this.ativa);
+
+        this.pagamentoConfirmado = true;
+    }
+
     private static void isAtiva(boolean ativa) {
         if (!ativa)
             throw new IllegalStateException("A inscrição se encontra desativa.");
