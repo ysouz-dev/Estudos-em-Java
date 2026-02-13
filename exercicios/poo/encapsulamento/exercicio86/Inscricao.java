@@ -33,6 +33,14 @@ public class Inscricao {
         this.ativa = false;
     }
 
+    public void mostraResumo() {
+        System.out.println("----- Resumo -----");
+        System.out.println("Nome: " + this.nomeParticipante);
+        System.out.println("Email: " + this.email);
+        System.out.println("Pagamento confirmado: " + ((this.pagamentoConfirmado) ? "SIM" : "NÃO"));
+        System.out.println("Ativa: " + ((this.ativa) ? "SIM" : "NÃO"));
+    }
+
     private static void isAtiva(boolean ativa) {
         if (!ativa)
             throw new IllegalStateException("A inscrição se encontra desativada.");
