@@ -7,6 +7,13 @@ public class Inscricao {
     private boolean ativa;
 
     public Inscricao(String nomeParticipante, String email) {
+        if (!validaNome(nomeParticipante)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+        if (!validaEmail(email)) {
+            throw new IllegalArgumentException("Email inválido!");
+        }
+
         this.nomeParticipante = nomeParticipante;
         this.email = email;
         this.pagamentoConfirmado = false;
