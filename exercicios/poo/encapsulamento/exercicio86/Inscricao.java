@@ -26,6 +26,13 @@ public class Inscricao {
         this.pagamentoConfirmado = true;
     }
 
+    public void cancelarInscricao() {
+        isAtiva(this.ativa);
+
+        this.pagamentoConfirmado = false;
+        this.ativa = false;
+    }
+
     private static void isAtiva(boolean ativa) {
         if (!ativa)
             throw new IllegalStateException("A inscrição se encontra desativa.");
