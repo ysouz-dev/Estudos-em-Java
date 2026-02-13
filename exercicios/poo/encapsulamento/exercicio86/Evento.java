@@ -60,7 +60,7 @@ public class Evento {
 
     private void adicionarInscricao(Inscricao inscricao) {
         Inscricao[] arrayTemporaria = new Inscricao[this.listaDeInscricoes.length + 1];
-        for (int i = 0; i < arrayTemporaria.length; i++) {
+        for (int i = 0; i < this.listaDeInscricoes.length; i++) {
             arrayTemporaria[i] = this.listaDeInscricoes[i];
         }
         arrayTemporaria[listaDeInscricoes.length] = inscricao;
