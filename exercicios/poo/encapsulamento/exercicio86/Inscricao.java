@@ -28,6 +28,10 @@ public class Inscricao {
         return this.email;
     }
 
+    public boolean getPagamento() {
+        return this.pagamentoConfirmado;
+    }
+
     public void confirmarPagamento() {
         isAtiva(this.ativa);
 
