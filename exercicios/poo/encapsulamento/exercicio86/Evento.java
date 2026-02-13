@@ -103,6 +103,12 @@ public class Evento {
         if (!validaVagas(totalVagas)) {
             throw new IllegalStateException("Número máximo de vagas atingido!");
         }
+        for (Inscricao inscricao : this.listaDeInscricoes) {
+            if (inscricao.getEmail().equals(formataNome(email))) {
+                throw new IllegalArgumentException("Email já cadastrado! Tente novamente.");
+            }
+        }
+
         Inscricao inscricao = new Inscricao(nome, email);
         adicionarInscricao(inscricao);
     }
