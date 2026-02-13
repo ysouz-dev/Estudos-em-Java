@@ -18,6 +18,14 @@ public class Evento {
         this.listaDeInscricoes = new Inscricao[0];
     }
 
+    public void realizarInscricao(String nome, String email) {
+        if (!validaVagas(totalVagas)) {
+            throw new IllegalStateException("Número máximo de vagas atingido!");
+        }
+        Inscricao inscricao = new Inscricao(nome, email);
+        adicionarInscricao(inscricao);
+    }
+
     public void adicionarInscricao(Inscricao inscricao) {
         Inscricao[] arrayTemporaria = new Inscricao[this.listaDeInscricoes.length + 1];
         for (int i = 0; i < arrayTemporaria.length; i++) {
