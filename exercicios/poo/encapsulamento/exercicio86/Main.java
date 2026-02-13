@@ -1,3 +1,12 @@
+/* Exercício: Crie um sistema de evento com controle de inscrições.
+ * Requisitos:
+ * - Criar as classes Evento e Inscricao
+ * - Aplicar encapsulamento corretamente
+ * - Validar dados no construtor
+ * - Controlar limite de vagas
+ * - Permitir confirmar pagamento e cancelar inscrição
+ * - Impedir estados inválidos no sistema */
+
 package exercicios.poo.encapsulamento.exercicio86;
 
 public class Main {
