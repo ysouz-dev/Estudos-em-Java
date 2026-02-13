@@ -11,6 +11,16 @@ public class Evento {
         this.listaDeInscricoes = new Inscricao[0];
     }
 
+    public void adicionarInscricao(Inscricao inscricao) {
+        Inscricao[] arrayTemporaria = new Inscricao[this.listaDeInscricoes.length + 1];
+        for (int i = 0; i < arrayTemporaria.length; i++) {
+            arrayTemporaria[i] = this.listaDeInscricoes[i];
+        }
+        arrayTemporaria[listaDeInscricoes.length] = inscricao;
+        this.listaDeInscricoes = arrayTemporaria;
+        this.totalVagas--;
+    }
+
     private static boolean validaNomeEvento(String nomeEvento) {
         if (formataNome(nomeEvento).isEmpty() || formataNome(nomeEvento).length() < 3) {
             return false;
