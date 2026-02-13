@@ -17,4 +17,8 @@ public class Evento {
         }
         return true;
     }
+
+    private static String formataNome(String nomeEvento) {
+        return nomeEvento.strip().toUpperCase();
+    }
 }
