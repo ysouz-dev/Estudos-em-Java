@@ -26,6 +26,14 @@ public class Evento {
         System.out.println("Pagamentos confirmados: " + getPagamentosConfirmados());
     }
 
+    public void confirmarPagamento(String email) {
+        for (int i = 0; i < this.listaDeInscricoes.length; i++) {
+            if (this.listaDeInscricoes[i].getEmail().equals(formataNome(email))) {
+                this.listaDeInscricoes[i].confirmarPagamento();
+            }
+        }
+    }
+
     public int getVagasDisponiveis() {
         return this.totalVagas;
     }
