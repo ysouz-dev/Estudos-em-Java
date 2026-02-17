@@ -6,10 +6,13 @@ public class SistemaVotacao {
     private ArrayList<String> votos1;
     private ArrayList<String> votos2;
     private int primeiroVoto;
+    private boolean ativa;
 
     public SistemaVotacao() {
         this.votos1 = new ArrayList<String>();
         this.votos2 = new ArrayList<String>();
+        this.primeiroVoto = 0;
+        this.ativa = false;
     }
 
     private static boolean validaNome(String nome) {
