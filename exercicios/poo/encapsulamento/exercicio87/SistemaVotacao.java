@@ -15,6 +15,13 @@ public class SistemaVotacao {
         this.ativa = false;
     }
 
+    public void iniciarVotacao() {
+        if (this.ativa) {
+            throw new IllegalStateException("A votação já está em andamento!");
+        }
+        this.ativa = true;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3) {
             return false;
