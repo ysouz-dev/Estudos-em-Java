@@ -22,6 +22,13 @@ public class SistemaVotacao {
         this.ativa = true;
     }
 
+    public void encerrarVotacao() {
+        if (!this.ativa) {
+            throw new IllegalStateException("A votação já está encerrada!");
+        }
+        this.ativa = false;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3) {
             return false;
