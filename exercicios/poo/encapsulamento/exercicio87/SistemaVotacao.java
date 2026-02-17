@@ -12,6 +12,19 @@ public class SistemaVotacao {
         this.votos2 = new ArrayList<String>();
     }
 
+    private static boolean validaNome(String nome) {
+        if (nome.isEmpty() || nome.length() < 3) {
+            return false;
+        }
+        String nomeSemEspaco = nome.replace(" ", "");
+        for (int i = 0; i < nomeSemEspaco.length(); i++) {
+            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private static boolean validaVoto(int voto) {
         return voto == 1 || voto == 2;
     }
