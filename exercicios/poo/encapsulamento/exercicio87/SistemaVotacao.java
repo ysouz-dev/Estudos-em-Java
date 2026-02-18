@@ -34,6 +34,22 @@ public class SistemaVotacao {
         }
     }
 
+    public String decidirVencedor() {
+        if (this.ativa) {
+            throw new IllegalStateException("A votação precisa estar encerrada para decidir vencedor.");
+        }
+
+        if (this.votos1.size() > this.votos2.size()) {
+            return "Os votos de número 1";
+        } else if (this.votos2.size() > this.votos1.size()) {
+            return "Os votos de número 2";
+        } else {
+            String vencedor = (this.primeiroVoto == 1) ? "1" : "2";
+            return "Houve um empate! mas o vencedor é quem recebeu o primeiro voto. Vencedor: número %s"
+                    .formatted(vencedor);
+        }
+    }
+
     public void iniciarVotacao() {
         if (this.ativa) {
             throw new IllegalStateException("A votação já está em andamento!");
