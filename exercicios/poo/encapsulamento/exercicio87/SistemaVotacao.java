@@ -15,6 +15,25 @@ public class SistemaVotacao {
         this.ativa = false;
     }
 
+    public void cadastrarVoto(String nome, int voto) {
+        if (!validaNome(nome)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+        if (!validaVoto(voto)) {
+            throw new IllegalArgumentException("Voto inválido! (somente 1 ou 2)");
+        }
+
+        if (this.primeiroVoto == 0) {
+            this.primeiroVoto = voto;
+        }
+
+        if (voto == 1) {
+            votos1.add(nome.strip().toUpperCase());
+        } else {
+            votos2.add(nome.strip().toUpperCase());
+        }
+    }
+
     public void iniciarVotacao() {
         if (this.ativa) {
             throw new IllegalStateException("A votação já está em andamento!");
