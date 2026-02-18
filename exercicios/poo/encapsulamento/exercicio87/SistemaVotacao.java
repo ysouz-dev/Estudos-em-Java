@@ -50,6 +50,13 @@ public class SistemaVotacao {
         }
     }
 
+    public void verStatusVotacao() {
+        System.out.println("Votos 1: " + this.votos1.size() + " votos");
+        System.out.println("Votos 2: " + this.votos2.size() + " votos");
+        System.out.println("Status: " + ((!this.ativa) ? "Inativa" : "Ativa"));
+        System.out.println("Primeiro voto: " + ((this.primeiroVoto != 0) ? this.primeiroVoto : "Nenhum voto"));
+    }
+
     public void iniciarVotacao() {
         if (this.ativa) {
             throw new IllegalStateException("A votação já está em andamento!");
