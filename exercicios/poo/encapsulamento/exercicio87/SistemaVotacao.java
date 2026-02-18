@@ -16,10 +16,13 @@ public class SistemaVotacao {
     }
 
     public void cadastrarVoto(String nome, int voto) {
-        if (!validaNome(nome)) {
+        if (!this.ativa) {
+            throw new IllegalStateException("A votação precisa estar iniciada para cadastrar");
+
+        } else if (!validaNome(nome)) {
             throw new IllegalArgumentException("Nome inválido!");
-        }
-        if (!validaVoto(voto)) {
+
+        } else if (!validaVoto(voto)) {
             throw new IllegalArgumentException("Voto inválido! (somente 1 ou 2)");
         }
 
