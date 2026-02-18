@@ -40,6 +40,8 @@ public class SistemaVotacao {
     public String decidirVencedor() {
         if (this.ativa) {
             throw new IllegalStateException("A votação precisa estar encerrada para decidir vencedor.");
+        } else if (this.primeiroVoto == 0) {
+            throw new IllegalStateException("É preciso ter ao menos uma votação para decidir o vencedor.");
         }
 
         if (this.votos1.size() > this.votos2.size()) {
