@@ -43,9 +43,9 @@ public class SistemaVotacao {
         }
 
         if (this.votos1.size() > this.votos2.size()) {
-            return "Os votos de número 1";
+            return "Vencedor: os votos de número 1";
         } else if (this.votos2.size() > this.votos1.size()) {
-            return "Os votos de número 2";
+            return "Vencedor: os votos de número 2";
         } else {
             String vencedor = (this.primeiroVoto == 1) ? "1" : "2";
             return "Houve um empate! mas o vencedor é quem recebeu o primeiro voto. Vencedor: número %s"
