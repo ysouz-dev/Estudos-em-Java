@@ -16,6 +16,16 @@ public class Cliente {
         this.status = true;
     }
 
+    private static boolean validaEmail(String email) {
+        final String[] EMAILS_PERMITIDOS = { "@GMAIL.COM", "@OUTLOOK.COM", "@HOTMAIL.COM", "@YAHOO.COM" };
+        for (String mail : EMAILS_PERMITIDOS) {
+            if (email.strip().toUpperCase().endsWith(mail)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome.isEmpty() || nome.length() < 3) {
             return false;
