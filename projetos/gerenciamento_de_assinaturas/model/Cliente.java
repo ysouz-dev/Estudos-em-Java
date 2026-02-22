@@ -9,6 +9,13 @@ public class Cliente {
     private boolean status;
 
     public Cliente(String nome, String email) {
+        if (!validaNome(nome)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+        if (!validaEmail(email)) {
+            throw new IllegalArgumentException("Email inválido!");
+        }
+
         this.nome = nome;
         this.email = email;
         this.id = geradorId;
