@@ -15,4 +15,17 @@ public class Cliente {
         geradorId++;
         this.status = true;
     }
+
+    private static boolean validaNome(String nome) {
+        if (nome.isEmpty() || nome.length() < 3) {
+            return false;
+        }
+        String nomeSemEspaco = nome.strip().replace(" ", "");
+        for (int i = 0; i < nomeSemEspaco.length(); i++) {
+            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
