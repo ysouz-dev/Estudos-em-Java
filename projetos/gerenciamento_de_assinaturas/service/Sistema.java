@@ -23,4 +23,8 @@ public class Sistema {
         listaDePlanos.add(plano);
     }
 
+    public void criarAssinatura(Assinatura assinatura) {
+        listaDeAssinaturas.add(assinatura);
+    }
+
 }
