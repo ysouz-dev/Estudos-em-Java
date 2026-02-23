@@ -28,6 +28,10 @@ public class Assinatura {
         return this.status;
     }
 
+    public String getData() {
+        return this.dataInicio;
+    }
+
     // metodos de instancia
     public void reativarAssinatura() {
         if (this.status) {
