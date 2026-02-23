@@ -18,4 +18,9 @@ public class Sistema {
     public void cadastrarCliente(Cliente cliente) {
         listaDeClientes.add(cliente);
     }
+
+    public void cadastrarPlano(Plano plano) {
+        listaDePlanos.add(plano);
+    }
+
 }
