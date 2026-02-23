@@ -47,4 +47,14 @@ public class Sistema {
         }
         System.out.println("----------------------");
     }
+
+    public double faturamentoMensal() {
+        double faturamento = 0;
+        for (Assinatura ass : listaDeAssinaturas) {
+            if (ass.getStatus()) {
+                faturamento += ass.getPlano().getValorMensalidade();
+            }
+        }
+        return faturamento;
+    }
 }
