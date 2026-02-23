@@ -13,4 +13,9 @@ public class Sistema {
         this.listaDePlanos = new ArrayList<Plano>();
         this.listaDeAssinaturas = new ArrayList<Assinatura>();
     }
+
+    // metodos de instancia
+    public void cadastrarCliente(Cliente cliente) {
+        listaDeClientes.add(cliente);
+    }
 }
