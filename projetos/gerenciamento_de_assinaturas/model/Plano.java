@@ -11,6 +11,15 @@ public class Plano {
         this.limiteTelas = limite;
     }
 
+    // métodos estáticos
+    private static boolean isPositvo(int valor) {
+        return valor > 0;
+    }
+
+    private static boolean isPositvo(double valor) {
+        return valor > 0;
+    }
+
     private static boolean validaNomePlano(String nome) {
         if (nome.isEmpty() || nome.length() < 3) {
             return false;
