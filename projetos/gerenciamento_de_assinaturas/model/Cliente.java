@@ -23,6 +23,10 @@ public class Cliente {
         this.status = true;
     }
 
+    private static String formataString(String string) {
+        return string.strip().toUpperCase();
+    }
+
     private static boolean validaEmail(String email) {
         final String[] EMAILS_PERMITIDOS = { "@GMAIL.COM", "@OUTLOOK.COM", "@HOTMAIL.COM", "@YAHOO.COM" };
         for (String mail : EMAILS_PERMITIDOS) {
