@@ -27,4 +27,8 @@ public class Sistema {
         listaDeAssinaturas.add(assinatura);
     }
 
+    public void cancelarAssinatura(Assinatura assinatura) {
+        assinatura.cancelarAssinatura();
+    }
+
 }
