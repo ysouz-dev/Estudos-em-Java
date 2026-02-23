@@ -23,6 +23,13 @@ public class Cliente {
         this.status = true;
     }
 
+    public void reativarCliente() {
+        if (this.status) {
+            throw new IllegalStateException("Impossível reativar um cliente já ativo.");
+        }
+        this.status = true;
+    }
+
     public void desativarCliente() {
         if (!this.status) {
             throw new IllegalStateException("impossível desativar um cliente já inativo.");
