@@ -57,4 +57,14 @@ public class Sistema {
         }
         return faturamento;
     }
+
+    // metodos estaticos
+    private static boolean clienteInList(Cliente cliente, ArrayList<Assinatura> lista) {
+        for (Assinatura ass : lista) {
+            if (ass.getCliente().equals(cliente) && ass.getStatus()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
