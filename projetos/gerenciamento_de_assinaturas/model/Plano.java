@@ -23,6 +23,19 @@ public class Plano {
         this.limiteTelas = limite;
     }
 
+    // getters
+    public String getNomePlano() {
+        return this.nomePlano;
+    }
+
+    public double getValorMensalidade() {
+        return this.valorMensal;
+    }
+
+    public int getLimiteTelas() {
+        return this.limiteTelas;
+    }
+
     // métodos estáticos
     private static boolean isPositvo(int valor) {
         return valor > 0;
