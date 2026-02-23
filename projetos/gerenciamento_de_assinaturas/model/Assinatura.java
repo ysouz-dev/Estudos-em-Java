@@ -41,6 +41,11 @@ public class Assinatura {
         if (this.status) {
             throw new IllegalStateException("A assinatura já está ativa para ser reativada.");
         }
+
+        if (!this.cliente.getStatus()) {
+            throw new IllegalStateException("Não é possivel reativar assinatura de cliente INATIVO.");
+        }
+
         this.dataInicio = LocalDate.now().toString();
         this.status = true;
     }
