@@ -23,6 +23,23 @@ public class Cliente {
         this.status = true;
     }
 
+    // getters
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public boolean getStatus() {
+        return this.status;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
     // metodos de instância
     public void reativarCliente() {
         if (this.status) {
