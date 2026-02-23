@@ -10,4 +10,11 @@ public class Plano {
         this.valorMensal = valor;
         this.limiteTelas = limite;
     }
+
+    private static boolean validaNomePlano(String nome) {
+        if (nome.isEmpty() || nome.length() < 3) {
+            return false;
+        }
+        return true;
+    }
 }
