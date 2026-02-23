@@ -5,7 +5,7 @@ public class Cliente {
 
     private String nome;
     private String email;
-    private int id;
+    final private int id;
     private boolean status;
 
     public Cliente(String nome, String email) {
