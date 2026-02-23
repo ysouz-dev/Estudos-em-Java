@@ -67,4 +67,13 @@ public class Sistema {
         }
         return false;
     }
+
+    private static boolean emailInList(String email, ArrayList<Cliente> lista) {
+        for (Cliente client : lista) {
+            if (client.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
