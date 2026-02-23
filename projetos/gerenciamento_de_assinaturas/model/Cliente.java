@@ -23,6 +23,14 @@ public class Cliente {
         this.status = true;
     }
 
+    public void desativarCliente() {
+        if (!this.status) {
+            throw new IllegalStateException("impossível desativar um cliente já inativo.");
+        }
+        this.status = false;
+    }
+
+    // metodos estáticos
     private static String formataString(String string) {
         return string.strip().toUpperCase();
     }
