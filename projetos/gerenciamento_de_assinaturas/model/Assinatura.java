@@ -14,4 +14,11 @@ public class Assinatura {
         this.status = true;
         this.dataInicio = LocalDate.now().toString();
     }
+
+    public void cancelarAssinatura() {
+        if (!this.status) {
+            throw new IllegalStateException("A assinatura já foi cancelada anteriormente.");
+        }
+        this.status = false;
+    }
 }
