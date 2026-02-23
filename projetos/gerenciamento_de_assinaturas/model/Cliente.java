@@ -32,7 +32,7 @@ public class Cliente {
 
     public void desativarCliente() {
         if (!this.status) {
-            throw new IllegalStateException("impossível desativar um cliente já inativo.");
+            throw new IllegalStateException("Impossível desativar um cliente já inativo.");
         }
         this.status = false;
     }
