@@ -9,6 +9,10 @@ public class Assinatura {
     private String dataInicio;
 
     public Assinatura(Cliente cliente, Plano plano) {
+        if (!cliente.getStatus()) {
+            throw new IllegalStateException("Não é possivel criar assinatura com cliente INATIVO.");
+        }
+
         this.cliente = cliente;
         this.plano = plano;
         this.status = true;
