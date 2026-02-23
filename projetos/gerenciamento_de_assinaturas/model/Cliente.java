@@ -23,6 +23,7 @@ public class Cliente {
         this.status = true;
     }
 
+    // metodos de instância
     public void reativarCliente() {
         if (this.status) {
             throw new IllegalStateException("Impossível reativar um cliente já ativo.");
