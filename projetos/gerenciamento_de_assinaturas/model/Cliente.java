@@ -16,8 +16,8 @@ public class Cliente {
             throw new IllegalArgumentException("Email inválido!");
         }
 
-        this.nome = nome;
-        this.email = email;
+        this.nome = formataString(nome);
+        this.email = formataString(email);
         this.id = geradorId;
         geradorId++;
         this.status = true;
