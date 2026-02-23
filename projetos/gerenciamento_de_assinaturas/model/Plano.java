@@ -6,6 +6,18 @@ public class Plano {
     private int limiteTelas;
 
     public Plano(String nome, double valor, int limite) {
+        if (!validaNomePlano(nome.strip())) {
+            throw new IllegalArgumentException("Nome do plano inválido!");
+        }
+
+        if (!isPositvo(valor)) {
+            throw new IllegalArgumentException("Valor da mensalidade não pode ser negativo.");
+        }
+
+        if (!isPositvo(limite)) {
+            throw new IllegalArgumentException("limite de telas não pode ser negativo.");
+        }
+
         this.nomePlano = nome;
         this.valorMensal = valor;
         this.limiteTelas = limite;
