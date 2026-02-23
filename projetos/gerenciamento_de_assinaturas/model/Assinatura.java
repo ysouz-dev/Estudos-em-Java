@@ -15,6 +15,20 @@ public class Assinatura {
         this.dataInicio = LocalDate.now().toString();
     }
 
+    // getters
+    public Cliente getCliente() {
+        return this.cliente;
+    }
+
+    public Plano getPlano() {
+        return this.plano;
+    }
+
+    public boolean getStatus() {
+        return this.status;
+    }
+
+    // metodos de instancia
     public void reativarAssinatura() {
         if (this.status) {
             throw new IllegalStateException("A assinatura já está ativa para ser reativada.");
