@@ -15,6 +15,13 @@ public class Assinatura {
         this.dataInicio = LocalDate.now().toString();
     }
 
+    public void reativarAssinatura() {
+        if (this.status) {
+            throw new IllegalStateException("A assinatura já está ativa para ser reativada.");
+        }
+        this.status = true;
+    }
+
     public void cancelarAssinatura() {
         if (!this.status) {
             throw new IllegalStateException("A assinatura já foi cancelada anteriormente.");
