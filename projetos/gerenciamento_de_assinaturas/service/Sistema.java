@@ -31,4 +31,8 @@ public class Sistema {
         assinatura.cancelarAssinatura();
     }
 
+    public void reativarAssinatura(Assinatura assinatura) {
+        assinatura.reativarAssinatura();
+    }
+
 }
