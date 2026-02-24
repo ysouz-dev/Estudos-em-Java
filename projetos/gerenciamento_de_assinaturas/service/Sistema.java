@@ -16,7 +16,7 @@ public class Sistema {
 
     // metodos de instancia
     public void cadastrarCliente(Cliente cliente) {
-        if (emailInList(cliente.getEmail(), listaDeClientes)) {
+        if (emailInList(cliente.getEmail(), this.listaDeClientes)) {
             throw new IllegalArgumentException("Email já cadastrado em outro cliente.");
         }
 
@@ -24,7 +24,7 @@ public class Sistema {
     }
 
     public void cadastrarPlano(Plano plano) {
-        if (planoInList(plano, listaDePlanos)) {
+        if (planoInList(plano, this.listaDePlanos)) {
             throw new IllegalArgumentException("Um plano cadastrado já possui esse nome.");
         }
 
@@ -32,7 +32,7 @@ public class Sistema {
     }
 
     public void criarAssinatura(Assinatura assinatura) {
-        if (clienteInList(assinatura.getCliente(), listaDeAssinaturas)) {
+        if (clienteInList(assinatura.getCliente(), this.listaDeAssinaturas)) {
             throw new IllegalArgumentException("Um cliente não pode possuir mais de 1 assinatura ativa.");
         }
 
@@ -48,7 +48,7 @@ public class Sistema {
     }
 
     public void listarAssinaturasAtivas() {
-        for (Assinatura ass : listaDeAssinaturas) {
+        for (Assinatura ass : this.listaDeAssinaturas) {
             if (ass.getStatus()) {
                 System.out.println("----------------------");
                 System.out.println("Nome do cliente: " + ass.getCliente().getNome());
@@ -62,7 +62,7 @@ public class Sistema {
 
     public double faturamentoMensal() {
         double faturamento = 0;
-        for (Assinatura ass : listaDeAssinaturas) {
+        for (Assinatura ass : this.listaDeAssinaturas) {
             if (ass.getStatus()) {
                 faturamento += ass.getPlano().getValorMensalidade();
             }
