@@ -14,6 +14,19 @@ public class Sistema {
         this.listaDeAssinaturas = new ArrayList<Assinatura>();
     }
 
+    // getters
+    public ArrayList<Cliente> getCliente() {
+        return this.listaDeClientes;
+    }
+
+    public ArrayList<Plano> getPlano() {
+        return this.listaDePlanos;
+    }
+
+    public ArrayList<Assinatura> getAssinaturas() {
+        return this.listaDeAssinaturas;
+    }
+
     // metodos de instancia
     public void cadastrarCliente(Cliente cliente) {
         if (emailInList(cliente.getEmail(), this.listaDeClientes)) {
