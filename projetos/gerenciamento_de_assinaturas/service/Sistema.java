@@ -16,6 +16,10 @@ public class Sistema {
 
     // metodos de instancia
     public void cadastrarCliente(Cliente cliente) {
+        if (emailInList(cliente.getEmail(), listaDeClientes)) {
+            throw new IllegalArgumentException("Email já cadastrado em outro cliente.");
+        }
+
         listaDeClientes.add(cliente);
     }
 
