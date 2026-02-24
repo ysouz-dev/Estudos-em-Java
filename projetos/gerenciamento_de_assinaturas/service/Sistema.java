@@ -24,6 +24,10 @@ public class Sistema {
     }
 
     public void cadastrarPlano(Plano plano) {
+        if (planoInList(plano, listaDePlanos)) {
+            throw new IllegalArgumentException("Um plano cadastrado já possui esse nome.");
+        }
+
         listaDePlanos.add(plano);
     }
 
