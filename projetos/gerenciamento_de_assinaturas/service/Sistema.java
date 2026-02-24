@@ -24,6 +24,10 @@ public class Sistema {
     }
 
     public void criarAssinatura(Assinatura assinatura) {
+        if (clienteInList(assinatura.getCliente(), listaDeAssinaturas)) {
+            throw new IllegalArgumentException("Um cliente não pode possuir mais de 1 assinatura ativa.");
+        }
+
         listaDeAssinaturas.add(assinatura);
     }
 
