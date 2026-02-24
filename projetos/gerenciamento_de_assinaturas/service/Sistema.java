@@ -84,4 +84,13 @@ public class Sistema {
         }
         return false;
     }
+
+    private static boolean planoInList(Plano plano, ArrayList<Plano> lista) {
+        for (Plano plan : lista) {
+            if (plano.getNomePlano().equals(plan.getNomePlano())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
