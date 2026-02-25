@@ -2,12 +2,15 @@ package projetos.gerenciamento_de_assinaturas.controller;
 
 import java.util.Scanner;
 import projetos.gerenciamento_de_assinaturas.model.*;
+import projetos.gerenciamento_de_assinaturas.service.Sistema;
 
 public class Menu {
     private Scanner scanner;
+    private Sistema sistema;
 
     public Menu() {
         this.scanner = new Scanner(System.in);
+        this.sistema = new Sistema();
     }
 
     public int iniciar() {
@@ -32,5 +35,16 @@ public class Menu {
             }
         } while (opcao < 1 || opcao > 8);
         return opcao;
+    }
+
+    public void cadastrarCliente() {
+        System.out.println("===== Cadastro Cliente =====");
+        System.out.print("Nome: ");
+        String nome = this.scanner.nextLine();
+        System.out.print("Email: ");
+        String email = this.scanner.nextLine();
+
+        sistema.cadastrarCliente(new Cliente(nome, email));
+        System.out.println("Cliente cadastrado com sucesso!");
     }
 }
