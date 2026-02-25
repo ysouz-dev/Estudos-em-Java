@@ -60,19 +60,6 @@ public class Sistema {
         assinatura.reativarAssinatura();
     }
 
-    public void listarAssinaturasAtivas() {
-        for (Assinatura ass : this.listaDeAssinaturas) {
-            if (ass.getStatus()) {
-                System.out.println("----------------------");
-                System.out.println("Nome do cliente: " + ass.getCliente().getNome());
-                System.out.println("Plano: " + ass.getPlano().getNomePlano());
-                System.out.println("Status: " + ((ass.getStatus()) ? "ATIVO" : "INATIVO"));
-                System.out.println("Data de início: " + ass.getData());
-            }
-        }
-        System.out.println("----------------------");
-    }
-
     public double faturamentoMensal() {
         double faturamento = 0;
         for (Assinatura ass : this.listaDeAssinaturas) {
