@@ -137,6 +137,26 @@ public class Menu {
         System.out.println("Assinatura reativada!");
     }
 
+    public void listarAssinaturasAtivas() {
+        if (this.sistema.getAssinaturas().size() > 0) {
+            System.out.println("===== Assinaturas Ativas =====");
+            int contador = 1;
+            for (Assinatura ass : this.sistema.getAssinaturas()) {
+                if (ass.getStatus()) {
+                    System.out.println(contador + ".");
+                    System.out.println("Nome do cliente: " + ass.getCliente().getNome());
+                    System.out.println("Plano: " + ass.getPlano().getNomePlano());
+                    System.out.println("Status: " + ass.getStatus());
+                    System.out.println("Data da assinatura: " + ass.getData());
+                    System.out.println("==================================");
+                    contador++;
+                }
+            }
+        } else {
+            System.out.println("Não foi encontrada nenhuma assinatura no sistema.");
+        }
+    }
+
     private void listaDePlanos() {
         for (int i = 0; i < this.sistema.getPlano().size(); i++) {
             System.out.println("[%d] %s - R$ %.2f".formatted(i + 1, this.sistema.getPlano().get(i).getNomePlano(),
