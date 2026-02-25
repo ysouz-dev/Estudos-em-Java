@@ -105,6 +105,22 @@ public class Menu {
         }
     }
 
+    public void cancelarAssinatura() {
+        System.out.println("===== Cancelar Assinatura =====");
+        int indexAssinatura = -1;
+        do {
+            System.out.print("Digite seu email: ");
+            String email = this.scanner.nextLine();
+            indexAssinatura = findAssinatura(this.sistema.getAssinaturas(), email);
+            if (indexAssinatura < 0) {
+                System.out.println("Não foi encontrada nenhuma assinatura com esse email, tente novamente.");
+            }
+        } while (indexAssinatura < 0);
+
+        this.sistema.getAssinaturas().get(indexAssinatura).cancelarAssinatura();
+        System.out.println("Assinatura cancelada.");
+    }
+
     private void listaDePlanos() {
         for (int i = 0; i < this.sistema.getPlano().size(); i++) {
             System.out.println("[%d] %s - R$ %.2f".formatted(i + 1, this.sistema.getPlano().get(i).getNomePlano(),
@@ -115,6 +131,15 @@ public class Menu {
     private static int findEmail(ArrayList<Cliente> lista, String email) {
         for (int i = 0; i < lista.size(); i++) {
             if (email.strip().toUpperCase().equals(lista.get(i).getEmail())) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private static int findAssinatura(ArrayList<Assinatura> lista, String email) {
+        for (int i = 0; i < lista.size(); i++) {
+            if (email.strip().toUpperCase().equals(lista.get(i).getCliente().getEmail())) {
                 return i;
             }
         }
