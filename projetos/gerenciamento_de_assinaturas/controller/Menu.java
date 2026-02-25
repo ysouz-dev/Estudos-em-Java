@@ -106,35 +106,43 @@ public class Menu {
     }
 
     public void cancelarAssinatura() {
-        System.out.println("===== Cancelar Assinatura =====");
-        int indexAssinatura = -1;
-        do {
-            System.out.print("Digite seu email: ");
-            String email = this.scanner.nextLine();
-            indexAssinatura = findAssinatura(this.sistema.getAssinaturas(), email);
-            if (indexAssinatura < 0) {
-                System.out.println("Não foi encontrada nenhuma assinatura com esse email, tente novamente.");
-            }
-        } while (indexAssinatura < 0);
+        if (this.sistema.getAssinaturas().size() > 0) {
+            System.out.println("===== Cancelar Assinatura =====");
+            int indexAssinatura = -1;
+            do {
+                System.out.print("Digite seu email: ");
+                String email = this.scanner.nextLine();
+                indexAssinatura = findAssinatura(this.sistema.getAssinaturas(), email);
+                if (indexAssinatura < 0) {
+                    System.out.println("Não foi encontrada nenhuma assinatura com esse email, tente novamente.");
+                }
+            } while (indexAssinatura < 0);
 
-        this.sistema.getAssinaturas().get(indexAssinatura).cancelarAssinatura();
-        System.out.println("Assinatura cancelada.");
+            this.sistema.getAssinaturas().get(indexAssinatura).cancelarAssinatura();
+            System.out.println("Assinatura cancelada.");
+        } else {
+            System.out.println("Não foi encontrada nenhuma assinatura no sistema.");
+        }
     }
 
     public void reativarAssinatura() {
-        System.out.println("===== Reativar Assinatura =====");
-        int indexAssinatura = -1;
-        do {
-            System.out.print("Digite seu email: ");
-            String email = this.scanner.nextLine();
-            indexAssinatura = findAssinatura(this.sistema.getAssinaturas(), email);
-            if (indexAssinatura < 0) {
-                System.out.println("Não foi encontrada nenhuma assinatura com esse email");
-            }
-        } while (indexAssinatura < 0);
+        if (this.sistema.getAssinaturas().size() > 0) {
+            System.out.println("===== Reativar Assinatura =====");
+            int indexAssinatura = -1;
+            do {
+                System.out.print("Digite seu email: ");
+                String email = this.scanner.nextLine();
+                indexAssinatura = findAssinatura(this.sistema.getAssinaturas(), email);
+                if (indexAssinatura < 0) {
+                    System.out.println("Não foi encontrada nenhuma assinatura com esse email");
+                }
+            } while (indexAssinatura < 0);
 
-        this.sistema.getAssinaturas().get(indexAssinatura).reativarAssinatura();
-        System.out.println("Assinatura reativada!");
+            this.sistema.getAssinaturas().get(indexAssinatura).reativarAssinatura();
+            System.out.println("Assinatura reativada!");
+        } else {
+            System.out.println("Não foi encontrada nenhuma assinatura no sistema.");
+        }
     }
 
     public void listarAssinaturasAtivas() {
