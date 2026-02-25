@@ -165,6 +165,11 @@ public class Menu {
         }
     }
 
+    public void calcularFaturamentoMensal() {
+        System.out.println("===== Faturamento Mensal =====");
+        System.out.println("R$ %.2f".formatted(this.sistema.faturamentoMensal()));
+    }
+
     private void listaDePlanos() {
         for (int i = 0; i < this.sistema.getPlano().size(); i++) {
             System.out.println("[%d] %s - R$ %.2f".formatted(i + 1, this.sistema.getPlano().get(i).getNomePlano(),
