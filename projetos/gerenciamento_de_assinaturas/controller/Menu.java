@@ -30,6 +30,7 @@ public class Menu {
         do {
             System.out.print("Digite a opção desejada: ");
             opcao = this.scanner.nextInt();
+            this.scanner.nextLine();
             if (opcao < 1 || opcao > 8) {
                 System.out.println("Erro: %d não é uma opção válida.".formatted(opcao));
             }
