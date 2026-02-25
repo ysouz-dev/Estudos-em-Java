@@ -48,4 +48,19 @@ public class Menu {
         sistema.cadastrarCliente(new Cliente(nome, email));
         System.out.println("Cliente cadastrado com sucesso!");
     }
+
+    public void cadastrarPlano() {
+        System.out.println("===== Cadastro Plano =====");
+        System.out.print("Nome plano: ");
+        String nomePlano = this.scanner.nextLine();
+
+        System.out.print("Valor mensalidade: R$ ");
+        double valor = this.scanner.nextDouble();
+
+        System.out.println("Limite de telas: ");
+        int limite = this.scanner.nextInt();
+
+        sistema.cadastrarPlano(new Plano(nomePlano, valor, limite));
+        System.out.println("Plano cadastrado com sucesso!");
+    }
 }
