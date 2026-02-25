@@ -58,7 +58,7 @@ public class Menu {
         System.out.print("Valor mensalidade: R$ ");
         double valor = this.scanner.nextDouble();
 
-        System.out.println("Limite de telas: ");
+        System.out.print("Limite de telas: ");
         int limite = this.scanner.nextInt();
 
         sistema.cadastrarPlano(new Plano(nomePlano, valor, limite));
