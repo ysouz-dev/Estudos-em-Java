@@ -121,6 +121,22 @@ public class Menu {
         System.out.println("Assinatura cancelada.");
     }
 
+    public void reativarAssinatura() {
+        System.out.println("===== Reativar Assinatura =====");
+        int indexAssinatura = -1;
+        do {
+            System.out.print("Digite seu email: ");
+            String email = this.scanner.nextLine();
+            indexAssinatura = findAssinatura(this.sistema.getAssinaturas(), email);
+            if (indexAssinatura < 0) {
+                System.out.println("Não foi encontrada nenhuma assinatura com esse email");
+            }
+        } while (indexAssinatura < 0);
+
+        this.sistema.getAssinaturas().get(indexAssinatura).reativarAssinatura();
+        System.out.println("Assinatura reativada!");
+    }
+
     private void listaDePlanos() {
         for (int i = 0; i < this.sistema.getPlano().size(); i++) {
             System.out.println("[%d] %s - R$ %.2f".formatted(i + 1, this.sistema.getPlano().get(i).getNomePlano(),
