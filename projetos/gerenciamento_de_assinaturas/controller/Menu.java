@@ -1,6 +1,7 @@
 package projetos.gerenciamento_de_assinaturas.controller;
 
 import java.util.Scanner;
+import projetos.gerenciamento_de_assinaturas.model.*;
 
 public class Menu {
     private Scanner scanner;
