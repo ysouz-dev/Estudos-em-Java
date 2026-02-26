@@ -14,6 +14,14 @@ public class Pedido {
         Status(int codigo) {
             this.codigo = codigo;
         }
+
+        public int getCodigo() {
+            return this.codigo;
+        }
+
+        public void setCodigo(int novoCodigo) {
+            this.codigo = novoCodigo;
+        }
     }
 
     private String nome;
