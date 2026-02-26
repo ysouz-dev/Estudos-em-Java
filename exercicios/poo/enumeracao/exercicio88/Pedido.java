@@ -13,4 +13,10 @@ public class Pedido {
     private String nome;
     private ArrayList<String> listaItens;
     private Status status;
+
+    public Pedido(String nome) {
+        this.nome = nome;
+        this.listaItens = new ArrayList<String>();
+        this.status = Status.PENDENTE;
+    }
 }
