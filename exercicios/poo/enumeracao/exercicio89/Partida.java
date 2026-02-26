@@ -36,4 +36,12 @@ public class Partida {
         this.pontuacaoJogador2 = 0;
         this.status = Status.NAO_INICIADA;
     }
+
+    public void iniciarPartida() {
+        if (this.status != Status.NAO_INICIADA) {
+            throw new IllegalStateException("A partida só pode ser iniciada se ela não tiver sido iniciada antes.");
+        }
+
+        this.status = Status.EM_ANDAMENTO;
+    }
 }
