@@ -53,6 +53,17 @@ public class Partida {
         this.status = Status.FINALIZADA;
     }
 
+    private void adicionarPonto(int vencedor) {
+        if (vencedor == 1) {
+            this.pontuacaoJogador1++;
+        } else if (vencedor == 2) {
+            this.pontuacaoJogador2++;
+        } else {
+            this.pontuacaoJogador1++;
+            this.pontuacaoJogador2++;
+        }
+    }
+
     private static boolean validaJogadores(Jogador j1, Jogador j2) {
         if (j1 == j2 || j1 == null || j2 == null) {
             return false;
