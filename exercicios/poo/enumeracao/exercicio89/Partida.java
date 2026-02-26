@@ -63,6 +63,26 @@ public class Partida {
         this.status = Status.FINALIZADA;
     }
 
+    public String nomeVencedor() {
+        if (this.status != Status.FINALIZADA) {
+            throw new IllegalStateException("Finalize a partida para ter um vencedor");
+        }
+
+        if (this.pontuacaoJogador1 > this.pontuacaoJogador2) {
+            this.jogador1.adicionarVitoria();
+            this.jogador2.adicionarDerrota();
+            return this.jogador1.getNome();
+        } else if (this.pontuacaoJogador2 > this.pontuacaoJogador1) {
+            this.jogador2.adicionarVitoria();
+            this.jogador1.adicionarDerrota();
+            return this.jogador2.getNome();
+        } else {
+            this.jogador1.adicionarEmpate();
+            this.jogador2.adicionarEmpate();
+            return "Empate";
+        }
+    }
+
     private void adicionarPonto(int vencedor) {
         if (vencedor == 1) {
             this.pontuacaoJogador1++;
