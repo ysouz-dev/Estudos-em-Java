@@ -54,6 +54,18 @@ public class Pedido {
         this.listaItens.add(item);
     }
 
+    public void avancarComPedido() {
+        if (this.status == Status.ENTREGUE) {
+            throw new IllegalStateException("Não é possivel avançar com o pedido, pois ele já foi entregue.");
+        }
+        this.status.setCodigo(this.status.getCodigo() + 1);
+        for (Status status : Status.values()) {
+            if (this.status.getCodigo() == status.getCodigo()) {
+                this.status = status;
+            }
+        }
+    }
+
     private static boolean validaNomeItem(String item) {
         if (item == null || item.strip().isEmpty() || item.length() < 3) {
             return false;
