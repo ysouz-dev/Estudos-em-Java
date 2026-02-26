@@ -23,4 +23,17 @@ public class Partida {
     private int pontuacaoJogador1;
     private int pontuacaoJogador2;
     private Status status;
+
+    public Partida(Jogador jogador1, Jogador jogador2) {
+        if (jogador1 == jogador2) {
+            throw new IllegalArgumentException("Os jogadores devem ser diferentes.");
+        }
+
+        this.jogador1 = jogador1;
+        this.jogador2 = jogador2;
+        this.round = 0;
+        this.pontuacaoJogador1 = 0;
+        this.pontuacaoJogador2 = 0;
+        this.status = Status.NAO_INICIADA;
+    }
 }
