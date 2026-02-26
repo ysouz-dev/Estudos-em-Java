@@ -15,6 +15,10 @@ public class Pedido {
     private Status status;
 
     public Pedido(String nome) {
+        if (!validaNome(nome)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+
         this.nome = nome;
         this.listaItens = new ArrayList<String>();
         this.status = Status.PENDENTE;
