@@ -24,6 +24,18 @@ public class Pedido {
         this.status = Status.PENDENTE;
     }
 
+    public void adicionarItem(String item) {
+        if (this.status == Status.SAIU_PARA_ENTREGA || this.status == Status.ENTREGUE) {
+            String erro = "Não é possivel adicionar item com o pedido a caminho.";
+            if (this.status == Status.ENTREGUE) {
+                erro = "Não é possivel adicionar item, o pedido já foi entregue.";
+            }
+            throw new IllegalStateException(erro);
+        }
+
+        this.listaItens.add(item);
+    }
+
     private static boolean validaNome(String nome) {
         if (nome == null || nome.strip().isEmpty() || nome.length() < 3) {
             return false;
