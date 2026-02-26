@@ -15,6 +15,22 @@ public class Jogador {
         this.empate = 0;
     }
 
+    public String getNome() {
+        return this.nome;
+    }
+
+    public int getVitoria() {
+        return this.vitoria;
+    }
+
+    public int getDerrota() {
+        return this.derrota;
+    }
+
+    public int getEmpate() {
+        return this.empate;
+    }
+
     public void adicionarVitoria() {
         this.vitoria++;
     }
