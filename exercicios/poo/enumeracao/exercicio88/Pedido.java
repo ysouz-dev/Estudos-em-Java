@@ -33,6 +33,10 @@ public class Pedido {
             throw new IllegalStateException(erro);
         }
 
+        if (!validaNomeItem(item)) {
+            throw new IllegalArgumentException("Nome do item inválido!");
+        }
+
         this.listaItens.add(item);
     }
 
