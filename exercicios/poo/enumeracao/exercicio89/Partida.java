@@ -25,7 +25,7 @@ public class Partida {
     private Status status;
 
     public Partida(Jogador jogador1, Jogador jogador2) {
-        if (jogador1 == jogador2) {
+        if (!validaJogadores(jogador1, jogador2)) {
             throw new IllegalArgumentException("Os jogadores devem ser diferentes.");
         }
 
