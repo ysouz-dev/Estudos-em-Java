@@ -36,6 +36,13 @@ public class Pedido {
         this.listaItens.add(item);
     }
 
+    private static boolean validaNomeItem(String item) {
+        if (item == null || item.strip().isEmpty() || item.length() < 3) {
+            return false;
+        }
+        return true;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome == null || nome.strip().isEmpty() || nome.length() < 3) {
             return false;
