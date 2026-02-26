@@ -39,6 +39,26 @@ public class Partida {
         this.status = Status.NAO_INICIADA;
     }
 
+    public String getNomeJogador1() {
+        return this.jogador1.getNome();
+    }
+
+    public String getNomeJogador2() {
+        return this.jogador2.getNome();
+    }
+
+    public int getPontoJogador1() {
+        return this.pontuacaoJogador1;
+    }
+
+    public int getPontoJogador2() {
+        return this.pontuacaoJogador2;
+    }
+
+    public int getRounds() {
+        return this.round;
+    }
+
     public void iniciarPartida() {
         if (this.status != Status.NAO_INICIADA) {
             throw new IllegalStateException("A partida só pode ser iniciada se ela não tiver sido iniciada antes.");
