@@ -5,6 +5,10 @@ public class Jogador {
     private int vitoria, derrota, empate;
 
     public Jogador(String nome) {
+        if (!validaNome(nome)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+
         this.nome = nome.strip().toUpperCase();
         this.vitoria = 0;
         this.derrota = 0;
