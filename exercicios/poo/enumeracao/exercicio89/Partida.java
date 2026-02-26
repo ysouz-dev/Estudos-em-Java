@@ -1,5 +1,7 @@
 package exercicios.poo.enumeracao.exercicio89;
 
+import java.util.Random;
+
 public class Partida {
     public enum Status {
         NAO_INICIADA("NÃO INICIADA"),
@@ -43,6 +45,14 @@ public class Partida {
         }
 
         this.status = Status.EM_ANDAMENTO;
+
+        Random aleatorio = new Random();
+        int contador = 0;
+        while (contador != 3) {
+            adicionarPonto(aleatorio.nextInt(3));
+            this.round++;
+            contador++;
+        }
     }
 
     public void finalizarPartida() {
