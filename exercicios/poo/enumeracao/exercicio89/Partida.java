@@ -45,6 +45,14 @@ public class Partida {
         this.status = Status.EM_ANDAMENTO;
     }
 
+    public void finalizarPartida() {
+        if (this.status != Status.EM_ANDAMENTO) {
+            throw new IllegalStateException("A partida só pode ser finalizada se ela estiver em andamento.");
+        }
+
+        this.status = Status.FINALIZADA;
+    }
+
     private static boolean validaJogadores(Jogador j1, Jogador j2) {
         if (j1 == j2 || j1 == null || j2 == null) {
             return false;
