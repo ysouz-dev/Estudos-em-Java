@@ -44,4 +44,11 @@ public class Partida {
 
         this.status = Status.EM_ANDAMENTO;
     }
+
+    private static boolean validaJogadores(Jogador j1, Jogador j2) {
+        if (j1 == j2 || j1 == null || j2 == null) {
+            return false;
+        }
+        return true;
+    }
 }
