@@ -18,15 +18,12 @@ public class Pedido {
         public int getCodigo() {
             return this.codigo;
         }
-
-        public void setCodigo(int novoCodigo) {
-            this.codigo = novoCodigo;
-        }
     }
 
     private String nome;
     private ArrayList<String> listaItens;
     private Status status;
+    private int codigoStatus;
 
     public Pedido(String nome) {
         if (!validaNome(nome)) {
@@ -36,6 +33,7 @@ public class Pedido {
         this.nome = nome.strip().toUpperCase();
         this.listaItens = new ArrayList<String>();
         this.status = Status.PENDENTE;
+        this.codigoStatus = 0;
     }
 
     public void adicionarItem(String item) {
@@ -58,9 +56,9 @@ public class Pedido {
         if (this.status == Status.ENTREGUE) {
             throw new IllegalStateException("Não é possivel avançar com o pedido, pois ele já foi entregue.");
         }
-        this.status.setCodigo(this.status.getCodigo() + 1);
+        this.codigoStatus++;
         for (Status status : Status.values()) {
-            if (this.status.getCodigo() == status.getCodigo()) {
+            if (this.codigoStatus == status.getCodigo()) {
                 this.status = status;
             }
         }
