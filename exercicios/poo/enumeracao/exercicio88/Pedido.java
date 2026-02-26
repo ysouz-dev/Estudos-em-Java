@@ -4,10 +4,16 @@ import java.util.ArrayList;
 
 public class Pedido {
     public enum Status {
-        PENDENTE,
-        EM_PREPARO,
-        SAIU_PARA_ENTREGA,
-        ENTREGUE
+        PENDENTE(0),
+        EM_PREPARO(1),
+        SAIU_PARA_ENTREGA(2),
+        ENTREGUE(3);
+
+        private int codigo;
+
+        Status(int codigo) {
+            this.codigo = codigo;
+        }
     }
 
     private String nome;
