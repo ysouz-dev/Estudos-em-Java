@@ -15,6 +15,18 @@ public class Jogador {
         this.empate = 0;
     }
 
+    public void adicionarVitoria() {
+        this.vitoria++;
+    }
+
+    public void adicionarDerrota() {
+        this.derrota++;
+    }
+
+    public void adicionarEmpate() {
+        this.empate++;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome == null || nome.strip().isEmpty() || nome.strip().length() < 3) {
             return false;
