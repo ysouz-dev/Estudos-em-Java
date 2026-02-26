@@ -53,6 +53,6 @@ public class Jogador {
                 return false;
             }
         }
-        return false;
+        return true;
     }
 }
