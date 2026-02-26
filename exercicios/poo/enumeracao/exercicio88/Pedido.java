@@ -66,6 +66,15 @@ public class Pedido {
         }
     }
 
+    public void mostrarResumo() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Itens: ");
+        for (String item : this.listaItens) {
+            System.out.println("- " + item);
+        }
+        System.out.println("Status do pedido: " + this.status);
+    }
+
     private static boolean validaNomeItem(String item) {
         if (item == null || item.strip().isEmpty() || item.length() < 3) {
             return false;
