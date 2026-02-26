@@ -19,7 +19,7 @@ public class Pedido {
             throw new IllegalArgumentException("Nome inválido!");
         }
 
-        this.nome = nome;
+        this.nome = nome.strip().toUpperCase();
         this.listaItens = new ArrayList<String>();
         this.status = Status.PENDENTE;
     }
