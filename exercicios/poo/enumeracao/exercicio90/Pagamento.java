@@ -6,6 +6,10 @@ public class Pagamento {
     private StatusPagamento statusPagamento;
 
     public Pagamento(double valorPagamento, String metodoPagamento) {
+        if (!validaMetodoPagamento(metodoPagamento)) {
+            throw new IllegalArgumentException("Método de pagamento inválido!");
+        }
+
         this.valorPagamento = valorPagamento;
         this.metodoPagamento = metodoPagamento;
         this.statusPagamento = StatusPagamento.PENDENTE;
