@@ -10,4 +10,13 @@ public class Pagamento {
         this.metodoPagamento = metodoPagamento;
         this.statusPagamento = StatusPagamento.PENDENTE;
     }
+
+    private static boolean validaMetodoPagamento(String metodo) {
+        for (MetodoPagamento met : MetodoPagamento.values()) {
+            if (metodo.strip().equalsIgnoreCase(met.getNomeMetodo())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
