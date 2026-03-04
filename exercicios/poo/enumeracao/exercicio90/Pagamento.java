@@ -10,6 +10,10 @@ public class Pagamento {
             throw new IllegalArgumentException("Método de pagamento inválido!");
         }
 
+        if (!validaValor(valorPagamento)) {
+            throw new IllegalArgumentException("Valor de pagamento inválido!");
+        }
+
         this.valorPagamento = valorPagamento;
         this.metodoPagamento = toMetodoPagamento(metodoPagamento);
         this.statusPagamento = StatusPagamento.PENDENTE;
