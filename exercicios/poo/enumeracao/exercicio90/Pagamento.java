@@ -41,6 +41,11 @@ public class Pagamento {
         System.out.println("Status do pagamento: " + this.statusPagamento);
     }
 
+    private double valorComTaxa() {
+        double acrescimo = this.metodoPagamento.getTaxa() / 100.0 * this.valorPagamento;
+        return this.valorPagamento + acrescimo;
+    }
+
     private static MetodoPagamento toMetodoPagamento(String metodo) {
         MetodoPagamento metodoNovo = null;
         for (MetodoPagamento met : MetodoPagamento.values()) {
