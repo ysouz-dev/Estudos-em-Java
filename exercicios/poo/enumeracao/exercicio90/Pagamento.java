@@ -15,6 +15,17 @@ public class Pagamento {
         this.statusPagamento = StatusPagamento.PENDENTE;
     }
 
+    private static String removeAcento(String texto) {
+        final char ACENTO = 'É';
+        String textoSemAcento = texto;
+        for (int i = 0; i < texto.strip().length(); i++) {
+            if (texto.strip().toUpperCase().charAt(i) == ACENTO) {
+                textoSemAcento = texto.replace(texto.charAt(i), 'E');
+            }
+        }
+        return textoSemAcento;
+    }
+
     private static boolean validaMetodoPagamento(String metodo) {
         for (MetodoPagamento met : MetodoPagamento.values()) {
             if (metodo.strip().equalsIgnoreCase(met.getNomeMetodo())) {
