@@ -27,6 +27,14 @@ public class Pagamento {
         this.statusPagamento = StatusPagamento.PROCESSADO;
     }
 
+    public void cancelarPagamento() {
+        if (this.statusPagamento != StatusPagamento.PENDENTE) {
+            throw new IllegalStateException("O status do pagamento não permite cancelar o pagamento.");
+        }
+
+        this.statusPagamento = StatusPagamento.CANCELADO;
+    }
+
     private static MetodoPagamento toMetodoPagamento(String metodo) {
         MetodoPagamento metodoNovo = null;
         for (MetodoPagamento met : MetodoPagamento.values()) {
