@@ -38,6 +38,8 @@ public class Pagamento {
     public void resumoPagamento() {
         System.out.println("Valor pagamento: R$ %.2f".formatted(this.valorPagamento));
         System.out.println("Forma de pagamento: " + this.metodoPagamento.getNomeMetodo());
+        System.out.println("Taxa: %d%%".formatted(this.metodoPagamento.getTaxa()));
+        System.out.println("Valor final: R$ %.2f".formatted(valorComTaxa()));
         System.out.println("Status do pagamento: " + this.statusPagamento);
     }
 
