@@ -36,6 +36,10 @@ public class Pagamento {
         return textoSemAcento;
     }
 
+    private static boolean validaValor(double valor) {
+        return valor >= 1;
+    }
+
     private static boolean validaMetodoPagamento(String metodo) {
         for (MetodoPagamento met : MetodoPagamento.values()) {
             if (removeAcento(metodo).strip().equalsIgnoreCase(removeAcento(met.getNomeMetodo()))) {
