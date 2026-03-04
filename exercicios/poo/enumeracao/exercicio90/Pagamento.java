@@ -35,6 +35,12 @@ public class Pagamento {
         this.statusPagamento = StatusPagamento.CANCELADO;
     }
 
+    public void resumoPagamento() {
+        System.out.println("Valor pagamento: R$ %.2f".formatted(this.valorPagamento));
+        System.out.println("Forma de pagamento: " + this.metodoPagamento.getNomeMetodo());
+        System.out.println("Status do pagamento: " + this.statusPagamento);
+    }
+
     private static MetodoPagamento toMetodoPagamento(String metodo) {
         MetodoPagamento metodoNovo = null;
         for (MetodoPagamento met : MetodoPagamento.values()) {
