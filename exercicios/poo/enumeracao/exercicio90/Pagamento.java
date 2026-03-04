@@ -67,6 +67,10 @@ public class Pagamento {
     }
 
     private static boolean validaMetodoPagamento(String metodo) {
+        if (metodo == null) {
+            return false;
+        }
+
         for (MetodoPagamento met : MetodoPagamento.values()) {
             if (removeAcento(metodo).strip().equalsIgnoreCase(removeAcento(met.getNomeMetodo()))) {
                 return true;
