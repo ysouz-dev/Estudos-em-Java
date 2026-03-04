@@ -11,7 +11,7 @@ public class Pagamento {
         }
 
         this.valorPagamento = valorPagamento;
-        this.metodoPagamento = metodoPagamento;
+        this.metodoPagamento = toMetodoPagamento(metodoPagamento);
         this.statusPagamento = StatusPagamento.PENDENTE;
     }
 
@@ -38,7 +38,7 @@ public class Pagamento {
 
     private static boolean validaMetodoPagamento(String metodo) {
         for (MetodoPagamento met : MetodoPagamento.values()) {
-            if (metodo.strip().equalsIgnoreCase(met.getNomeMetodo())) {
+            if (removeAcento(metodo).strip().equalsIgnoreCase(removeAcento(met.getNomeMetodo()))) {
                 return true;
             }
         }
