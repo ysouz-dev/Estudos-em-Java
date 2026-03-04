@@ -19,6 +19,14 @@ public class Pagamento {
         this.statusPagamento = StatusPagamento.PENDENTE;
     }
 
+    public void realizarPagamento() {
+        if (this.statusPagamento != StatusPagamento.PENDENTE) {
+            throw new IllegalStateException("O status do pagamento não permite realizar o pagamento.");
+        }
+
+        this.statusPagamento = StatusPagamento.PROCESSADO;
+    }
+
     private static MetodoPagamento toMetodoPagamento(String metodo) {
         MetodoPagamento metodoNovo = null;
         for (MetodoPagamento met : MetodoPagamento.values()) {
