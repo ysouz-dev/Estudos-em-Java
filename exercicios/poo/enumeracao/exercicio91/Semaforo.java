@@ -11,5 +11,9 @@ public class Semaforo {
         Status(int duracao) {
             this.duracao = duracao;
         }
+
+        public int getDuracao() {
+            return this.duracao;
+        }
     }
 }
