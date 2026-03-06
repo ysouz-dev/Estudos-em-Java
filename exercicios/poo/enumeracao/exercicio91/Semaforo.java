@@ -1,5 +1,8 @@
 package exercicios.poo.enumeracao.exercicio91;
 
+import java.time.Duration;
+import java.time.LocalDate;
+
 public class Semaforo {
     public enum Status {
         VERMELHO(40),
