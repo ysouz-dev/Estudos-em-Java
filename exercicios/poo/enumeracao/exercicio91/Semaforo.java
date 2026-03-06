@@ -2,6 +2,7 @@ package exercicios.poo.enumeracao.exercicio91;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Semaforo {
     public enum Status {
@@ -18,5 +19,19 @@ public class Semaforo {
         public int getDuracao() {
             return this.duracao;
         }
+    }
+
+    private Status cor;
+    private int codigoCor;
+    private LocalTime ultimaHoraUsado;
+    private int intervalo;
+    private boolean reverse;
+
+    public Semaforo() {
+        this.cor = Status.VERMELHO;
+        this.codigoCor = this.cor.ordinal();
+        this.ultimaHoraUsado = LocalTime.now();
+        this.intervalo = this.cor.getDuracao();
+        this.reverse = false;
     }
 }
