@@ -54,6 +54,10 @@ public class Semaforo {
         }
     }
 
+    public long tempoRestante() {
+        return this.intervalo - Duration.between(this.ultimaHoraUsado, LocalTime.now()).getSeconds();
+    }
+
     private void atualizaCor() {
         for (Status status : Status.values()) {
             if (this.codigoCor == status.ordinal()) {
