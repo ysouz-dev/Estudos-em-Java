@@ -1,7 +1,6 @@
 package exercicios.poo.enumeracao.exercicio91;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Semaforo {
