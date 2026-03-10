@@ -34,4 +34,12 @@ public class Semaforo {
         this.intervalo = this.cor.getDuracao();
         this.reverse = false;
     }
+
+    private boolean inIntervalo() {
+        Duration tempoPassado = Duration.between(this.ultimaHoraUsado, LocalTime.now());
+        if (tempoPassado.getSeconds() < this.intervalo) {
+            return false;
+        }
+        return true;
+    }
 }
