@@ -34,6 +34,10 @@ public class Semaforo {
         this.reverse = false;
     }
 
+    public Status getStatus() {
+        return this.cor;
+    }
+
     public void proximoEstado() {
         if (!inIntervalo()) {
             long tempoRestante = (this.intervalo
