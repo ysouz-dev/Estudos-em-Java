@@ -6,9 +6,9 @@ import java.time.LocalTime;
 
 public class Semaforo {
     public enum Status {
-        VERMELHO(40),
+        VERDE(20),
         AMARELO(5),
-        VERDE(30);
+        VERMELHO(25);
 
         private int duracao;
 
@@ -28,11 +28,35 @@ public class Semaforo {
     private boolean reverse;
 
     public Semaforo() {
-        this.cor = Status.VERMELHO;
+        this.cor = Status.VERDE;
         this.codigoCor = this.cor.ordinal();
         this.ultimaHoraUsado = LocalTime.now();
         this.intervalo = this.cor.getDuracao();
         this.reverse = false;
+    }
+
+    public void proximoEstado() {
+        if (!inIntervalo()) {
+            long tempoRestante = (this.intervalo
+                    - Duration.between(this.ultimaHoraUsado, LocalTime.now()).getSeconds());
+            throw new IllegalStateException("Metodo em cooldown. Tempo restante: " + tempoRestante + " segundos");
+        }
+
+        if (this.codigoCor == 2) {
+            this.codigoCor = 0;
+            atualizaCor();
+        } else {
+            this.codigoCor++;
+            atualizaCor();
+        }
+    }
+
+    private void atualizaCor() {
+        for (Status status : Status.values()) {
+            if (this.codigoCor == status.ordinal()) {
+                this.cor = status;
+            }
+        }
     }
 
     private boolean inIntervalo() {
