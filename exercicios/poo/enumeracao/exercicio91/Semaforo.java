@@ -47,9 +47,13 @@ public class Semaforo {
         if (this.codigoCor == 2) {
             this.codigoCor = 0;
             atualizaCor();
+            this.ultimaHoraUsado = LocalTime.now();
+            this.intervalo = this.cor.getDuracao();
         } else {
             this.codigoCor++;
             atualizaCor();
+            this.ultimaHoraUsado = LocalTime.now();
+            this.intervalo = this.cor.getDuracao();
         }
     }
 
