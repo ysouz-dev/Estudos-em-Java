@@ -40,8 +40,7 @@ public class Semaforo {
 
     public void proximoEstado() {
         if (!inIntervalo()) {
-            long tempoRestante = (this.intervalo
-                    - Duration.between(this.ultimaHoraUsado, LocalTime.now()).getSeconds());
+            long tempoRestante = tempoRestante();
             throw new IllegalStateException("Metodo em cooldown. Tempo restante: " + tempoRestante + " segundos");
         }
 
