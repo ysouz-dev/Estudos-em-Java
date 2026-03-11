@@ -55,7 +55,7 @@ public class Matricula {
 
     public void ativarMatricula() {
         if (!this.statusMatricula.podeAtivar()) {
-            throw new IllegalStateException("Não é possivel ativar uma mátricula já " + this.statusMatricula + ".");
+            throw new IllegalStateException("Não é possivel ativar uma matrícula já " + this.statusMatricula + ".");
         }
 
         this.statusMatricula = Status.ATIVA;
@@ -63,7 +63,7 @@ public class Matricula {
 
     public void trancarMatricula() {
         if (!this.statusMatricula.podeTrancar()) {
-            throw new IllegalStateException("Não é possivel trancar uma mátricula já " + this.statusMatricula + ".");
+            throw new IllegalStateException("Não é possivel trancar uma matrícula já " + this.statusMatricula + ".");
         }
 
         this.statusMatricula = Status.TRANCADA;
@@ -71,7 +71,7 @@ public class Matricula {
 
     public void cancelarMatricula() {
         if (!this.statusMatricula.podeCancelar()) {
-            throw new IllegalStateException("Não é possivel cancelar uma mátricula já " + this.statusMatricula + ".");
+            throw new IllegalStateException("Não é possivel cancelar uma matrícula já " + this.statusMatricula + ".");
         }
 
         this.statusMatricula = Status.CANCELADA;
@@ -79,7 +79,7 @@ public class Matricula {
 
     public void concluirMatricula() {
         if (!this.statusMatricula.podeConcluir()) {
-            throw new IllegalStateException("Não é possivel concluir uma mátricula já " + this.statusMatricula + ".");
+            throw new IllegalStateException("Não é possivel concluir uma matrícula já " + this.statusMatricula + ".");
         }
 
         this.statusMatricula = Status.CONCLUIDA;
