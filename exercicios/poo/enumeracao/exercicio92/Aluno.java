@@ -33,6 +33,13 @@ public class Aluno {
         this.matricula.concluirMatricula();
     }
 
+    public void resumo() {
+        System.out.println("Número da matrícula: " + this.matricula.getId());
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Status: " + this.matricula.getStatus());
+    }
+
     private static boolean validaIdade(int idade) {
         return idade > 0 && idade <= 75;
     }
