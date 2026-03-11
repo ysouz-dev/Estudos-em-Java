@@ -49,6 +49,25 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        Semaforo semaforo = new Semaforo();
+        Scanner scanner = new Scanner(System.in);
 
+        int escolha = Integer.MIN_VALUE;
+        while (escolha != 0) {
+            escolha = menuPrincipal(semaforo, scanner);
+
+            switch (escolha) {
+                case 1:
+                    semaforo.proximoEstado();
+                    break;
+
+                case 2:
+                    continue;
+
+                case 0:
+                    System.out.println("Semáforo encerrado.");
+                    break;
+            }
+        }
     }
 }
