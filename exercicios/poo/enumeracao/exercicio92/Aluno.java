@@ -11,6 +11,10 @@ public class Aluno {
         this.matricula = new Matricula();
     }
 
+    private static boolean validaIdade(int idade) {
+        return idade > 0 && idade <= 75;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome == null || nome.strip().isEmpty() || nome.strip().length() < 3) {
             return false;
