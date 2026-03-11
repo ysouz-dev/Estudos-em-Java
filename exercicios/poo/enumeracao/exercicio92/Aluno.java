@@ -5,4 +5,9 @@ public class Aluno {
     private int idade;
     private Matricula matricula;
 
+    public Aluno(String nome, int idade) {
+        this.nome = nome.strip().toUpperCase();
+        this.idade = idade;
+        this.matricula = new Matricula();
+    }
 }
