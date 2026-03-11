@@ -9,6 +9,34 @@ public class Matricula {
         CANCELADA,
         CONCLUIDA;
 
+        private boolean podeConcluir() {
+            if (this == CANCELADA || this == CONCLUIDA) {
+                return false;
+            }
+            return true;
+        }
+
+        private boolean podeTrancar() {
+            if (this == CANCELADA || this == CONCLUIDA || this == TRANCADA) {
+                return false;
+            }
+            return true;
+        }
+
+        private boolean podeCancelar() {
+            if (this == CONCLUIDA || this == CANCELADA) {
+                return false;
+            }
+            return true;
+        }
+
+        private boolean podeAtivar() {
+            if (this == CANCELADA || this == CONCLUIDA || this == ATIVA) {
+                return false;
+            }
+            return true;
+        }
+
     }
 
     private static int id = 0001;
