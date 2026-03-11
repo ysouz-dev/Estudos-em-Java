@@ -24,14 +24,12 @@ public class Semaforo {
     private int codigoCor;
     private LocalTime ultimaHoraUsado;
     private int intervalo;
-    private boolean reverse;
 
     public Semaforo() {
         this.cor = Status.VERDE;
         this.codigoCor = this.cor.ordinal();
         this.ultimaHoraUsado = LocalTime.now();
         this.intervalo = this.cor.getDuracao();
-        this.reverse = false;
     }
 
     public Status getStatus() {
