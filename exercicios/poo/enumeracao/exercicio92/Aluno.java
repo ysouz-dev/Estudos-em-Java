@@ -17,6 +17,22 @@ public class Aluno {
         this.matricula = new Matricula();
     }
 
+    public void ativarMatricula() {
+        this.matricula.ativarMatricula();
+    }
+
+    public void trancarMatricula() {
+        this.matricula.trancarMatricula();
+    }
+
+    public void cancelarMatricula() {
+        this.matricula.cancelarMatricula();
+    }
+
+    public void concluirMatricula() {
+        this.matricula.concluirMatricula();
+    }
+
     private static boolean validaIdade(int idade) {
         return idade > 0 && idade <= 75;
     }
