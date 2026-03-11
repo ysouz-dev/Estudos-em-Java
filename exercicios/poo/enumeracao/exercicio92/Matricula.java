@@ -49,6 +49,10 @@ public class Matricula {
         this.statusMatricula = Status.ATIVA;
     }
 
+    public String getId() {
+        return this.NUMERO_MATRICULA;
+    }
+
     public void ativarMatricula() {
         if (!this.statusMatricula.podeAtivar()) {
             throw new IllegalStateException("Não é possivel ativar uma mátricula já " + this.statusMatricula + ".");
