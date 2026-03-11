@@ -6,6 +6,12 @@ public class Aluno {
     private Matricula matricula;
 
     public Aluno(String nome, int idade) {
+        if (!validaNome(nome)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        } else if (!validaIdade(idade)) {
+            throw new IllegalArgumentException("Idade inválida!");
+        }
+
         this.nome = nome.strip().toUpperCase();
         this.idade = idade;
         this.matricula = new Matricula();
