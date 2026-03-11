@@ -56,4 +56,12 @@ public class Matricula {
 
         this.statusMatricula = Status.ATIVA;
     }
+
+    public void trancarMatricula() {
+        if (!this.statusMatricula.podeTrancar()) {
+            throw new IllegalStateException("Não é possivel trancar uma mátricula já " + this.statusMatricula + ".");
+        }
+
+        this.statusMatricula = Status.TRANCADA;
+    }
 }
