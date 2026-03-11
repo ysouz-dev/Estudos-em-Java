@@ -72,4 +72,12 @@ public class Matricula {
 
         this.statusMatricula = Status.CANCELADA;
     }
+
+    public void concluirMatricula() {
+        if (!this.statusMatricula.podeConcluir()) {
+            throw new IllegalStateException("Não é possivel concluir uma mátricula já " + this.statusMatricula + ".");
+        }
+
+        this.statusMatricula = Status.CONCLUIDA;
+    }
 }
