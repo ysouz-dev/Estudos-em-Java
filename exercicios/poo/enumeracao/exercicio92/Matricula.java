@@ -39,7 +39,7 @@ public class Matricula {
 
     }
 
-    private static int id = 0001;
+    private static int id = 1;
     private final String NUMERO_MATRICULA;
     private Status statusMatricula;
 
