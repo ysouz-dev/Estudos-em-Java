@@ -53,6 +53,10 @@ public class Matricula {
         return this.NUMERO_MATRICULA;
     }
 
+    public Status getStatus() {
+        return this.statusMatricula;
+    }
+
     public void ativarMatricula() {
         if (!this.statusMatricula.podeAtivar()) {
             throw new IllegalStateException("Não é possivel ativar uma matrícula já " + this.statusMatricula + ".");
