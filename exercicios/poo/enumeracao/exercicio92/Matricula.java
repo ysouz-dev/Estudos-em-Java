@@ -64,4 +64,12 @@ public class Matricula {
 
         this.statusMatricula = Status.TRANCADA;
     }
+
+    public void cancelarMatricula() {
+        if (!this.statusMatricula.podeCancelar()) {
+            throw new IllegalStateException("Não é possivel cancelar uma mátricula já " + this.statusMatricula + ".");
+        }
+
+        this.statusMatricula = Status.CANCELADA;
+    }
 }
