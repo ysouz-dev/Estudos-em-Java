@@ -6,6 +6,10 @@ public class Jogador {
     private Rank rank;
 
     public Jogador(String nome) {
+        if (!validaNome(nome)) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+
         this.nome = nome.strip().toUpperCase();
         this.pontuacao = 0;
         this.rank = Rank.BRONZE;
