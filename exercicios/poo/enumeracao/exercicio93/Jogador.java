@@ -23,6 +23,12 @@ public class Jogador {
         atualizaRank();
     }
 
+    public void resumo() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Pontuação: " + this.pontuacao);
+        System.out.println("Rank: " + this.rank);
+    }
+
     private void atualizaRank() {
         if (this.pontuacao <= 999) {
             this.rank = Rank.BRONZE;
