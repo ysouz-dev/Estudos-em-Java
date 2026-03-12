@@ -19,6 +19,10 @@ public class Jogador {
         this.pontuacao += pontos;
     }
 
+    private static boolean validaPontos(int pontos) {
+        return pontos >= 1;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome == null || nome.strip().isEmpty() || nome.strip().length() < 3) {
             return false;
