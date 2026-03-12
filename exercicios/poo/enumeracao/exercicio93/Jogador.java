@@ -20,6 +20,19 @@ public class Jogador {
             throw new IllegalArgumentException("Pontos digitados inválidos!");
         }
         this.pontuacao += pontos;
+        atualizaRank();
+    }
+
+    private void atualizaRank() {
+        if (this.pontuacao <= 999) {
+            this.rank = Rank.BRONZE;
+        } else if (this.pontuacao <= 1999) {
+            this.rank = Rank.PRATA;
+        } else if (this.pontuacao <= 2999) {
+            this.rank = Rank.OURO;
+        } else {
+            this.rank = Rank.PLATINA;
+        }
     }
 
     private static boolean validaPontos(int pontos) {
