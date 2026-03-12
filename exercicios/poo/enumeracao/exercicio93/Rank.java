@@ -13,4 +13,16 @@ public enum Rank {
         this.minimo = minimo;
         this.maximo = maximo;
     }
+
+    public Rank atualizaRank(int pontuacao) {
+        if (pontuacao <= BRONZE.maximo) {
+            return BRONZE;
+        } else if (pontuacao <= PRATA.maximo) {
+            return PRATA;
+        } else if (pontuacao <= OURO.maximo) {
+            return OURO;
+        } else {
+            return PLATINA;
+        }
+    }
 }
