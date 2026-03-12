@@ -16,6 +16,9 @@ public class Jogador {
     }
 
     public void adicionarPontos(int pontos) {
+        if (!validaPontos(pontos)) {
+            throw new IllegalArgumentException("Pontos digitados inválidos!");
+        }
         this.pontuacao += pontos;
     }
 
