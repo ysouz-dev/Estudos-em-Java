@@ -15,6 +15,10 @@ public class Jogador {
         this.rank = Rank.BRONZE;
     }
 
+    public void adicionarPontos(int pontos) {
+        this.pontuacao += pontos;
+    }
+
     private static boolean validaNome(String nome) {
         if (nome == null || nome.strip().isEmpty() || nome.strip().length() < 3) {
             return false;
