@@ -1,5 +1,7 @@
 package exercicios.poo.enumeracao.exercicio94;
 
+import java.time.LocalDate;
+
 public class Pedido {
     public enum Status {
         AGUARDANDO,
