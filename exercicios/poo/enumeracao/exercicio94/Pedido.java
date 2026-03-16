@@ -8,4 +8,11 @@ public class Pedido {
     }
 
     private static int id = 1;
+    private String idPedido;
+    private int diaCriacao;
+    private int mesCriacao;
+    private int anoCriacao;
+    private TipoEntrega tipoEntrega;
+    private int estimativaEntrega;
+
 }
