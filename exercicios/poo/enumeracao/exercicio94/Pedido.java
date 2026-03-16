@@ -18,6 +18,10 @@ public class Pedido {
     private int estimativaEntrega;
 
     public Pedido(TipoEntrega tipoEntrega) {
+        if (!tipoEntrega.hasTipoEntrega()) {
+            throw new IllegalArgumentException();
+        }
+
         this.idPedido = ("#" + LocalDate.now().getYear() + "0" + id);
         id++;
         this.diaCriacao = LocalDate.now().getDayOfMonth();
