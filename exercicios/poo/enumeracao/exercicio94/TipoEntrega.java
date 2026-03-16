@@ -10,4 +10,8 @@ public enum TipoEntrega {
     TipoEntrega(int dias) {
         this.dias = dias;
     }
+
+    public boolean hasTipoEntrega() {
+        return this != null;
+    }
 }
