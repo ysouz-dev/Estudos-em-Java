@@ -44,6 +44,18 @@ public class Pedido {
 
     }
 
+    public void resumo() {
+        System.out.println("Id: " + this.idPedido);
+        System.out.println("Data do pedido: %d/%d/%d".formatted(this.dataCriacao.getDayOfMonth(),
+                this.dataCriacao.getMonthValue(), this.dataCriacao.getYear()));
+
+        System.out.println("Tipo de entrega: " + this.tipoEntrega);
+        System.out.println("Estimativa de entrega: %d/%d/%d".formatted(this.estimativaEntrega.getDayOfMonth(),
+                this.estimativaEntrega.getMonthValue(), this.estimativaEntrega.getYear()));
+
+        System.out.println("Status da entrega: " + this.statusEntrega);
+    }
+
     public void enviarPedido() {
         if (!this.statusEntrega.podeEnviar()) {
             throw new IllegalStateException("O pedido só pode ser enviado se o status for AGUARDANDO.");
