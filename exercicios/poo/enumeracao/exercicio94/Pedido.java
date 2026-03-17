@@ -6,7 +6,14 @@ public class Pedido {
     public enum Status {
         AGUARDANDO,
         ENVIADO,
-        ENTREGUE
+        ENTREGUE;
+
+        public boolean podeEnviar() {
+            if (this != AGUARDANDO) {
+                return false;
+            }
+            return true;
+        }
     }
 
     private static int id = 1;
