@@ -13,7 +13,7 @@ public class Pedido {
     private String idPedido;
     private LocalDate dataCriacao;
     private TipoEntrega tipoEntrega;
-    private int estimativaEntrega;
+    private LocalDate estimativaEntrega;
 
     public Pedido(TipoEntrega tipoEntrega) {
         if (!tipoEntrega.hasTipoEntrega()) {
