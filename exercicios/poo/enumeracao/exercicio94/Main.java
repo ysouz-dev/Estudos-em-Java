@@ -15,6 +15,20 @@ package exercicios.poo.enumeracao.exercicio94;
 
 public class Main {
     public static void main(String[] args) {
+        Pedido p1 = new Pedido(TipoEntrega.NORMAL);
+        p1.resumo();
+        System.out.println("----------");
+
+        p1.enviarPedido();
+        p1.resumo();
+        System.out.println("----------");
+
+        p1.entregarPedido();
+        p1.resumo();
+        System.out.println("----------");
+
+        // testa enviar pedido depois de ja entregue
+        p1.enviarPedido();
 
     }
 }
