@@ -24,6 +24,7 @@ public class Pedido {
         id++;
         this.dataCriacao = LocalDate.now();
         this.tipoEntrega = tipoEntrega;
+        this.estimativaEntrega = this.dataCriacao.plusDays(this.tipoEntrega.getDias());
 
     }
 }
