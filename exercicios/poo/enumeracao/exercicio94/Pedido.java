@@ -54,4 +54,12 @@ public class Pedido {
         LocalDate dataEnvio = LocalDate.now();
         this.estimativaEntrega = dataEnvio.plusDays(this.tipoEntrega.getDias());
     }
+
+    public void entregarPedido() {
+        if (!this.statusEntrega.podeEntregar()) {
+            throw new IllegalStateException("O pedido só pode ser entregue se o status for ENVIADO.");
+        }
+
+        this.statusEntrega = Status.ENTREGUE;
+    }
 }
