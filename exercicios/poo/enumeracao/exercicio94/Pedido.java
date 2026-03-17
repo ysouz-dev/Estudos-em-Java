@@ -14,6 +14,7 @@ public class Pedido {
     private LocalDate dataCriacao;
     private TipoEntrega tipoEntrega;
     private LocalDate estimativaEntrega;
+    private Status statusEntrega;
 
     public Pedido(TipoEntrega tipoEntrega) {
         if (!tipoEntrega.hasTipoEntrega()) {
@@ -25,6 +26,7 @@ public class Pedido {
         this.dataCriacao = LocalDate.now();
         this.tipoEntrega = tipoEntrega;
         this.estimativaEntrega = this.dataCriacao.plusDays(this.tipoEntrega.getDias());
+        this.statusEntrega = Status.AGUARDANDO;
 
     }
 }
