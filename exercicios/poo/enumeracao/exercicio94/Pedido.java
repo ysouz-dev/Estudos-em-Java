@@ -43,4 +43,15 @@ public class Pedido {
         this.statusEntrega = Status.AGUARDANDO;
 
     }
+
+    public void enviarPedido() {
+        if (!this.statusEntrega.podeEnviar()) {
+            throw new IllegalStateException("O pedido só pode ser enviado se o status for AGUARDANDO.");
+        }
+
+        this.statusEntrega = Status.ENVIADO;
+
+        LocalDate dataEnvio = LocalDate.now();
+        this.estimativaEntrega = dataEnvio.plusDays(this.tipoEntrega.getDias());
+    }
 }
