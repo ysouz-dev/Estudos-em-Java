@@ -15,7 +15,4 @@ public enum TipoEntrega {
         return this.dias;
     }
 
-    public boolean hasTipoEntrega() {
-        return this != null;
-    }
 }

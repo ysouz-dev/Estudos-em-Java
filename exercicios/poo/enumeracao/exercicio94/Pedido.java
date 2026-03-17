@@ -31,8 +31,8 @@ public class Pedido {
     private Status statusEntrega;
 
     public Pedido(TipoEntrega tipoEntrega) {
-        if (!tipoEntrega.hasTipoEntrega()) {
-            throw new IllegalArgumentException();
+        if (tipoEntrega == null) {
+            throw new IllegalArgumentException("Tipo de intrega inválido!");
         }
 
         this.idPedido = ("#" + LocalDate.now().getYear() + "0" + id);
