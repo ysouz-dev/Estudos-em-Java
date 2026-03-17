@@ -14,6 +14,13 @@ public class Pedido {
             }
             return true;
         }
+
+        public boolean podeEntregar() {
+            if (this != ENVIADO) {
+                return false;
+            }
+            return true;
+        }
     }
 
     private static int id = 1;
