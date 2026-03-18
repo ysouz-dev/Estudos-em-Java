@@ -11,6 +11,12 @@ public abstract class Funcionario {
         this.salarioBase = salarioBase;
     }
 
+    private static void validaSalario(double salarioBase) {
+        if (salarioBase <= 0) {
+            throw new IllegalArgumentException("Salário inválido!");
+        }
+    }
+
     private static void validaNome(String nome) {
         if (nome == null || nome.strip().isEmpty() || nome.strip().length() < 3) {
             throw new IllegalArgumentException("Nome inválido!");
