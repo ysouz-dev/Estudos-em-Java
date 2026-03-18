@@ -14,7 +14,15 @@ public abstract class Funcionario {
 
     public void calcularSalario() {
         double bonus = 0;
-        this.salarioBase += bonus;
+        aumentarSalario(bonus);
+    }
+
+    public void aumentarSalario(double valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException("Aumento inválido!");
+        }
+
+        this.salarioBase += valor;
     }
 
     private static void validaSalario(double salarioBase) {
