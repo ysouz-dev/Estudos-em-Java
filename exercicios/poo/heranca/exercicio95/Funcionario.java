@@ -12,7 +12,7 @@ public abstract class Funcionario {
         this.salarioBase = salarioBase;
     }
 
-    public void calcularSalario() {
+    protected void calcularSalario() {
         double bonus = 0;
         aumentarSalario(bonus);
     }
