@@ -5,6 +5,8 @@ public abstract class Funcionario {
     private double salarioBase;
 
     public Funcionario(String nome, double salarioBase) {
+        validaNome(nome);
+
         this.nome = nome.strip().toUpperCase();
         this.salarioBase = salarioBase;
     }
