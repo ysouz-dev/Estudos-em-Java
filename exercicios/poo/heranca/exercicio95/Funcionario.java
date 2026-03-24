@@ -12,6 +12,10 @@ public abstract class Funcionario {
         this.salarioBase = salarioBase;
     }
 
+    public String getNome() {
+        return this.nome;
+    }
+
     protected void calcularSalario() {
         double bonus = 0;
         aumentarSalario(bonus);
