@@ -16,6 +16,10 @@ public abstract class Funcionario {
         return this.nome;
     }
 
+    public double getSalario() {
+        return this.salarioBase;
+    }
+
     protected void calcularSalario() {
         double bonus = 0;
         aumentarSalario(bonus);
