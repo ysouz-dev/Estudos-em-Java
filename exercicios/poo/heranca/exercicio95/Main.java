@@ -25,6 +25,25 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        ArrayList<Funcionario> listaFuncionarios = new ArrayList<Funcionario>();
+        Gerente gerente = new Gerente("Yago", 3000);
+        Desenvolvedor dev = new Desenvolvedor("joao", 2500, "java");
+
+        System.out.println("----------- 1 -------------");
+        listaFuncionarios.add(gerente);
+        listaFuncionarios.add(dev);
+        listarFuncionarios(listaFuncionarios);
+
+        System.out.println("----------- 2 -------------");
+        listaFuncionarios.get(0).calcularSalario();
+        listaFuncionarios.get(1).calcularSalario();
+        listarFuncionarios(listaFuncionarios);
+
+        System.out.println("----------- 3 -------------");
+        ((Desenvolvedor) listaFuncionarios.get(1)).adicionarProjeto();
+        ((Desenvolvedor) listaFuncionarios.get(1)).adicionarProjeto();
+        listaFuncionarios.get(1).calcularSalario();
+        listarFuncionarios(listaFuncionarios);
 
     }
 }
