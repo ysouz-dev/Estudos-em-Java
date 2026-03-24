@@ -17,7 +17,8 @@ public class Main {
             System.out.println("-----------------------------------");
             System.out.println("N. " + contador);
             System.out.println("Nome: " + funcionario.getNome());
-            System.out.println("Salário: " + funcionario.getSalario());
+            System.out.println("Salário Base: R$ %.2f".formatted(funcionario.getSalario()));
+            System.out.println("Salário com bônus: R$ %.2f".formatted(funcionario.calcularSalario()));
             System.out.println("Cargo: " + funcionario.getClass().getSimpleName());
             System.out.println("-----------------------------------");
             contador++;
