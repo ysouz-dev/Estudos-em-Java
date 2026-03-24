@@ -1,7 +1,7 @@
 package exercicios.poo.heranca.exercicio95;
 
 public class Desenvolvedor extends Funcionario {
-    private String linguanguem;
+    private String linguaguem;
     private int projetos;
 
     public Desenvolvedor(String nome, double salarioBase, String linguagem) {
@@ -9,7 +9,7 @@ public class Desenvolvedor extends Funcionario {
             throw new IllegalArgumentException("Linguagem inválida!");
         }
         super(nome, salarioBase);
-        this.linguanguem = linguagem.strip().toUpperCase();
+        this.linguaguem = linguagem.strip().toUpperCase();
         this.projetos = 0;
     }
 
