@@ -6,8 +6,8 @@ public class Gerente extends Funcionario {
     }
 
     @Override
-    public void calcularSalario() {
+    public double calcularSalario() {
         double bonus = 400;
-        aumentarSalario(bonus);
+        return getSalario() + bonus;
     }
 }

@@ -14,9 +14,9 @@ public class Desenvolvedor extends Funcionario {
     }
 
     @Override
-    public void calcularSalario() {
+    public double calcularSalario() {
         double bonus = 400 * this.projetos;
-        aumentarSalario(bonus);
+        return getSalario() + bonus;
     }
 
     public void adicionarProjeto() {
