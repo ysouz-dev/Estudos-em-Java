@@ -26,7 +26,7 @@ public abstract class Funcionario {
     }
 
     public void aumentarSalario(double valor) {
-        if (valor <= 0) {
+        if (valor < 0) {
             throw new IllegalArgumentException("Aumento inválido!");
         }
 
