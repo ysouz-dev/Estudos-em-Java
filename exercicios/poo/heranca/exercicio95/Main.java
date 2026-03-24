@@ -11,6 +11,19 @@ package exercicios.poo.heranca.exercicio95;
 import java.util.ArrayList;
 
 public class Main {
+    public static void listarFuncionarios(ArrayList<Funcionario> lista) {
+        int contador = 1;
+        for (Funcionario funcionario : lista) {
+            System.out.println("-----------------------------------");
+            System.out.println("N. " + contador);
+            System.out.println("Nome: " + funcionario.getNome());
+            System.out.println("Salário: " + funcionario.getSalario());
+            System.out.println("Cargo: " + funcionario.getClass().getSimpleName());
+            System.out.println("-----------------------------------");
+            contador++;
+        }
+    }
+
     public static void main(String[] args) {
 
     }
