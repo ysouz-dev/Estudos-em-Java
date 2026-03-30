@@ -22,6 +22,19 @@ public abstract class Conta {
         this.saldo = this.saldo.add(new BigDecimal(valorDepositado));
     }
 
+    public void sacar(double valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException("Valor de saque inválido!");
+        }
+
+        String valorSacado = String.valueOf(valor);
+        if (this.saldo.subtract(new BigDecimal(valorSacado)).compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Valor de saque inválido!");
+        }
+
+        this.saldo = this.saldo.subtract(new BigDecimal(valorSacado));
+    }
+
     private static void validaTitular(String titular) {
         if (titular == null || titular.isBlank() || titular.strip().length() < 3) {
             throw new IllegalArgumentException("Nome do titular inválido!");
