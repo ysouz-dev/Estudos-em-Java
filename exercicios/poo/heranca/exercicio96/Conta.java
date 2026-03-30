@@ -7,6 +7,8 @@ public abstract class Conta {
     private BigDecimal saldo;
 
     public Conta(String titular) {
+        validaTitular(titular);
+
         this.titular = titular.strip().toUpperCase();
         this.saldo = BigDecimal.ZERO;
     }
