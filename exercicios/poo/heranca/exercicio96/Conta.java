@@ -17,6 +17,11 @@ public abstract class Conta {
         return this.titular;
     }
 
+    public void setTitular(String novoTitular) {
+        validaTitular(novoTitular);
+        this.titular = novoTitular.strip().toUpperCase();
+    }
+
     public BigDecimal getSaldo() {
         return this.saldo;
     }
