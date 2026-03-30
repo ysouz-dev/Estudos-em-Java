@@ -13,6 +13,14 @@ public abstract class Conta {
         this.saldo = BigDecimal.ZERO;
     }
 
+    public String getTitular() {
+        return this.titular;
+    }
+
+    public BigDecimal getSaldo() {
+        return this.saldo;
+    }
+
     public void depositar(double valor) {
         if (valor <= 0) {
             throw new IllegalArgumentException("Valor de depósito inválido!");
