@@ -84,6 +84,20 @@ public abstract class Conta {
         this.saldo = this.saldo.subtract(new BigDecimal(valorSacado));
     }
 
+    public void ativarConta() {
+        if (!this.status.podeAtivar()) {
+            throw new IllegalStateException("Não é possivel ativar uma conta já ativada!");
+        }
+        this.status = Status.ATIVA;
+    }
+
+    public void bloquearConta() {
+        if (!this.status.podeBloquear()) {
+            throw new IllegalStateException("Não é possivel bloquear uma conta já bloqueada!");
+        }
+        this.status = Status.BLOQUEADA;
+    }
+
     private static void validaTitular(String titular) {
         if (titular == null || titular.isBlank() || titular.strip().length() < 3) {
             throw new IllegalArgumentException("Nome do titular inválido!");
