@@ -54,12 +54,12 @@ public abstract class Conta {
         return this.saldo;
     }
 
-    public void depositar(double valor) {
+    public void depositar(BigDecimal valor) {
         if (!this.status.estaAtiva()) {
             throw new IllegalStateException("Não é possivel depositar com a conta BLOQUEADA!");
         }
 
-        if (valor <= 0) {
+        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Valor de depósito inválido!");
         }
 
@@ -67,12 +67,12 @@ public abstract class Conta {
         this.saldo = this.saldo.add(new BigDecimal(valorDepositado));
     }
 
-    public void sacar(double valor) {
+    public void sacar(BigDecimal valor) {
         if (!this.status.estaAtiva()) {
             throw new IllegalStateException("Não é possivel sacar com a conta BLOQUEADA!");
         }
 
-        if (valor <= 0) {
+        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Valor de saque inválido!");
         }
 
