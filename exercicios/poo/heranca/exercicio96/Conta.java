@@ -3,14 +3,42 @@ package exercicios.poo.heranca.exercicio96;
 import java.math.BigDecimal;
 
 public abstract class Conta {
+    public enum Status {
+        ATIVA,
+        BLOQUEADA;
+
+        public boolean estaAtiva() {
+            if (this == Status.BLOQUEADA) {
+                return false;
+            }
+            return true;
+        }
+
+        public boolean podeBloquear() {
+            if (this == Status.BLOQUEADA) {
+                return false;
+            }
+            return true;
+        }
+
+        public boolean podeAtivar() {
+            if (this == Status.ATIVA) {
+                return false;
+            }
+            return true;
+        }
+    }
+
     private String titular;
     private BigDecimal saldo;
+    private Status status;
 
     public Conta(String titular) {
         validaTitular(titular);
 
         this.titular = titular.strip().toUpperCase();
         this.saldo = BigDecimal.ZERO;
+        this.status = Status.ATIVA;
     }
 
     public String getTitular() {
