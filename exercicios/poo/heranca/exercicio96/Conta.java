@@ -96,6 +96,12 @@ public abstract class Conta {
         this.status = Status.BLOQUEADA;
     }
 
+    public void resumo() {
+        System.out.println("Nome do titular: " + this.titular);
+        System.out.println("Saldo disponivel: R$ %.2f".formatted(this.saldo));
+        System.out.println("Status da conta: " + this.status);
+    }
+
     private static void validaTitular(String titular) {
         if (titular == null || titular.isBlank() || titular.strip().length() < 3) {
             throw new IllegalArgumentException("Nome do titular inválido!");
