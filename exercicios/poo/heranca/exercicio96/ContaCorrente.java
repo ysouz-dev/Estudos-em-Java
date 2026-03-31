@@ -15,4 +15,11 @@ public class ContaCorrente extends Conta {
         BigDecimal valorDaTaxa = valor.multiply(this.taxaSaque);
         super.sacar(valor.add(valorDaTaxa));
     }
+
+    @Override
+    public void resumo() {
+        super.resumo();
+        System.out.println("Tipo de conta: Corrente");
+        System.out.println("Taxa de saque: 2%");
+    }
 }
