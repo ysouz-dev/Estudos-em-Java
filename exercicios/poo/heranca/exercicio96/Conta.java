@@ -63,8 +63,7 @@ public abstract class Conta {
             throw new IllegalArgumentException("Valor de depósito inválido!");
         }
 
-        String valorDepositado = String.valueOf(valor);
-        this.saldo = this.saldo.add(new BigDecimal(valorDepositado));
+        this.saldo = this.saldo.add(valor);
     }
 
     public void sacar(BigDecimal valor) {
@@ -76,12 +75,11 @@ public abstract class Conta {
             throw new IllegalArgumentException("Valor de saque inválido!");
         }
 
-        String valorSacado = String.valueOf(valor);
-        if (this.saldo.subtract(new BigDecimal(valorSacado)).compareTo(BigDecimal.ZERO) < 0) {
+        if (this.saldo.subtract(valor).compareTo(BigDecimal.ZERO) < 0) {
             throw new IllegalArgumentException("Valor de saque inválido!");
         }
 
-        this.saldo = this.saldo.subtract(new BigDecimal(valorSacado));
+        this.saldo = this.saldo.subtract(valor);
     }
 
     public void ativarConta() {
