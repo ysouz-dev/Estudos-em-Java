@@ -98,7 +98,7 @@ public abstract class Conta {
 
     public void resumo() {
         System.out.println("Nome do titular: " + this.titular);
-        System.out.println("Saldo disponível: R$ %.2f".formatted(this.saldo));
+        System.out.println("Saldo disponível: R$ %s".formatted(this.saldo.toString()));
         System.out.println("Status da conta: " + this.status);
     }
 
