@@ -30,7 +30,7 @@ public abstract class Personagem {
             System.out.println("O(A)" + personagem.getNome() + " já foi derrotado!");
             return;
         }
-        reduzirVida(this.ataqueBasico);
+        personagem.reduzirVida(this.ataqueBasico);
     }
 
     public void reduzirVida(int quantidade) {

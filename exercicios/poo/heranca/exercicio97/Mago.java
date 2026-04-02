@@ -16,7 +16,7 @@ public class Mago extends Personagem {
             throw new IllegalStateException("O mago precisa recuperar mana para atacar.");
         }
         super.atacar(personagem);
-        reduzirVida(this.ataqueMagico);
+        personagem.reduzirVida(this.ataqueMagico);
         this.mana = false;
     }
 

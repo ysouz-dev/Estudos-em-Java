@@ -19,7 +19,7 @@ public class Arqueiro extends Personagem {
         }
 
         super.atacar(personagem);
-        reduzirVida(ataqueDistancia);
+        personagem.reduzirVida(ataqueDistancia);
         this.flechas--;
 
         if (this.flechas == 0) {

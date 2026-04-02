@@ -16,7 +16,7 @@ public class Guerreiro extends Personagem {
             throw new IllegalStateException("O guerreiro precisa recuperar estamina para atacar.");
         }
         super.atacar(personagem);
-        reduzirVida(this.ataqueForte);
+        personagem.reduzirVida(this.ataqueForte);
         this.estamina = false;
     }
 
