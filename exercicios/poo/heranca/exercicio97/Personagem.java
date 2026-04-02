@@ -11,6 +11,14 @@ public abstract class Personagem {
         this.vida = 100;
     }
 
+    public void reduzirVida(int quantidade) {
+        if (quantidade < 0) {
+            throw new IllegalArgumentException("A quantidade não pode ser negativa.");
+        }
+
+        this.vida -= quantidade;
+    }
+
     private static void validaNome(String nome) {
         if (nome == null || nome.isBlank() || nome.strip().length() < 3) {
             throw new IllegalArgumentException("Nome de personagem inválido!");
