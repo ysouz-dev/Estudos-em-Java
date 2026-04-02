@@ -41,6 +41,13 @@ public abstract class Personagem {
         this.vida -= quantidade;
     }
 
+    public void status() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Tipo: " + this.getClass().getSimpleName());
+        System.out.println("Vida: " + this.vida);
+        System.out.println("Ataque básico: " + this.ataqueBasico);
+    }
+
     private static void validaNome(String nome) {
         if (nome == null || nome.isBlank() || nome.strip().length() < 3) {
             throw new IllegalArgumentException("Nome de personagem inválido!");
