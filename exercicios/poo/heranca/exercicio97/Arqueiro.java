@@ -27,6 +27,13 @@ public class Arqueiro extends Personagem {
         }
     }
 
+    @Override
+    public void status() {
+        super.status();
+        System.out.println("Ataque à distância: " + this.ataqueDistancia);
+        System.out.println("Flechas: " + this.flechas);
+    }
+
     public void recarregarArco() {
         if (this.arcoCarregado) {
             throw new IllegalStateException("O arco já está carregado!");

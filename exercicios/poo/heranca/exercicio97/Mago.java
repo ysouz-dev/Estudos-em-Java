@@ -20,6 +20,12 @@ public class Mago extends Personagem {
         this.mana = false;
     }
 
+    @Override
+    public void status() {
+        super.status();
+        System.out.println("Ataque mágico: " + this.ataqueMagico);
+    }
+
     public void recuperarMana() {
         if (this.mana) {
             throw new IllegalStateException("O mago já possui mana!");

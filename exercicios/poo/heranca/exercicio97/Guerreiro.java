@@ -20,6 +20,12 @@ public class Guerreiro extends Personagem {
         this.estamina = false;
     }
 
+    @Override
+    public void status() {
+        super.status();
+        System.out.println("Ataque forte: " + this.ataqueForte);
+    }
+
     public void recuperarEstamina() {
         if (this.estamina) {
             throw new IllegalStateException("O guerreiro já possui estamina!");
