@@ -11,6 +11,14 @@ public abstract class Personagem {
         this.vida = 100;
     }
 
+    public int getVida() {
+        return this.vida;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
     public void reduzirVida(int quantidade) {
         if (quantidade < 0) {
             throw new IllegalArgumentException("A quantidade não pode ser negativa.");
