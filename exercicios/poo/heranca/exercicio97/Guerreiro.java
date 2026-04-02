@@ -24,6 +24,7 @@ public class Guerreiro extends Personagem {
     public void status() {
         super.status();
         System.out.println("Ataque forte: " + this.ataqueForte);
+        System.out.println("Estamina: " + ((this.estamina) ? "COM" : "SEM"));
     }
 
     public void recuperarEstamina() {

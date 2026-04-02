@@ -24,6 +24,7 @@ public class Mago extends Personagem {
     public void status() {
         super.status();
         System.out.println("Ataque mágico: " + this.ataqueMagico);
+        System.out.println("Mana: " + ((this.mana) ? "COM" : "SEM"));
     }
 
     public void recuperarMana() {
