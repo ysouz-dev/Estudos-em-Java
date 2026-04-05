@@ -37,4 +37,10 @@ public abstract class Pedido {
 
         this.status = Status.ENVIADO;
     }
+
+    public void entregarPedido() {
+        if (!this.status.podeEntregar()) {
+            throw new IllegalStateException("O pedido só pode ser entregue se estiver com status ENVIADO");
+        }
+    }
 }
