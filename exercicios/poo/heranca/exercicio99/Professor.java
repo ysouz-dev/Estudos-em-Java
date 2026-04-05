@@ -45,6 +45,14 @@ public class Professor extends Pessoa {
         this.emAula = false;
     }
 
+    public void aumentarSalario(BigDecimal aumento) {
+        if (aumento.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("Aumento de salário inválido!");
+        }
+
+        this.salario = this.salario.add(aumento);
+    }
+
     private static void validaSalario(BigDecimal salario) {
         if (salario == null) {
             throw new IllegalArgumentException("Salário inválido!");
