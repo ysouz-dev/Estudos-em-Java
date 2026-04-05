@@ -9,6 +9,10 @@ public class Professor extends Pessoa {
         GEOGRAFIA,
         HISTORIA,
         CIENCIAS;
+
+        public boolean isDiciplina() {
+            return this != null;
+        }
     }
 
     private boolean emAula;
