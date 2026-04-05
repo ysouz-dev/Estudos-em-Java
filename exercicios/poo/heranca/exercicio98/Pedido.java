@@ -14,4 +14,11 @@ public abstract class Pedido {
     private int idPedido;
     private LocalDate data;
     private Status status;
+
+    public Pedido() {
+        this.idPedido = idGeral;
+        idGeral++;
+        this.data = LocalDate.now();
+        this.status = Status.AGUARDANDO;
+    }
 }
