@@ -48,6 +48,8 @@ public abstract class Pedido {
         if (!this.status.podeEntregar()) {
             throw new IllegalStateException("O pedido só pode ser entregue se estiver com status ENVIADO");
         }
+
+        this.status = Status.ENTREGUE;
     }
 
     public void resumo() {
