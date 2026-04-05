@@ -29,4 +29,12 @@ public abstract class Pedido {
         this.data = LocalDate.now();
         this.status = Status.AGUARDANDO;
     }
+
+    public void enviarPedido() {
+        if (!this.status.podeEnviar()) {
+            throw new IllegalStateException("O pedido só pode ser enviado se estiver com status AGUARDANDO");
+        }
+
+        this.status = Status.ENVIADO;
+    }
 }
