@@ -7,6 +7,14 @@ public abstract class Pedido {
         AGUARDANDO,
         ENVIADO,
         ENTREGUE;
+
+        public boolean podeEnviar() {
+            return this == AGUARDANDO;
+        }
+
+        public boolean podeEntregar() {
+            return this == ENVIADO;
+        }
     }
 
     private static int idGeral = 1000;
