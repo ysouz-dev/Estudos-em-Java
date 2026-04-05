@@ -55,6 +55,10 @@ public abstract class Pedido {
         System.out.println("Data: %d/%d/%d".formatted(dia, mes, ano));
 
         System.out.println("Status do pedido: " + this.status);
-        System.out.println("Frete: R$ %.2f".formatted(this.frete));
+        System.out.println("Frete: R$ %.2f".formatted(calcularFrete(0)));
+    }
+
+    public double calcularFrete(double taxa) {
+        return this.frete + taxa;
     }
 }
