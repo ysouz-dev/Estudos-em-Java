@@ -43,4 +43,15 @@ public abstract class Pedido {
             throw new IllegalStateException("O pedido só pode ser entregue se estiver com status ENVIADO");
         }
     }
+
+    public void resumo() {
+        System.out.println("Id: " + this.idPedido);
+
+        int dia = this.data.getDayOfMonth();
+        int mes = this.data.getMonthValue();
+        int ano = this.data.getYear();
+        System.out.println("Data: %d/%d/%d".formatted(dia, mes, ano));
+
+        System.out.println("Status do pedido: " + this.status);
+    }
 }
