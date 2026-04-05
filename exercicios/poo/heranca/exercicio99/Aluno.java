@@ -7,6 +7,18 @@ public class Aluno extends Pessoa {
         ATIVO,
         TRANCADO,
         FORMADO;
+
+        public boolean podeTrancar() {
+            return this == ATIVO;
+        }
+
+        public boolean podeFormar() {
+            return this == ATIVO;
+        }
+
+        public boolean podeAtivar() {
+            return this == TRANCADO;
+        }
     }
 
     private static int idGeralMatricula = 1;
