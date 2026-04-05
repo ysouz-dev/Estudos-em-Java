@@ -5,6 +5,9 @@ public abstract class Pessoa {
     private int idade;
 
     public Pessoa(String nome, int idade) {
+        validaNome(nome);
+        validaIdade(idade);
+
         this.nome = nome.strip().toUpperCase();
         this.idade = idade;
     }
