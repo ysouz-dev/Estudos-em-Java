@@ -40,4 +40,12 @@ public class Aluno extends Pessoa {
         this.status = Status.TRANCADO;
     }
 
+    public void ativarMatricula() {
+        if (!this.status.podeAtivar()) {
+            throw new IllegalStateException("A matrícula só pode ser ativada se estiver TRANCADA.");
+        }
+
+        this.status = Status.ATIVO;
+    }
+
 }
