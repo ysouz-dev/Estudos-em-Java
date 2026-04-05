@@ -12,6 +12,10 @@ public abstract class Pessoa {
         this.idade = idade;
     }
 
+    public void fazerAniversário() {
+        this.idade++;
+    }
+
     private static void validaIdade(int idade) {
         if (idade < 1 || idade > 100) {
             throw new IllegalArgumentException("Idade inválida!");
