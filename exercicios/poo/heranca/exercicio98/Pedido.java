@@ -20,12 +20,14 @@ public abstract class Pedido {
     private static int idGeral = 1000;
 
     private int idPedido;
+    private double frete;
     private LocalDate data;
     private Status status;
 
     public Pedido() {
         this.idPedido = idGeral;
         idGeral++;
+        this.frete = 10;
         this.data = LocalDate.now();
         this.status = Status.AGUARDANDO;
     }
@@ -53,5 +55,6 @@ public abstract class Pedido {
         System.out.println("Data: %d/%d/%d".formatted(dia, mes, ano));
 
         System.out.println("Status do pedido: " + this.status);
+        System.out.println("Frete: R$ %.2f".formatted(this.frete));
     }
 }
