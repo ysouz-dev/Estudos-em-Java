@@ -9,6 +9,12 @@ public abstract class Pessoa {
         this.idade = idade;
     }
 
+    private static void validaIdade(int idade) {
+        if (idade < 1 || idade > 100) {
+            throw new IllegalArgumentException("Idade inválida!");
+        }
+    }
+
     private static void validaNome(String nome) {
         if (nome == null || nome.isBlank() || nome.strip().length() < 3) {
             throw new IllegalArgumentException("Nome inválido!");
