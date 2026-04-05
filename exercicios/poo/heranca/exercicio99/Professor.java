@@ -28,6 +28,21 @@ public class Professor extends Pessoa {
         super(nome, idade);
         this.disciplina = disciplina;
         this.salario = salario;
+        this.emAula = false;
+    }
+
+    public void iniciarAula() {
+        if (this.emAula) {
+            throw new IllegalStateException("O professor já está dando aula.");
+        }
+        this.emAula = true;
+    }
+
+    public void encerrarAula() {
+        if (!this.emAula) {
+            throw new IllegalStateException("O professor já não está dando aula.");
+        }
+        this.emAula = false;
     }
 
     private static void validaSalario(BigDecimal salario) {
