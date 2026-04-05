@@ -63,8 +63,4 @@ public abstract class Pedido {
         System.out.println("Status do pedido: " + this.status);
         System.out.println("Frete: R$ %.2f".formatted(this.frete));
     }
-
-    public double calcularFrete() {
-        return this.frete;
-    }
 }

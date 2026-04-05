@@ -7,7 +7,6 @@ public class PedidoInternacional extends Pedido {
         this.taxaImportacao = 5;
     }
 
-    @Override
     public double calcularFrete() {
         return this.getFrete() + this.taxaImportacao;
     }
