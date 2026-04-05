@@ -16,6 +16,11 @@ public abstract class Pessoa {
         this.idade++;
     }
 
+    public void resumo() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+    }
+
     private static void validaIdade(int idade) {
         if (idade < 1 || idade > 100) {
             throw new IllegalArgumentException("Idade inválida!");
