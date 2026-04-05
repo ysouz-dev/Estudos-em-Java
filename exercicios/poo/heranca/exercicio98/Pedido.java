@@ -36,6 +36,10 @@ public abstract class Pedido {
         return this.frete;
     }
 
+    public int getId() {
+        return this.idPedido;
+    }
+
     public void enviarPedido() {
         if (!this.status.podeEnviar()) {
             throw new IllegalStateException("O pedido só pode ser enviado se estiver com status AGUARDANDO");
