@@ -64,7 +64,7 @@ public abstract class Pedido {
         System.out.println("Frete: R$ %.2f".formatted(this.frete));
     }
 
-    public double calcularFrete(double taxa) {
-        return this.frete + taxa;
+    public double calcularFrete() {
+        return this.frete;
     }
 }

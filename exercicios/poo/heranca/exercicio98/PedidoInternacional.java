@@ -8,15 +8,14 @@ public class PedidoInternacional extends Pedido {
     }
 
     @Override
-    public double calcularFrete(double taxa) {
-        taxa = this.taxaImportacao;
-        return this.getFrete() + taxa;
+    public double calcularFrete() {
+        return this.getFrete() + this.taxaImportacao;
     }
 
     @Override
     public void resumo() {
         super.resumo();
         System.out.println("Taxa de importação: R$ %.2f".formatted(this.taxaImportacao));
-        System.out.println("Frete total: R$ %.2f".formatted(calcularFrete(taxaImportacao)));
+        System.out.println("Frete total: R$ %.2f".formatted(calcularFrete()));
     }
 }
