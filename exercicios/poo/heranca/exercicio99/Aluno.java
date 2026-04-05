@@ -48,4 +48,11 @@ public class Aluno extends Pessoa {
         this.status = Status.ATIVO;
     }
 
+    public void formar() {
+        if (!this.status.podeFormar()) {
+            throw new IllegalStateException("O aluno só pode se formar se a matrícula estiver ATIVA.");
+        }
+
+        this.status = Status.FORMADO;
+    }
 }
