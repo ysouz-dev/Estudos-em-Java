@@ -58,7 +58,7 @@ public class Professor extends Pessoa {
             throw new IllegalArgumentException("Salário inválido!");
         }
 
-        if (salario.compareTo(new BigDecimal("1621.00")) < 1621) {
+        if (salario.compareTo(new BigDecimal("1621.00")) < 0) {
             throw new IllegalArgumentException("O salário do professor não pode ser menor que o salário mínimo.");
         }
     }
