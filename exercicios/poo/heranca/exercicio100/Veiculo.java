@@ -39,6 +39,10 @@ public abstract class Veiculo {
         public boolean podeColocarEmManutencao() {
             return this == DESLIGADO;
         }
+
+        public boolean podeRetirarDaManutencao() {
+            return this == EM_MANUTENCAO;
+        }
     }
 
     private String marca;
@@ -80,6 +84,13 @@ public abstract class Veiculo {
             throw new IllegalStateException("O veículo só pode ir para manutenção se estiver desligado.");
         }
         this.status = Status.EM_MANUTENCAO;
+    }
+
+    public void retirarDaManutencao() {
+        if (!this.status.podeRetirarDaManutencao()) {
+            throw new IllegalStateException("O veículo só pode voltar da manutenção caso ele esteja nela.");
+        }
+        this.status = Status.DESLIGADO;
     }
 
     public void ligar() {
