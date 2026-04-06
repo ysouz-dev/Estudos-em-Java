@@ -10,7 +10,7 @@ public class Professor extends Pessoa {
         HISTORIA,
         CIENCIAS;
 
-        public static void isDiciplina(Disciplina disciplina) {
+        public static void isDisciplina(Disciplina disciplina) {
             if (disciplina == null) {
                 throw new IllegalArgumentException("Disciplina inválida!");
             }
@@ -22,7 +22,7 @@ public class Professor extends Pessoa {
     private BigDecimal salario;
 
     public Professor(String nome, int idade, Disciplina disciplina, BigDecimal salario) {
-        Disciplina.isDiciplina(disciplina);
+        Disciplina.isDisciplina(disciplina);
         validaSalario(salario);
 
         super(nome, idade);
