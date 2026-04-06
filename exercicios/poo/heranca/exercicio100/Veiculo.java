@@ -31,4 +31,14 @@ public abstract class Veiculo {
         this.tipoCombustivel = combustivel;
         this.status = Status.DESLIGADO;
     }
+
+    private static void validaMarcaEModelo(String marca, String modelo) {
+        if (marca == null || marca.isBlank() || marca.strip().length() < 3) {
+            throw new IllegalArgumentException("Marca inválida!");
+        }
+
+        if (modelo == null || modelo.isBlank() || modelo.strip().length() < 2) {
+            throw new IllegalArgumentException("Modelo inválido!");
+        }
+    }
 }
