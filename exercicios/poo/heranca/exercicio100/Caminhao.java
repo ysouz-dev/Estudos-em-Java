@@ -5,7 +5,15 @@ public class Caminhao extends Veiculo {
 
     public Caminhao(String marca, String modelo, double tanque, double consumo, TipoCombustivel combustivel,
             double pesoCarga) {
+
+        validaPeso(pesoCarga);
         super(marca, modelo, tanque, consumo, combustivel);
         this.pesoCarga = pesoCarga;
+    }
+
+    private static void validaPeso(double peso) {
+        if (peso < 0) {
+            throw new IllegalArgumentException("O peso não pode ser negativo.");
+        }
     }
 }
