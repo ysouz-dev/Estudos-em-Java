@@ -19,6 +19,10 @@ public abstract class Veiculo {
         LIGADO,
         EM_MOVIMENTO,
         EM_MANUTENCAO;
+
+        public boolean podeLigar() {
+            return this == DESLIGADO;
+        }
     }
 
     private String marca;
@@ -41,6 +45,13 @@ public abstract class Veiculo {
         this.consumoPorLitro = consumoPorLitro;
         this.tipoCombustivel = combustivel;
         this.status = Status.DESLIGADO;
+    }
+
+    public void ligar() {
+        if (!this.status.podeLigar()) {
+            throw new IllegalStateException("O veículo só pode ser ligado se estiver desligado.");
+        }
+        this.status = Status.LIGADO;
     }
 
     private static void validaMarcaEModelo(String marca, String modelo) {
