@@ -24,7 +24,8 @@ public class Moto extends Veiculo {
 
     @Override
     public double calcularAutonomia() {
-        return super.calcularAutonomia() + 0.1 * super.calcularAutonomia();
+        double autonomiaBase = super.calcularAutonomia();
+        return autonomiaBase + 0.1 * autonomiaBase;
     }
 
     @Override

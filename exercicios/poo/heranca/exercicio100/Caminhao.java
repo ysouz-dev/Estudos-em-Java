@@ -14,7 +14,8 @@ public class Caminhao extends Veiculo {
     @Override
     public double calcularAutonomia() {
         if (this.pesoCarga > 0) {
-            return super.calcularAutonomia() - 0.2 * super.calcularAutonomia();
+            double autonomiaBase = super.calcularAutonomia();
+            return autonomiaBase - 0.2 * autonomiaBase;
         }
         return super.calcularAutonomia();
     }
