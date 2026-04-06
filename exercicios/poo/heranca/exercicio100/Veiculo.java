@@ -30,6 +30,11 @@ public abstract class Veiculo {
 
     public Veiculo(String marca, String modelo, double capacidadeTanque, double consumoPorLitro,
             TipoCombustivel combustivel) {
+
+        validaMarcaEModelo(marca, modelo);
+        validaCapacidadeEConsumo(capacidadeTanque, consumoPorLitro);
+        TipoCombustivel.isCombustivel(combustivel);
+
         this.marca = marca.strip().toUpperCase();
         this.modelo = modelo.strip().toUpperCase();
         this.capacidadeTanque = capacidadeTanque;
