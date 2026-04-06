@@ -62,4 +62,12 @@ public class Professor extends Pessoa {
             throw new IllegalArgumentException("O salário do professor não pode ser menor que o salário mínimo.");
         }
     }
+
+    @Override
+    public void resumo() {
+        super.resumo();
+        System.out.println("Disciplina: " + this.disciplina);
+        System.out.println("Salário: R$ %s".formatted(this.salario.toString()));
+        System.out.println("Em aula: " + ((this.emAula) ? "SIM" : "NÃO"));
+    }
 }

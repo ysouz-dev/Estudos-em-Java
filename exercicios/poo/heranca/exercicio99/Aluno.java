@@ -55,4 +55,11 @@ public class Aluno extends Pessoa {
 
         this.status = Status.FORMADO;
     }
+
+    @Override
+    public void resumo() {
+        super.resumo();
+        System.out.println("Matrícula: " + this.matricula);
+        System.out.println("Status: " + this.status);
+    }
 }
