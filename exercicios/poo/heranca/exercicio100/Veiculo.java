@@ -72,7 +72,7 @@ public abstract class Veiculo {
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Combustível: " + this.tipoCombustivel);
         System.out.println("Status: " + this.status);
-        System.out.println("Autonomia: " + calcularAutonomia() + " Km/L");
+        System.out.println("Autonomia: " + calcularAutonomia() + " Km");
     }
 
     public double calcularAutonomia() {
@@ -119,6 +119,10 @@ public abstract class Veiculo {
             throw new IllegalStateException("O veículo precisa estar ligado para desligar.");
         }
         this.status = Status.DESLIGADO;
+    }
+
+    public String getModelo() {
+        return this.modelo;
     }
 
     private static void validaMarcaEModelo(String marca, String modelo) {
