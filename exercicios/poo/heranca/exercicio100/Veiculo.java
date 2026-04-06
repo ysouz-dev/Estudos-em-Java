@@ -72,7 +72,7 @@ public abstract class Veiculo {
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Combustível: " + this.tipoCombustivel);
         System.out.println("Status: " + this.status);
-        System.out.println("Autonomia: " + calcularAutonomia());
+        System.out.println("Autonomia: " + calcularAutonomia() + " Km/L");
     }
 
     public double calcularAutonomia() {
