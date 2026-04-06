@@ -21,4 +21,9 @@ public class Moto extends Veiculo {
         super(marca, modelo, tanque, consumo, combustivel);
         this.partidaEletrica = partida;
     }
+
+    @Override
+    public double calcularAutonomia() {
+        return super.calcularAutonomia() + 0.1 * super.calcularAutonomia();
+    }
 }
