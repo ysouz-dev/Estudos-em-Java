@@ -27,6 +27,10 @@ public abstract class Veiculo {
         public boolean podeMover() {
             return this == LIGADO;
         }
+
+        public boolean podeParar() {
+            return this == EM_MOVIMENTO;
+        }
     }
 
     private String marca;
@@ -63,6 +67,13 @@ public abstract class Veiculo {
             throw new IllegalStateException("O veículo só pode se mover se estiver ligado.");
         }
         this.status = Status.EM_MOVIMENTO;
+    }
+
+    public void parar() {
+        if (!this.status.podeParar()) {
+            throw new IllegalStateException("O veículo precisa estar em movimento para parar");
+        }
+        this.status = Status.LIGADO;
     }
 
     private static void validaMarcaEModelo(String marca, String modelo) {
