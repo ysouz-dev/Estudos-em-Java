@@ -35,6 +35,10 @@ public abstract class Veiculo {
         public boolean podeDesligar() {
             return this == LIGADO;
         }
+
+        public boolean podeColocarEmManutencao() {
+            return this == DESLIGADO;
+        }
     }
 
     private String marca;
@@ -69,6 +73,13 @@ public abstract class Veiculo {
 
     public double calcularAutonomia() {
         return this.capacidadeTanque * this.consumoPorLitro;
+    }
+
+    public void colocarEmManutencao() {
+        if (!this.status.podeColocarEmManutencao()) {
+            throw new IllegalStateException("O veículo só pode ir para manutenção se estiver desligado.");
+        }
+        this.status = Status.EM_MANUTENCAO;
     }
 
     public void ligar() {
