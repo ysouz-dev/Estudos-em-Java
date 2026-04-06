@@ -59,6 +59,10 @@ public abstract class Veiculo {
         this.status = Status.DESLIGADO;
     }
 
+    public double calcularAutonomia() {
+        return this.capacidadeTanque * this.consumoPorLitro;
+    }
+
     public void ligar() {
         if (!this.status.podeLigar()) {
             throw new IllegalStateException("O veículo só pode ser ligado se estiver desligado.");
