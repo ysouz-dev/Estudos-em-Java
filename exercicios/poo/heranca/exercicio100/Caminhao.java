@@ -19,6 +19,12 @@ public class Caminhao extends Veiculo {
         return super.calcularAutonomia();
     }
 
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        System.out.println("Peso da carga: " + this.pesoCarga + " kg");
+    }
+
     private static void validaPeso(double peso) {
         if (peso < 0) {
             throw new IllegalArgumentException("O peso não pode ser negativo.");

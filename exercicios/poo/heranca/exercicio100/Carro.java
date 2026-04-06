@@ -9,6 +9,12 @@ public class Carro extends Veiculo {
         this.portas = portas;
     }
 
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        System.out.println("Quantidade de portas: " + this.portas);
+    }
+
     private static void validaPortas(int portas) {
         if (portas < 2) {
             throw new IllegalArgumentException("Um carro precisa ter no mínimo 2 portas.");
