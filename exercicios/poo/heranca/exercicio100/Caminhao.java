@@ -6,8 +6,8 @@ public class Caminhao extends Veiculo {
     public Caminhao(String marca, String modelo, double tanque, double consumo, TipoCombustivel combustivel,
             double pesoCarga) {
 
-        validaPeso(pesoCarga);
         super(marca, modelo, tanque, consumo, combustivel);
+        validaPeso(pesoCarga);
         this.pesoCarga = pesoCarga;
     }
 

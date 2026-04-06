@@ -17,8 +17,8 @@ public class Moto extends Veiculo {
     public Moto(String marca, String modelo, double tanque, double consumo, TipoCombustivel combustivel,
             PartidaEletrica partida) {
 
-        PartidaEletrica.isPartidaEletrica(partida);
         super(marca, modelo, tanque, consumo, combustivel);
+        PartidaEletrica.isPartidaEletrica(partida);
         this.partidaEletrica = partida;
     }
 
