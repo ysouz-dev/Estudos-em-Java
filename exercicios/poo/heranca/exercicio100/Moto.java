@@ -1,0 +1,36 @@
+package exercicios.poo.heranca.exercicio100;
+
+public class Moto extends Veiculo {
+    public enum PartidaEletrica {
+        SIM,
+        NAO;
+
+        public static void isPartidaEletrica(PartidaEletrica partida) {
+            if (partida == null) {
+                throw new IllegalArgumentException("Entrada referente a partida elétrica inválida!");
+            }
+        }
+    }
+
+    private PartidaEletrica partidaEletrica;
+
+    public Moto(String marca, String modelo, double tanque, double consumo, TipoCombustivel combustivel,
+            PartidaEletrica partida) {
+
+        super(marca, modelo, tanque, consumo, combustivel);
+        PartidaEletrica.isPartidaEletrica(partida);
+        this.partidaEletrica = partida;
+    }
+
+    @Override
+    public double calcularAutonomia() {
+        double autonomiaBase = super.calcularAutonomia();
+        return autonomiaBase + 0.1 * autonomiaBase;
+    }
+
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        System.out.println("Partida elétrica: " + this.partidaEletrica);
+    }
+}
