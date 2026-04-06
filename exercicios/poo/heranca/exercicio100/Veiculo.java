@@ -41,4 +41,14 @@ public abstract class Veiculo {
             throw new IllegalArgumentException("Modelo inválido!");
         }
     }
+
+    private static void validaCapacidadeEConsumo(double capacidadeTanque, double consumo) {
+        if (capacidadeTanque < 1) {
+            throw new IllegalArgumentException("A capacidade do tanque não pode ser menor que 1 Litro");
+        }
+
+        if (consumo < 1) {
+            throw new IllegalArgumentException("O consumo do veículo não pode ser menor que 1 KM/L");
+        }
+    }
 }
