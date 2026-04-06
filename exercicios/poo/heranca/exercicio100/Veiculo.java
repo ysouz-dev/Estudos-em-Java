@@ -59,6 +59,14 @@ public abstract class Veiculo {
         this.status = Status.DESLIGADO;
     }
 
+    public void exibirDados() {
+        System.out.println("Marca: " + this.marca);
+        System.out.println("Modelo: " + this.modelo);
+        System.out.println("Combustível: " + this.tipoCombustivel);
+        System.out.println("Status: " + this.status);
+        System.out.println("Autonomia: " + calcularAutonomia());
+    }
+
     public double calcularAutonomia() {
         return this.capacidadeTanque * this.consumoPorLitro;
     }
