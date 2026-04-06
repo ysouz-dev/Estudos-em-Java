@@ -6,6 +6,12 @@ public abstract class Veiculo {
         ETANOL,
         DIESEL,
         ELETRICO;
+
+        public static void isCombustivel(TipoCombustivel combustivel) {
+            if (combustivel == null) {
+                throw new IllegalArgumentException("Combustivel inválido!");
+            }
+        }
     }
 
     public enum Status {
