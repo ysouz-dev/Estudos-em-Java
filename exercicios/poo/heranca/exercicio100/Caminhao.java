@@ -11,6 +11,14 @@ public class Caminhao extends Veiculo {
         this.pesoCarga = pesoCarga;
     }
 
+    @Override
+    public double calcularAutonomia() {
+        if (this.pesoCarga > 0) {
+            return super.calcularAutonomia() - 0.2 * super.calcularAutonomia();
+        }
+        return super.calcularAutonomia();
+    }
+
     private static void validaPeso(double peso) {
         if (peso < 0) {
             throw new IllegalArgumentException("O peso não pode ser negativo.");
