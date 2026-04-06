@@ -51,7 +51,7 @@ public class Main {
 
         // faz aniversario de todos da lista
         for (Pessoa pessoa : listaGeral) {
-            pessoa.fazerAniversário();
+            pessoa.fazerAniversario();
         }
 
         // mostra resumo de todos novamente
