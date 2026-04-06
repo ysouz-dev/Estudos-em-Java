@@ -15,6 +15,7 @@ Repositório dedicado aos meus estudos e à minha evolução na linguagem Java.
     1. Classes e objetos
     2. Encapsulamento
     3. Enumeração
+    4. Herança
 
 ---
 
