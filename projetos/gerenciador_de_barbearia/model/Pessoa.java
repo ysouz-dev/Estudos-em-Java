@@ -18,6 +18,18 @@ public abstract class Pessoa {
         this.sexo = sexo;
     }
 
+    private static void validaCPF(String cpf) {
+        if (cpf == null || cpf.isBlank() || cpf.strip().length() < 11) {
+            throw new IllegalArgumentException("Cpf inválido!");
+        }
+
+        for (int i = 0; i < cpf.strip().length(); i++) {
+            if (!Character.isDigit(cpf.strip().charAt(i))) {
+                throw new IllegalArgumentException("Cpf inválido!");
+            }
+        }
+    }
+
     private static void validaIdade(int idade) {
         if (idade < 1 || idade > 100) {
             throw new IllegalArgumentException("Idade inválida!");
