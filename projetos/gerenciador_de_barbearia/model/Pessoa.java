@@ -17,4 +17,17 @@ public abstract class Pessoa {
         this.cpf = cpf;
         this.sexo = sexo;
     }
+
+    private static void validaNome(String nome) {
+        if (nome == null || nome.isBlank() || nome.strip().length() < 3) {
+            throw new IllegalArgumentException("Nome inválido!");
+        }
+
+        String nomeSemEspaco = nome.replace(" ", "");
+        for (int i = 0; i < nomeSemEspaco.length(); i++) {
+            if (!Character.isLetter(nomeSemEspaco.charAt(i))) {
+                throw new IllegalArgumentException("Nome inválido!");
+            }
+        }
+    }
 }
