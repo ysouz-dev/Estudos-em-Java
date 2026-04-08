@@ -4,6 +4,12 @@ public abstract class Pessoa {
     public enum Sexo {
         MASCULINO,
         FEMININO;
+
+        public static void isSexo(Sexo sexo) {
+            if (sexo == null) {
+                throw new IllegalArgumentException("Sexo inválido!");
+            }
+        }
     }
 
     private String nome;
