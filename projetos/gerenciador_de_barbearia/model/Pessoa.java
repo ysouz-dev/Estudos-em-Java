@@ -18,9 +18,14 @@ public abstract class Pessoa {
     private final Sexo sexo;
 
     public Pessoa(String nome, int idade, String cpf, Sexo sexo) {
+        validaNome(nome);
+        validaIdade(idade);
+        validaCPF(cpf);
+        Sexo.isSexo(sexo);
+
         this.nome = nome.strip().toUpperCase();
         this.idade = idade;
-        this.cpf = cpf;
+        this.cpf = cpf.strip();
         this.sexo = sexo;
     }
 
