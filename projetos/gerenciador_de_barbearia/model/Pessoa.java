@@ -53,7 +53,7 @@ public abstract class Pessoa {
     }
 
     private static void validaCPF(String cpf) {
-        if (cpf == null || cpf.isBlank() || cpf.strip().length() < 11) {
+        if (cpf == null || cpf.isBlank() || cpf.strip().length() != 11) {
             throw new IllegalArgumentException("Cpf inválido!");
         }
 
