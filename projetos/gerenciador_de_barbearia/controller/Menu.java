@@ -120,7 +120,11 @@ public final class Menu {
     }
 
     public void listarClientes() {
-        this.sistema.listarClientes();
+        try {
+            this.sistema.listarClientes();
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void encerrarSistema() {
