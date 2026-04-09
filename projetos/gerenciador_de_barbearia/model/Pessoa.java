@@ -36,6 +36,22 @@ public abstract class Pessoa {
         System.out.println("Sexo: " + this.sexo);
     }
 
+    public String getNome() {
+        return this.nome;
+    }
+
+    public int getIdade() {
+        return this.idade;
+    }
+
+    public String getCPF() {
+        return this.cpf;
+    }
+
+    public Sexo getSexo() {
+        return this.sexo;
+    }
+
     private static void validaCPF(String cpf) {
         if (cpf == null || cpf.isBlank() || cpf.strip().length() < 11) {
             throw new IllegalArgumentException("Cpf inválido!");
