@@ -9,4 +9,13 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
     public SistemaBarbeariaImpl() {
         this.listaPessoas = new ArrayList<Pessoa>();
     }
+
+    private static boolean containsPessoa(ArrayList<Pessoa> lista, Pessoa pessoa) {
+        for (Pessoa people : lista) {
+            if (pessoa.getCPF().equals(people.getCPF())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
