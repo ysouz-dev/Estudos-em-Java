@@ -7,6 +7,10 @@ public class ClienteDiario extends Pessoa {
         super(nome, idade, cpf, sexo);
     }
 
+    public void aumentarAtendimento() {
+        this.totalAtendimentos++;
+    }
+
     @Override
     public void resumo() {
         super.resumo();
