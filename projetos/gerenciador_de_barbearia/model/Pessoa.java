@@ -4,8 +4,16 @@ import projetos.gerenciador_de_barbearia.util.Validador;
 
 public abstract class Pessoa {
     public enum Sexo {
-        MASCULINO,
-        FEMININO;
+        MASCULINO("MASCULINO", "M"),
+        FEMININO("FEMININO", "F");
+
+        private String nome;
+        private String sigla;
+
+        Sexo(String nome, String sigla) {
+            this.nome = nome;
+            this.sigla = sigla;
+        }
 
         public static void isSexo(Sexo sexo) {
             if (sexo == null) {
