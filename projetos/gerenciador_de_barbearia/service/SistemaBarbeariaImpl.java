@@ -10,6 +10,14 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         this.listaPessoas = new ArrayList<Pessoa>();
     }
 
+    @Override
+    public void cadastrarAtendimento(Pessoa pessoa) {
+        if (containsPessoa(listaPessoas, pessoa)) {
+            throw new IllegalArgumentException("O sistema já possui um cliente cadastrado com esse cpf.");
+        }
+        listaPessoas.add(pessoa);
+    }
+
     private static boolean containsPessoa(ArrayList<Pessoa> lista, Pessoa pessoa) {
         for (Pessoa people : lista) {
             if (pessoa.getCPF().equals(people.getCPF())) {
