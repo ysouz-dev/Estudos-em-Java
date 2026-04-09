@@ -15,6 +15,15 @@ public abstract class Pessoa {
             this.sigla = sigla;
         }
 
+        public Sexo toSexo(String sexo) {
+            for (Sexo sex : Sexo.values()) {
+                if (sexo.strip().equalsIgnoreCase(sex.nome) || sexo.strip().equalsIgnoreCase(sex.sigla)) {
+                    return sex;
+                }
+            }
+            throw new IllegalArgumentException("Sexo inválido!");
+        }
+
         public static void isSexo(Sexo sexo) {
             if (sexo == null) {
                 throw new IllegalArgumentException("Sexo inválido!");
