@@ -29,6 +29,7 @@ public final class Menu {
             try {
                 System.out.print("Digite um número da opção: ");
                 escolha = this.scanner.nextInt();
+                this.scanner.nextLine();
                 if (escolha < 1 || escolha > 1) {
                     System.out.printf("Erro: %d não é uma opção válida!%n", escolha);
                 }
