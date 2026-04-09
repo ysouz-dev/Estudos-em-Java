@@ -1,6 +1,7 @@
 package projetos.gerenciador_de_barbearia.service;
 
 import projetos.gerenciador_de_barbearia.model.Pessoa;
+import projetos.gerenciador_de_barbearia.util.Formatador;
 import java.util.ArrayList;
 
 public final class SistemaBarbeariaImpl implements SistemaBarbearia {
@@ -25,6 +26,7 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         }
         for (Pessoa pessoa : listaPessoas) {
             pessoa.resumo();
+            Formatador.linha();
         }
     }
 
