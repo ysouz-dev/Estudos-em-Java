@@ -18,6 +18,17 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         listaPessoas.add(pessoa);
     }
 
+    @Override
+    public void listarClientes() {
+        int contador = 1;
+        for (Pessoa pessoa : listaPessoas) {
+            System.out.println(contador + ".");
+            pessoa.resumo();
+            System.out.println("=============================");
+            contador++;
+        }
+    }
+
     private static boolean containsPessoa(ArrayList<Pessoa> lista, Pessoa pessoa) {
         for (Pessoa people : lista) {
             if (pessoa.getCPF().equals(people.getCPF())) {
