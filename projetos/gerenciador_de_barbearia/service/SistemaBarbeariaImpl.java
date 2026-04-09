@@ -21,16 +21,10 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
     @Override
     public void listarClientes() {
         if (this.listaPessoas.size() == 0) {
-            System.out.println("Nenhum cliente cadastrado!");
-            return;
+            throw new IllegalStateException("Nenhum cliente cadastrado no sistema.");
         }
-
-        int contador = 1;
         for (Pessoa pessoa : listaPessoas) {
-            System.out.println(contador + ".");
             pessoa.resumo();
-            System.out.println("=============================");
-            contador++;
         }
     }
 
