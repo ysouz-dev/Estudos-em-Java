@@ -11,7 +11,7 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
     }
 
     @Override
-    public void cadastrarAtendimento(Pessoa pessoa) {
+    public void cadastrarCliente(Pessoa pessoa) {
         if (containsPessoa(listaPessoas, pessoa)) {
             throw new IllegalArgumentException("O sistema já possui um cliente cadastrado com esse cpf.");
         }
