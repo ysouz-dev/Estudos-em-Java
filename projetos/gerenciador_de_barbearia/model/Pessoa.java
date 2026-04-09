@@ -5,7 +5,8 @@ import projetos.gerenciador_de_barbearia.util.Validador;
 public abstract class Pessoa {
     public enum Sexo {
         MASCULINO("MASCULINO", "M"),
-        FEMININO("FEMININO", "F");
+        FEMININO("FEMININO", "F"),
+        NAO_INFORMADO("NÃO INFORMADO", "N");
 
         private String nome;
         private String sigla;
