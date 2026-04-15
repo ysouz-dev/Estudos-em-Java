@@ -8,4 +8,6 @@ public interface SistemaBarbearia {
     public void cadastrarAtendimento(Pessoa pessoa, Atendimento atendimento);
 
     public void listarClientes();
+
+    public void listarAtendimentos();
 }
