@@ -54,6 +54,10 @@ public class Atendimento {
         servicosRealizados.add(servico);
     }
 
+    public Pessoa getPessoa() {
+        return this.cliente;
+    }
+
     private static boolean containsServico(ArrayList<Servico> lista, Servico servico) {
         for (Servico service : lista) {
             if (servico == service) {
