@@ -60,7 +60,7 @@ public class Atendimento {
         System.out.println("Serviços:");
         BigDecimal somaServicos = BigDecimal.ZERO;
         for (Servico service : this.servicosRealizados) {
-            System.out.println(service + "R$ %.2f".formatted(service.getValor()));
+            System.out.println(service + " R$ %.2f".formatted(service.getValor()));
             somaServicos = somaServicos.add(service.getValor());
         }
         System.out.println("Total serviço: R$ %.2f".formatted(somaServicos));
