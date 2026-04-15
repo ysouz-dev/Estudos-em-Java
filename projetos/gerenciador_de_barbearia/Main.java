@@ -15,6 +15,10 @@ public class Main {
                     break;
 
                 case 2:
+                    menu.cadastrarAtendimento();
+                    break;
+
+                case 3:
                     menu.listarClientes();
                     break;
 
