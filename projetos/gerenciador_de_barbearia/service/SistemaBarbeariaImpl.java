@@ -49,6 +49,18 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         }
     }
 
+    @Override
+    public void listarAtendimentos() {
+        if (this.listaAtendimentos.size() == 0) {
+            throw new IllegalStateException("Nenhum atendimento cadastrado no sistema.");
+        }
+        int contador = 1;
+        for (Atendimento atendimento : this.listaAtendimentos) {
+            System.out.println("N. " + contador);
+            atendimento.getServicos();
+        }
+    }
+
     private static boolean containsPessoa(ArrayList<Pessoa> lista, Pessoa pessoa) {
         for (Pessoa people : lista) {
             if (pessoa.getCPF().equals(people.getCPF())) {
