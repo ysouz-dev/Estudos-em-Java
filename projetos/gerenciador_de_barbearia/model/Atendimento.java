@@ -26,7 +26,7 @@ public class Atendimento {
         public static void listarServicos() {
             Servico[] lista = Servico.values();
             for (int i = 0; i < lista.length; i++) {
-                System.out.printf("[ %d ] - %s R$ %.2f", i + 1, lista[i], lista[i].getValor());
+                System.out.printf("[ %d ] - %s R$ %.2f%n", i + 1, lista[i], lista[i].getValor());
             }
         }
 
