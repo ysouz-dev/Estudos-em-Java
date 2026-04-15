@@ -13,6 +13,15 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         this.listaAtendimentos = new ArrayList<Atendimento>();
     }
 
+    public Pessoa findPessoa(String cpf) {
+        for (Pessoa people : this.listaPessoas) {
+            if (people.getCPF().equals(cpf)) {
+                return people;
+            }
+        }
+        throw new IllegalArgumentException("Esse CPF não está cadastrado no sistema.");
+    }
+
     @Override
     public void cadastrarCliente(Pessoa pessoa) {
         if (containsPessoa(listaPessoas, pessoa)) {
