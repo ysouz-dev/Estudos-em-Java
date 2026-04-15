@@ -32,7 +32,7 @@ public class Atendimento {
 
         public static void isServico(Servico servico) {
             if (servico == null) {
-                throw new IllegalArgumentException("Servico inválido!");
+                throw new IllegalArgumentException("Serviço inválido!");
             }
         }
     }
@@ -48,7 +48,7 @@ public class Atendimento {
     public void adicionarServico(Servico servico) {
         Servico.isServico(servico);
         if (containsServico(servicosRealizados, servico)) {
-            throw new IllegalArgumentException("Esse servico já foi registrado nesse atendimento.");
+            throw new IllegalArgumentException("Esse serviço já foi registrado nesse atendimento.");
         }
 
         servicosRealizados.add(servico);
