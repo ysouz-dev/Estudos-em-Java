@@ -1,14 +1,16 @@
 package projetos.gerenciador_de_barbearia.service;
 
-import projetos.gerenciador_de_barbearia.model.Pessoa;
+import projetos.gerenciador_de_barbearia.model.*;
 import projetos.gerenciador_de_barbearia.util.Formatador;
 import java.util.ArrayList;
 
 public final class SistemaBarbeariaImpl implements SistemaBarbearia {
     private ArrayList<Pessoa> listaPessoas;
+    private ArrayList<Atendimento> listaAtendimentos;
 
     public SistemaBarbeariaImpl() {
         this.listaPessoas = new ArrayList<Pessoa>();
+        this.listaAtendimentos = new ArrayList<Atendimento>();
     }
 
     @Override
@@ -17,6 +19,14 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
             throw new IllegalArgumentException("O sistema já possui um cliente cadastrado com esse cpf.");
         }
         listaPessoas.add(pessoa);
+    }
+
+    @Override
+    public void cadastrarAtendimento(Pessoa pessoa, Atendimento atendimento) {
+        if (!containsPessoa(listaPessoas, pessoa)) {
+            throw new IllegalArgumentException("Esse cliente não possui cadastro no sistema.");
+        }
+        listaAtendimentos.add(atendimento);
     }
 
     @Override
