@@ -19,6 +19,10 @@ public class Atendimento {
             this.valor = valor;
         }
 
+        public BigDecimal getValor() {
+            return this.valor;
+        }
+
         public static void isServico(Servico servico) {
             if (servico == null) {
                 throw new IllegalArgumentException("Servico inválido!");
