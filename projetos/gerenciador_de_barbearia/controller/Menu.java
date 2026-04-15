@@ -2,8 +2,7 @@ package projetos.gerenciador_de_barbearia.controller;
 
 import projetos.gerenciador_de_barbearia.util.*;
 import projetos.gerenciador_de_barbearia.service.SistemaBarbeariaImpl;
-import projetos.gerenciador_de_barbearia.model.Pessoa.Sexo;
-import projetos.gerenciador_de_barbearia.model.ClienteDiario;
+import projetos.gerenciador_de_barbearia.model.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -21,7 +20,8 @@ public final class Menu {
         Formatador.titulo("Barbearia YS");
         Formatador.linha();
         System.out.println("[ 1 ] Cadastrar Cliente");
-        System.out.println("[ 2 ] Listar Clientes");
+        System.out.println("[ 2 ] Cadastrar Atendimento");
+        System.out.println("[ 3 ] Listar Clientes");
         System.out.println("[ 0 ] Encerrar Sistema");
 
         Formatador.linha();
@@ -32,7 +32,7 @@ public final class Menu {
                 System.out.print("Digite um número da opção: ");
                 escolha = this.scanner.nextInt();
                 this.scanner.nextLine();
-                if (escolha < 0 || escolha > 2) {
+                if (escolha < 0 || escolha > 3) {
                     System.out.printf("Erro: %d não é uma opção válida!%n", escolha);
                 }
             } catch (InputMismatchException e) {
@@ -40,7 +40,7 @@ public final class Menu {
                 this.scanner.nextLine();
             }
             Formatador.linha();
-        } while (escolha < 0 || escolha > 2);
+        } while (escolha < 0 || escolha > 3);
         return escolha;
     }
 
@@ -95,12 +95,12 @@ public final class Menu {
         }
 
         // leitura e validacao de sexo
-        Sexo sexo = Sexo.NAO_INFORMADO;
+        Pessoa.Sexo sexo = Pessoa.Sexo.NAO_INFORMADO;
         while (true) {
             try {
                 System.out.print("Sexo: ");
                 sexo = sexo.toSexo(this.scanner.nextLine());
-                Sexo.isSexo(sexo);
+                Pessoa.Sexo.isSexo(sexo);
                 break;
 
             } catch (IllegalArgumentException e) {
@@ -117,6 +117,76 @@ public final class Menu {
             System.out.println("Erro: " + e.getMessage());
         }
         Formatador.linha();
+    }
+
+    public void cadastrarAtendimento() {
+
+        String cpf;
+        Pessoa cliente;
+        // leitura e validacao do cpf
+        while (true) {
+            try {
+                System.out.print("Cpf do cliente: ");
+                cpf = this.scanner.nextLine();
+                Validador.validaCPF(cpf);
+                break;
+
+            } catch (IllegalArgumentException e) {
+                System.out.println("Erro: " + e.getMessage());
+                Formatador.linha();
+            }
+        }
+
+        // verifica se existe cliente com esse cpf no sistema
+        try {
+            cliente = this.sistema.findPessoa(cpf);
+            Formatador.linha();
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+            return;
+        }
+
+        Atendimento atendimento = new Atendimento(cliente);
+
+        // looping de adicao de serviços ao atendimento
+        int opcao = Integer.MIN_VALUE;
+        while (opcao != 0) {
+            Atendimento.Servico[] lista = Atendimento.Servico.values();
+            Atendimento.Servico.listarServicos();
+            System.out.println("[ 0 ] - Finalizar");
+
+            // leitura e validacao da opcao desejada de servico
+            do {
+                Formatador.linha();
+                System.out.print("Digite o número do serviço realizado: ");
+                try {
+                    opcao = this.scanner.nextInt();
+
+                    if (opcao < 0 || opcao > lista.length) {
+                        System.out.printf("Erro: %d não é uma opção válida.%n", opcao);
+                    }
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Erro: Digite um número para a opção.");
+                    this.scanner.nextLine();
+                }
+            } while (opcao < 0 || opcao > lista.length);
+
+            // adiciona o servico ao atendimento
+            if (opcao != 0) {
+                try {
+                    atendimento.adicionarServico(lista[opcao - 1]);
+
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Erro: " + e.getMessage());
+                }
+            }
+        }
+        if (atendimento.getPessoa() instanceof ClienteDiario) {
+            ((ClienteDiario) atendimento.getPessoa()).aumentarAtendimento();
+        }
+        System.out.println("Atendimento cadastrado!");
     }
 
     public void listarClientes() {
