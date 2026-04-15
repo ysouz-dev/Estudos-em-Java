@@ -51,4 +51,13 @@ public class Atendimento {
         servicosRealizados.add(servico);
     }
 
+    private static boolean containsServico(ArrayList<Servico> lista, Servico servico) {
+        for (Servico service : lista) {
+            if (servico == service) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
