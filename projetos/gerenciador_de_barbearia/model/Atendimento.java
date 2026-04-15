@@ -58,6 +58,10 @@ public class Atendimento {
         return this.cliente;
     }
 
+    public ArrayList<Servico> getServicos() {
+        return new ArrayList<Servico>(this.servicosRealizados);
+    }
+
     private static boolean containsServico(ArrayList<Servico> lista, Servico servico) {
         for (Servico service : lista) {
             if (servico == service) {
