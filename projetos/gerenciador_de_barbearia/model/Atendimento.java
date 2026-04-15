@@ -47,6 +47,9 @@ public class Atendimento {
 
     public void adicionarServico(Servico servico) {
         Servico.isServico(servico);
+        if (containsServico(servicosRealizados, servico)) {
+            throw new IllegalArgumentException("Esse servico já foi registrado nesse atendimento.");
+        }
 
         servicosRealizados.add(servico);
     }
