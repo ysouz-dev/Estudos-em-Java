@@ -1,16 +1,23 @@
 package projetos.gerenciador_de_barbearia.model;
 
 import java.util.ArrayList;
+import java.math.BigDecimal;
 
 public class Atendimento {
     public enum Servico {
-        CORTE,
-        PEZINHO,
-        SOBRANCELHA,
-        BARBA,
-        PIGMENTACAO,
-        LUZES,
-        PLATINADO;
+        CORTE(new BigDecimal("20")),
+        PEZINHO(new BigDecimal("5")),
+        SOBRANCELHA(new BigDecimal("5")),
+        BARBA(new BigDecimal("10")),
+        PIGMENTACAO(new BigDecimal("5")),
+        LUZES(new BigDecimal("45")),
+        PLATINADO(new BigDecimal("50"));
+
+        private BigDecimal valor;
+
+        Servico(BigDecimal valor) {
+            this.valor = valor;
+        }
     }
 
     private ArrayList<Servico> servicosRealizados;
