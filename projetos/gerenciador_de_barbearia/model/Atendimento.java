@@ -23,6 +23,13 @@ public class Atendimento {
             return this.valor;
         }
 
+        public static void listarServicos() {
+            Servico[] lista = Servico.values();
+            for (int i = 0; i < lista.length; i++) {
+                System.out.printf("[ %d ] - %s R$ %.2f", i + 1, lista[i], lista[i].getValor());
+            }
+        }
+
         public static void isServico(Servico servico) {
             if (servico == null) {
                 throw new IllegalArgumentException("Servico inválido!");
