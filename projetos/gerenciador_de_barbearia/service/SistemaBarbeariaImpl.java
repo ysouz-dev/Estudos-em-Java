@@ -1,6 +1,7 @@
 package projetos.gerenciador_de_barbearia.service;
 
 import projetos.gerenciador_de_barbearia.model.Pessoa;
+import projetos.gerenciador_de_barbearia.util.Formatador;
 import java.util.ArrayList;
 
 public final class SistemaBarbeariaImpl implements SistemaBarbearia {
@@ -16,6 +17,17 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
             throw new IllegalArgumentException("O sistema já possui um cliente cadastrado com esse cpf.");
         }
         listaPessoas.add(pessoa);
+    }
+
+    @Override
+    public void listarClientes() {
+        if (this.listaPessoas.size() == 0) {
+            throw new IllegalStateException("Nenhum cliente cadastrado no sistema.");
+        }
+        for (Pessoa pessoa : listaPessoas) {
+            pessoa.resumo();
+            Formatador.linha();
+        }
     }
 
     private static boolean containsPessoa(ArrayList<Pessoa> lista, Pessoa pessoa) {

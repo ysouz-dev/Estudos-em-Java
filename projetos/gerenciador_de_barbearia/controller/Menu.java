@@ -1,6 +1,6 @@
 package projetos.gerenciador_de_barbearia.controller;
 
-import projetos.gerenciador_de_barbearia.util.Validador;
+import projetos.gerenciador_de_barbearia.util.*;
 import projetos.gerenciador_de_barbearia.service.SistemaBarbeariaImpl;
 import projetos.gerenciador_de_barbearia.model.Pessoa.Sexo;
 import projetos.gerenciador_de_barbearia.model.ClienteDiario;
@@ -17,13 +17,14 @@ public final class Menu {
     }
 
     public int MenuPrincipal() {
-        System.out.println("=============================");
-        System.out.println("==       Barbearia YS      ==");
-        System.out.println("=============================");
+        Formatador.linha();
+        Formatador.titulo("Barbearia YS");
+        Formatador.linha();
         System.out.println("[ 1 ] Cadastrar Cliente");
+        System.out.println("[ 2 ] Listar Clientes");
         System.out.println("[ 0 ] Encerrar Sistema");
 
-        System.out.println("=============================");
+        Formatador.linha();
 
         int escolha = Integer.MIN_VALUE;
         do {
@@ -31,19 +32,20 @@ public final class Menu {
                 System.out.print("Digite um número da opção: ");
                 escolha = this.scanner.nextInt();
                 this.scanner.nextLine();
-                if (escolha < 0 || escolha > 1) {
+                if (escolha < 0 || escolha > 2) {
                     System.out.printf("Erro: %d não é uma opção válida!%n", escolha);
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Erro: Digite um número das opções!");
                 this.scanner.nextLine();
             }
-        } while (escolha < 0 || escolha > 1);
+            Formatador.linha();
+        } while (escolha < 0 || escolha > 2);
         return escolha;
     }
 
     public void cadastrarCliente() {
-        System.out.println("====== Cadastro Cliente =====");
+        Formatador.tituloDinamico("Cadastro Cliente", 6);
 
         // leitura e validacao de nome
         String nome;
@@ -114,7 +116,15 @@ public final class Menu {
         } catch (IllegalArgumentException e) {
             System.out.println("Erro: " + e.getMessage());
         }
-        System.out.println("=============================");
+        Formatador.linha();
+    }
+
+    public void listarClientes() {
+        try {
+            this.sistema.listarClientes();
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void encerrarSistema() {

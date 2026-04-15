@@ -14,6 +14,10 @@ public class Main {
                     menu.cadastrarCliente();
                     break;
 
+                case 2:
+                    menu.listarClientes();
+                    break;
+
                 case 0:
                     menu.encerrarSistema();
                     break;
