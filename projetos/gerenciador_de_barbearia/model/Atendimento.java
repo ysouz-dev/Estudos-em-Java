@@ -18,6 +18,12 @@ public class Atendimento {
         Servico(BigDecimal valor) {
             this.valor = valor;
         }
+
+        public static void isServico(Servico servico) {
+            if (servico == null) {
+                throw new IllegalArgumentException("Servico inválido!");
+            }
+        }
     }
 
     private ArrayList<Servico> servicosRealizados;
@@ -26,6 +32,12 @@ public class Atendimento {
     public Atendimento(Pessoa cliente) {
         this.servicosRealizados = new ArrayList<Servico>();
         this.cliente = cliente;
+    }
+
+    public void adicionarServico(Servico servico) {
+        Servico.isServico(servico);
+
+        servicosRealizados.add(servico);
     }
 
 }
