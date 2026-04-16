@@ -77,6 +77,10 @@ public class Atendimento {
         return this.cliente;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
     private static boolean containsServico(ArrayList<Servico> lista, Servico servico) {
         for (Servico service : lista) {
             if (servico == service) {
