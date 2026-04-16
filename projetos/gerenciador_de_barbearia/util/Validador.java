@@ -32,4 +32,17 @@ public abstract class Validador {
             }
         }
     }
+
+    public static void validaId(String id) {
+        if (id == null || id.isBlank() || !id.startsWith("#")) {
+            throw new IllegalArgumentException("Id inválido!");
+        }
+
+        String idSemHash = id.replace("#", "");
+        for (int i = 0; i < idSemHash.length(); i++) {
+            if (!Character.isDigit(idSemHash.charAt(i))) {
+                throw new IllegalArgumentException("Id inválido!");
+            }
+        }
+    }
 }
