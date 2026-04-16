@@ -207,6 +207,37 @@ public final class Menu {
         }
     }
 
+    public void removerCliente() {
+        // leitura e validacao do cpf
+        String cpf;
+        while (true) {
+            try {
+                System.out.print("Digite o cpf do cliente: ");
+                cpf = this.scanner.nextLine();
+                Validador.validaCPF(cpf);
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+
+        // verifica se existe cliente com esse cpf no sistema
+        Pessoa cliente;
+        try {
+            cliente = this.sistema.findPessoa(cpf);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
+        // remove cliente do sistema
+        try {
+            this.sistema.removerCliente(cliente);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public void encerrarSistema() {
         System.out.println("Sistema encerrado. Volte sempre!");
         this.scanner.close();
