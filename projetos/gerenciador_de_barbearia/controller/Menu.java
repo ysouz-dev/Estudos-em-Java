@@ -239,6 +239,37 @@ public final class Menu {
         }
     }
 
+    public void removerAtendimento() {
+        // leitura e validacao do id
+        String id;
+        while (true) {
+            try {
+                System.out.print("Digite o id do atendimento: ");
+                id = this.scanner.nextLine();
+                Validador.validaId(id);
+                break;
+
+            } catch (IllegalArgumentException e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+
+        // procura o atendimento de acordo com o id
+        Atendimento atendimento;
+        try {
+            atendimento = this.sistema.findAtendimento(id);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
+        try {
+            this.sistema.removerAtendimento(atendimento);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public void encerrarSistema() {
         System.out.println("Sistema encerrado. Volte sempre!");
         this.scanner.close();
