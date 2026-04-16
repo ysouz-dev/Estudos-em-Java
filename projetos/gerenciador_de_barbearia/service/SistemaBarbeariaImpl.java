@@ -22,6 +22,15 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         throw new IllegalArgumentException("Esse CPF não está cadastrado no sistema.");
     }
 
+    public Atendimento findAtendimento(String id) {
+        for (Atendimento atendimento : this.listaAtendimentos) {
+            if (atendimento.getId().equals(id)) {
+                return atendimento;
+            }
+        }
+        throw new IllegalArgumentException("Id de atendimento inexistente ou incorreto.");
+    }
+
     @Override
     public void cadastrarCliente(Pessoa pessoa) {
         if (containsPessoa(listaPessoas, pessoa)) {
