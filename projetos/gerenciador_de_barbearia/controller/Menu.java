@@ -235,6 +235,7 @@ public final class Menu {
         // remove cliente do sistema
         try {
             this.sistema.removerCliente(cliente);
+            System.out.println("Cliente removido!");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -266,6 +267,7 @@ public final class Menu {
 
         try {
             this.sistema.removerAtendimento(atendimento);
+            System.out.println("Atendimento removido!");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
