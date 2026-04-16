@@ -84,4 +84,13 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         }
         return false;
     }
+
+    private static boolean containsAtendimento(ArrayList<Atendimento> lista, Atendimento atendimento) {
+        for (Atendimento atend : lista) {
+            if (atendimento.getId().equals(atend.getId())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
