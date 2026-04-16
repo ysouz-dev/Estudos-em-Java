@@ -31,10 +31,7 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
     }
 
     @Override
-    public void cadastrarAtendimento(Pessoa pessoa, Atendimento atendimento) {
-        if (!containsPessoa(listaPessoas, pessoa)) {
-            throw new IllegalArgumentException("Esse cliente não possui cadastro no sistema.");
-        }
+    public void cadastrarAtendimento(Atendimento atendimento) {
         listaAtendimentos.add(atendimento);
     }
 
@@ -46,6 +43,19 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         for (Pessoa pessoa : listaPessoas) {
             pessoa.resumo();
             Formatador.linha();
+        }
+    }
+
+    @Override
+    public void listarAtendimentos() {
+        if (this.listaAtendimentos.size() == 0) {
+            throw new IllegalStateException("Nenhum atendimento cadastrado no sistema.");
+        }
+        int contador = 1;
+        for (Atendimento atendimento : this.listaAtendimentos) {
+            System.out.println("N. " + contador);
+            atendimento.resumo();
+            contador++;
         }
     }
 

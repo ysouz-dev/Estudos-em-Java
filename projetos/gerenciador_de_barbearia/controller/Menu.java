@@ -22,6 +22,7 @@ public final class Menu {
         System.out.println("[ 1 ] Cadastrar Cliente");
         System.out.println("[ 2 ] Cadastrar Atendimento");
         System.out.println("[ 3 ] Listar Clientes");
+        System.out.println("[ 4 ] Listar Atendimentos");
         System.out.println("[ 0 ] Encerrar Sistema");
 
         Formatador.linha();
@@ -32,7 +33,7 @@ public final class Menu {
                 System.out.print("Digite um número da opção: ");
                 escolha = this.scanner.nextInt();
                 this.scanner.nextLine();
-                if (escolha < 0 || escolha > 3) {
+                if (escolha < 0 || escolha > 4) {
                     System.out.printf("Erro: %d não é uma opção válida!%n", escolha);
                 }
             } catch (InputMismatchException e) {
@@ -40,7 +41,7 @@ public final class Menu {
                 this.scanner.nextLine();
             }
             Formatador.linha();
-        } while (escolha < 0 || escolha > 3);
+        } while (escolha < 0 || escolha > 4);
         return escolha;
     }
 
@@ -186,12 +187,21 @@ public final class Menu {
         if (atendimento.getPessoa() instanceof ClienteDiario) {
             ((ClienteDiario) atendimento.getPessoa()).aumentarAtendimento();
         }
+        this.sistema.cadastrarAtendimento(atendimento);
         System.out.println("Atendimento cadastrado!");
     }
 
     public void listarClientes() {
         try {
             this.sistema.listarClientes();
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void listarAtendimentos() {
+        try {
+            this.sistema.listarAtendimentos();
         } catch (IllegalStateException e) {
             System.out.println(e.getMessage());
         }

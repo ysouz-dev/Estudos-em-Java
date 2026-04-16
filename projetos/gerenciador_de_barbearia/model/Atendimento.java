@@ -1,6 +1,7 @@
 package projetos.gerenciador_de_barbearia.model;
 
 import java.util.ArrayList;
+import projetos.gerenciador_de_barbearia.util.Formatador;
 import java.math.BigDecimal;
 
 public class Atendimento {
@@ -52,6 +53,18 @@ public class Atendimento {
         }
 
         servicosRealizados.add(servico);
+    }
+
+    public void resumo() {
+        System.out.println("Cliente: " + this.cliente.getNome());
+        System.out.println("Serviços:");
+        BigDecimal somaServicos = BigDecimal.ZERO;
+        for (Servico service : this.servicosRealizados) {
+            System.out.println(service + " R$ %.2f".formatted(service.getValor()));
+            somaServicos = somaServicos.add(service.getValor());
+        }
+        System.out.println("Total serviço: R$ %.2f".formatted(somaServicos));
+        Formatador.linha();
     }
 
     public Pessoa getPessoa() {

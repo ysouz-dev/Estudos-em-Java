@@ -22,6 +22,10 @@ public class Main {
                     menu.listarClientes();
                     break;
 
+                case 4:
+                    menu.listarAtendimentos();
+                    break;
+
                 case 0:
                     menu.encerrarSistema();
                     break;
