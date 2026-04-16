@@ -123,6 +123,7 @@ public final class Menu {
     }
 
     public void cadastrarAtendimento() {
+        Formatador.tituloDinamico("Cadastro Atendimento", 4);
 
         String cpf;
         Pessoa cliente;
@@ -210,6 +211,8 @@ public final class Menu {
     }
 
     public void removerCliente() {
+        Formatador.tituloDinamico("Remover Cliente", 6);
+
         // leitura e validacao do cpf
         String cpf;
         while (true) {
@@ -242,6 +245,8 @@ public final class Menu {
     }
 
     public void removerAtendimento() {
+        Formatador.tituloDinamico("Remover Atendimento", 4);
+
         // leitura e validacao do id
         String id;
         while (true) {
