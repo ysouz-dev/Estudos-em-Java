@@ -23,6 +23,7 @@ public final class Menu {
         System.out.println("[ 2 ] Cadastrar Atendimento");
         System.out.println("[ 3 ] Listar Clientes");
         System.out.println("[ 4 ] Listar Atendimentos");
+        System.out.println("[ 5 ] Remover Cliente");
         System.out.println("[ 0 ] Encerrar Sistema");
 
         Formatador.linha();
@@ -33,7 +34,7 @@ public final class Menu {
                 System.out.print("Digite um número da opção: ");
                 escolha = this.scanner.nextInt();
                 this.scanner.nextLine();
-                if (escolha < 0 || escolha > 4) {
+                if (escolha < 0 || escolha > 5) {
                     System.out.printf("Erro: %d não é uma opção válida!%n", escolha);
                 }
             } catch (InputMismatchException e) {
@@ -41,7 +42,7 @@ public final class Menu {
                 this.scanner.nextLine();
             }
             Formatador.linha();
-        } while (escolha < 0 || escolha > 4);
+        } while (escolha < 0 || escolha > 5);
         return escolha;
     }
 
@@ -203,6 +204,37 @@ public final class Menu {
         try {
             this.sistema.listarAtendimentos();
         } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void removerCliente() {
+        // leitura e validacao do cpf
+        String cpf;
+        while (true) {
+            try {
+                System.out.print("Digite o cpf do cliente: ");
+                cpf = this.scanner.nextLine();
+                Validador.validaCPF(cpf);
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+
+        // verifica se existe cliente com esse cpf no sistema
+        Pessoa cliente;
+        try {
+            cliente = this.sistema.findPessoa(cpf);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
+        // remove cliente do sistema
+        try {
+            this.sistema.removerCliente(cliente);
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
