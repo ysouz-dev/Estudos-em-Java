@@ -38,12 +38,17 @@ public class Atendimento {
         }
     }
 
+    private static int idGeral = 1;
+
+    private String id;
     private ArrayList<Servico> servicosRealizados;
     private Pessoa cliente;
 
     public Atendimento(Pessoa cliente) {
         this.servicosRealizados = new ArrayList<Servico>();
         this.cliente = cliente;
+        this.id = ("#" + idGeral);
+        idGeral++;
     }
 
     public void adicionarServico(Servico servico) {
@@ -56,6 +61,7 @@ public class Atendimento {
     }
 
     public void resumo() {
+        System.out.println("ID: " + this.id);
         System.out.println("Cliente: " + this.cliente.getNome());
         System.out.println("Serviços:");
         BigDecimal somaServicos = BigDecimal.ZERO;
