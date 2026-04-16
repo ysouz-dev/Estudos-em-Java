@@ -26,6 +26,10 @@ public class Main {
                     menu.listarAtendimentos();
                     break;
 
+                case 5:
+                    menu.removerCliente();
+                    break;
+
                 case 0:
                     menu.encerrarSistema();
                     break;
