@@ -3,14 +3,17 @@ package projetos.gerenciador_de_barbearia.service;
 import projetos.gerenciador_de_barbearia.model.*;
 import projetos.gerenciador_de_barbearia.util.Formatador;
 import java.util.ArrayList;
+import java.math.BigDecimal;
 
 public final class SistemaBarbeariaImpl implements SistemaBarbearia {
     private ArrayList<Pessoa> listaPessoas;
     private ArrayList<Atendimento> listaAtendimentos;
+    private BigDecimal totalFaturado;
 
     public SistemaBarbeariaImpl() {
         this.listaPessoas = new ArrayList<Pessoa>();
         this.listaAtendimentos = new ArrayList<Atendimento>();
+        this.totalFaturado = BigDecimal.ZERO;
     }
 
     public Pessoa findPessoa(String cpf) {
@@ -44,6 +47,7 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         if (containsAtendimento(this.listaAtendimentos, atendimento)) {
             throw new IllegalArgumentException("O sistema já possui esse atendimento cadastrado.");
         }
+        this.totalFaturado = this.totalFaturado.add(atendimento.getTotal());
         listaAtendimentos.add(atendimento);
     }
 
@@ -84,6 +88,7 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         if (!containsAtendimento(this.listaAtendimentos, atendimento)) {
             throw new IllegalArgumentException("Atendimento não está cadastrado no sistema.");
         }
+        this.totalFaturado = this.totalFaturado.subtract(atendimento.getTotal());
         this.listaAtendimentos.remove(atendimento);
     }
 
