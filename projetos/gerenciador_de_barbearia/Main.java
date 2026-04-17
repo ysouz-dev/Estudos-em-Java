@@ -34,6 +34,10 @@ public class Main {
                     menu.removerAtendimento();
                     break;
 
+                case 7:
+                    menu.estatisticas();
+                    break;
+
                 case 0:
                     menu.encerrarSistema();
                     break;
