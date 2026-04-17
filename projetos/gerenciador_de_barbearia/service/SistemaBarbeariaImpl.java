@@ -33,7 +33,7 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
 
     @Override
     public void cadastrarCliente(Pessoa pessoa) {
-        if (containsPessoa(listaPessoas, pessoa)) {
+        if (containsPessoa(this.listaPessoas, pessoa)) {
             throw new IllegalArgumentException("O sistema já possui um cliente cadastrado com esse cpf.");
         }
         listaPessoas.add(pessoa);
@@ -41,6 +41,9 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
 
     @Override
     public void cadastrarAtendimento(Atendimento atendimento) {
+        if (containsAtendimento(this.listaAtendimentos, atendimento)) {
+            throw new IllegalArgumentException("O sistema já possui esse atendimento cadastrado.");
+        }
         listaAtendimentos.add(atendimento);
     }
 
