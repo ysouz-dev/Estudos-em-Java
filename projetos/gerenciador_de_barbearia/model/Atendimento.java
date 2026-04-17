@@ -82,6 +82,10 @@ public class Atendimento {
         return this.id;
     }
 
+    public BigDecimal getTotal() {
+        return this.totalServico;
+    }
+
     private static boolean containsServico(ArrayList<Servico> lista, Servico servico) {
         for (Servico service : lista) {
             if (servico == service) {
