@@ -24,6 +24,7 @@ public final class Menu {
         System.out.println("[ 3 ] Listar Clientes");
         System.out.println("[ 4 ] Listar Atendimentos");
         System.out.println("[ 5 ] Remover Cliente");
+        System.out.println("[ 6 ] Remover Atendimento");
         System.out.println("[ 0 ] Encerrar Sistema");
 
         Formatador.linha();
@@ -34,7 +35,7 @@ public final class Menu {
                 System.out.print("Digite um número da opção: ");
                 escolha = this.scanner.nextInt();
                 this.scanner.nextLine();
-                if (escolha < 0 || escolha > 5) {
+                if (escolha < 0 || escolha > 6) {
                     System.out.printf("Erro: %d não é uma opção válida!%n", escolha);
                 }
             } catch (InputMismatchException e) {
@@ -42,7 +43,7 @@ public final class Menu {
                 this.scanner.nextLine();
             }
             Formatador.linha();
-        } while (escolha < 0 || escolha > 5);
+        } while (escolha < 0 || escolha > 6);
         return escolha;
     }
 
@@ -122,6 +123,7 @@ public final class Menu {
     }
 
     public void cadastrarAtendimento() {
+        Formatador.tituloDinamico("Cadastro Atendimento", 4);
 
         String cpf;
         Pessoa cliente;
@@ -209,6 +211,8 @@ public final class Menu {
     }
 
     public void removerCliente() {
+        Formatador.tituloDinamico("Remover Cliente", 6);
+
         // leitura e validacao do cpf
         String cpf;
         while (true) {
@@ -234,6 +238,41 @@ public final class Menu {
         // remove cliente do sistema
         try {
             this.sistema.removerCliente(cliente);
+            System.out.println("Cliente removido!");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void removerAtendimento() {
+        Formatador.tituloDinamico("Remover Atendimento", 4);
+
+        // leitura e validacao do id
+        String id;
+        while (true) {
+            try {
+                System.out.print("Digite o id do atendimento: ");
+                id = this.scanner.nextLine();
+                Validador.validaId(id);
+                break;
+
+            } catch (IllegalArgumentException e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+
+        // procura o atendimento de acordo com o id
+        Atendimento atendimento;
+        try {
+            atendimento = this.sistema.findAtendimento(id);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
+        try {
+            this.sistema.removerAtendimento(atendimento);
+            System.out.println("Atendimento removido!");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }

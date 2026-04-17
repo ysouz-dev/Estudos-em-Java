@@ -30,6 +30,10 @@ public class Main {
                     menu.removerCliente();
                     break;
 
+                case 6:
+                    menu.removerAtendimento();
+                    break;
+
                 case 0:
                     menu.encerrarSistema();
                     break;

@@ -22,6 +22,15 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         throw new IllegalArgumentException("Esse CPF não está cadastrado no sistema.");
     }
 
+    public Atendimento findAtendimento(String id) {
+        for (Atendimento atendimento : this.listaAtendimentos) {
+            if (atendimento.getId().equals(id)) {
+                return atendimento;
+            }
+        }
+        throw new IllegalArgumentException("Id de atendimento inexistente ou incorreto.");
+    }
+
     @Override
     public void cadastrarCliente(Pessoa pessoa) {
         if (containsPessoa(listaPessoas, pessoa)) {
@@ -61,15 +70,32 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
 
     @Override
     public void removerCliente(Pessoa pessoa) {
-        if (!containsPessoa(listaPessoas, pessoa)) {
+        if (!containsPessoa(this.listaPessoas, pessoa)) {
             throw new IllegalArgumentException("Cliente não está cadastrado no sistema.");
         }
         this.listaPessoas.remove(pessoa);
     }
 
+    @Override
+    public void removerAtendimento(Atendimento atendimento) {
+        if (!containsAtendimento(this.listaAtendimentos, atendimento)) {
+            throw new IllegalArgumentException("Atendimento não está cadastrado no sistema.");
+        }
+        this.listaAtendimentos.remove(atendimento);
+    }
+
     private static boolean containsPessoa(ArrayList<Pessoa> lista, Pessoa pessoa) {
         for (Pessoa people : lista) {
             if (pessoa.getCPF().equals(people.getCPF())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean containsAtendimento(ArrayList<Atendimento> lista, Atendimento atendimento) {
+        for (Atendimento atend : lista) {
+            if (atendimento.getId().equals(atend.getId())) {
                 return true;
             }
         }

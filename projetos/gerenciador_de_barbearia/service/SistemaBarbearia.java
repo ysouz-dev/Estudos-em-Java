@@ -12,4 +12,6 @@ public interface SistemaBarbearia {
     public void listarAtendimentos();
 
     public void removerCliente(Pessoa pessoa);
+
+    public void removerAtendimento(Atendimento atendimento);
 }
