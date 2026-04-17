@@ -92,6 +92,13 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         this.listaAtendimentos.remove(atendimento);
     }
 
+    @Override
+    public void estatisticas() {
+        System.out.println("Total de clientes: " + this.listaPessoas.size());
+        System.out.println("Total de Atendimentos: " + this.listaAtendimentos.size());
+        System.out.println("Total faturado: R$ %.2f".formatted(this.totalFaturado));
+    }
+
     private static boolean containsPessoa(ArrayList<Pessoa> lista, Pessoa pessoa) {
         for (Pessoa people : lista) {
             if (pessoa.getCPF().equals(people.getCPF())) {
