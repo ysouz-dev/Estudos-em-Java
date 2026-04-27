@@ -3,14 +3,17 @@ package projetos.gerenciador_de_barbearia.service;
 import projetos.gerenciador_de_barbearia.model.*;
 import projetos.gerenciador_de_barbearia.util.Formatador;
 import java.util.ArrayList;
+import java.math.BigDecimal;
 
 public final class SistemaBarbeariaImpl implements SistemaBarbearia {
     private ArrayList<Pessoa> listaPessoas;
     private ArrayList<Atendimento> listaAtendimentos;
+    private BigDecimal totalFaturado;
 
     public SistemaBarbeariaImpl() {
         this.listaPessoas = new ArrayList<Pessoa>();
         this.listaAtendimentos = new ArrayList<Atendimento>();
+        this.totalFaturado = BigDecimal.ZERO;
     }
 
     public Pessoa findPessoa(String cpf) {
@@ -33,7 +36,7 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
 
     @Override
     public void cadastrarCliente(Pessoa pessoa) {
-        if (containsPessoa(listaPessoas, pessoa)) {
+        if (containsPessoa(this.listaPessoas, pessoa)) {
             throw new IllegalArgumentException("O sistema já possui um cliente cadastrado com esse cpf.");
         }
         listaPessoas.add(pessoa);
@@ -41,6 +44,10 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
 
     @Override
     public void cadastrarAtendimento(Atendimento atendimento) {
+        if (containsAtendimento(this.listaAtendimentos, atendimento)) {
+            throw new IllegalArgumentException("O sistema já possui esse atendimento cadastrado.");
+        }
+        this.totalFaturado = this.totalFaturado.add(atendimento.getTotal());
         listaAtendimentos.add(atendimento);
     }
 
@@ -81,7 +88,15 @@ public final class SistemaBarbeariaImpl implements SistemaBarbearia {
         if (!containsAtendimento(this.listaAtendimentos, atendimento)) {
             throw new IllegalArgumentException("Atendimento não está cadastrado no sistema.");
         }
+        this.totalFaturado = this.totalFaturado.subtract(atendimento.getTotal());
         this.listaAtendimentos.remove(atendimento);
+    }
+
+    @Override
+    public void estatisticas() {
+        System.out.println("Total de clientes: " + this.listaPessoas.size());
+        System.out.println("Total de Atendimentos: " + this.listaAtendimentos.size());
+        System.out.println("Total faturado: R$ %.2f".formatted(this.totalFaturado));
     }
 
     private static boolean containsPessoa(ArrayList<Pessoa> lista, Pessoa pessoa) {

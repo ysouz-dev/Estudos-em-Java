@@ -42,12 +42,14 @@ public class Atendimento {
 
     private String id;
     private ArrayList<Servico> servicosRealizados;
+    private BigDecimal totalServico;
     private Pessoa cliente;
 
     public Atendimento(Pessoa cliente) {
         this.servicosRealizados = new ArrayList<Servico>();
         this.cliente = cliente;
         this.id = ("#" + idGeral);
+        this.totalServico = BigDecimal.ZERO;
         idGeral++;
     }
 
@@ -57,6 +59,7 @@ public class Atendimento {
             throw new IllegalArgumentException("Esse serviço já foi registrado nesse atendimento.");
         }
 
+        this.totalServico = this.totalServico.add(servico.getValor());
         servicosRealizados.add(servico);
     }
 
@@ -64,12 +67,10 @@ public class Atendimento {
         System.out.println("ID: " + this.id);
         System.out.println("Cliente: " + this.cliente.getNome());
         System.out.println("Serviços:");
-        BigDecimal somaServicos = BigDecimal.ZERO;
         for (Servico service : this.servicosRealizados) {
             System.out.println(service + " R$ %.2f".formatted(service.getValor()));
-            somaServicos = somaServicos.add(service.getValor());
         }
-        System.out.println("Total serviço: R$ %.2f".formatted(somaServicos));
+        System.out.println("Total serviço: R$ %.2f".formatted(this.totalServico));
         Formatador.linha();
     }
 
@@ -79,6 +80,10 @@ public class Atendimento {
 
     public String getId() {
         return this.id;
+    }
+
+    public BigDecimal getTotal() {
+        return this.totalServico;
     }
 
     private static boolean containsServico(ArrayList<Servico> lista, Servico servico) {

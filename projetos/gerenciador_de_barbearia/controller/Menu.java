@@ -25,6 +25,7 @@ public final class Menu {
         System.out.println("[ 4 ] Listar Atendimentos");
         System.out.println("[ 5 ] Remover Cliente");
         System.out.println("[ 6 ] Remover Atendimento");
+        System.out.println("[ 7 ] Estatísticas");
         System.out.println("[ 0 ] Encerrar Sistema");
 
         Formatador.linha();
@@ -35,7 +36,7 @@ public final class Menu {
                 System.out.print("Digite um número da opção: ");
                 escolha = this.scanner.nextInt();
                 this.scanner.nextLine();
-                if (escolha < 0 || escolha > 6) {
+                if (escolha < 0 || escolha > 7) {
                     System.out.printf("Erro: %d não é uma opção válida!%n", escolha);
                 }
             } catch (InputMismatchException e) {
@@ -43,7 +44,7 @@ public final class Menu {
                 this.scanner.nextLine();
             }
             Formatador.linha();
-        } while (escolha < 0 || escolha > 6);
+        } while (escolha < 0 || escolha > 7);
         return escolha;
     }
 
@@ -276,6 +277,11 @@ public final class Menu {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void estatisticas() {
+        Formatador.tituloDinamico("Estatísticas", 8);
+        this.sistema.estatisticas();
     }
 
     public void encerrarSistema() {
